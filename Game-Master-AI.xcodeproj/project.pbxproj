@@ -3,10 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21B283F2D35457F00DA2FB4 /* D4.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283A2D35457F00DA2FB4 /* D4.dae */; };
+		B21B28402D35457F00DA2FB4 /* D6.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283B2D35457F00DA2FB4 /* D6.dae */; };
+		B21B28412D35457F00DA2FB4 /* D12.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283C2D35457F00DA2FB4 /* D12.dae */; };
+		B21B28422D35457F00DA2FB4 /* D8.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283D2D35457F00DA2FB4 /* D8.dae */; };
+		B21B28462D358CE100DA2FB4 /* D20.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B28452D358CE100DA2FB4 /* D20.dae */; };
+		B2390B1E2D33DB5500310046 /* privacy_policy.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2390B1C2D33DB5500310046 /* privacy_policy.txt */; };
+		B2390B1F2D33DB5500310046 /* terms_and_conditions.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2390B1D2D33DB5500310046 /* terms_and_conditions.txt */; };
+		B2390B212D34051D00310046 /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2390B202D34051D00310046 /* SceneKitView.swift */; };
+		B2390B242D3405D600310046 /* DiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2390B232D3405D600310046 /* DiceType.swift */; };
+		B2390B292D3428C300310046 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2390B282D3428C300310046 /* ArrayExtensions.swift */; };
+		B24808702D328A90002F0017 /* BoardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248086F2D328A90002F0017 /* BoardGame.swift */; };
+		B24808762D329A04002F0017 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24808752D329A04002F0017 /* SearchViewModel.swift */; };
+		B24808782D329A78002F0017 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24808772D329A78002F0017 /* ChatViewModel.swift */; };
+		B2600AE72D331D490096E553 /* board_games.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2600AE62D331D490096E553 /* board_games.txt */; };
+		B2600AEC2D332F4A0096E553 /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2600AEB2D332F4A0096E553 /* GamesView.swift */; };
+		B2600AEF2D33305A0096E553 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2600AEE2D33305A0096E553 /* DicesView.swift */; };
+		B2DF20222D2EB78600301845 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B2DF20212D2EB78600301845 /* Essentials */; };
+		B2DF20242D2EB98000301845 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2DF20232D2EB98000301845 /* Config.plist */; };
 		B2E14AC32D2EAF1D00CA7D5A /* Game_Master_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E14AC22D2EAF1D00CA7D5A /* Game_Master_AIApp.swift */; };
 		B2E14AC52D2EAF1D00CA7D5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E14AC42D2EAF1D00CA7D5A /* ContentView.swift */; };
 		B2E14AC72D2EAF1E00CA7D5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E14AC62D2EAF1E00CA7D5A /* Assets.xcassets */; };
@@ -14,6 +32,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B213E2942D305A990076AF5B /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreKitConfiguration.storekit; path = "Game-Master-AI/StoreKitConfiguration.storekit"; sourceTree = "<group>"; };
+		B21B283A2D35457F00DA2FB4 /* D4.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D4.dae; sourceTree = "<group>"; };
+		B21B283B2D35457F00DA2FB4 /* D6.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D6.dae; sourceTree = "<group>"; };
+		B21B283C2D35457F00DA2FB4 /* D12.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D12.dae; sourceTree = "<group>"; };
+		B21B283D2D35457F00DA2FB4 /* D8.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D8.dae; sourceTree = "<group>"; };
+		B21B28452D358CE100DA2FB4 /* D20.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D20.dae; sourceTree = "<group>"; };
+		B2390B1C2D33DB5500310046 /* privacy_policy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = privacy_policy.txt; sourceTree = "<group>"; };
+		B2390B1D2D33DB5500310046 /* terms_and_conditions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = terms_and_conditions.txt; sourceTree = "<group>"; };
+		B2390B202D34051D00310046 /* SceneKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
+		B2390B232D3405D600310046 /* DiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceType.swift; sourceTree = "<group>"; };
+		B2390B282D3428C300310046 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		B248086F2D328A90002F0017 /* BoardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGame.swift; sourceTree = "<group>"; };
+		B24808752D329A04002F0017 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		B24808772D329A78002F0017 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		B2600AE62D331D490096E553 /* board_games.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = board_games.txt; sourceTree = "<group>"; };
+		B2600AEB2D332F4A0096E553 /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		B2600AEE2D33305A0096E553 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
+		B2DF20232D2EB98000301845 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Essentials/Config.plist; sourceTree = "<group>"; };
 		B2E14ABF2D2EAF1D00CA7D5A /* Game-Master-AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-Master-AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E14AC22D2EAF1D00CA7D5A /* Game_Master_AIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_Master_AIApp.swift; sourceTree = "<group>"; };
 		B2E14AC42D2EAF1D00CA7D5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,17 +62,111 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DF20222D2EB78600301845 /* Essentials in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B21B28242D351E8300DA2FB4 /* Dices */ = {
+			isa = PBXGroup;
+			children = (
+				B21B28452D358CE100DA2FB4 /* D20.dae */,
+				B21B283A2D35457F00DA2FB4 /* D4.dae */,
+				B21B283B2D35457F00DA2FB4 /* D6.dae */,
+				B21B283D2D35457F00DA2FB4 /* D8.dae */,
+				B21B283C2D35457F00DA2FB4 /* D12.dae */,
+			);
+			path = Dices;
+			sourceTree = "<group>";
+		};
+		B2390B222D3405CB00310046 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B2390B232D3405D600310046 /* DiceType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B2390B252D34288200310046 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B2390B282D3428C300310046 /* ArrayExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B248086B2D32844B002F0017 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B21B28242D351E8300DA2FB4 /* Dices */,
+				B2390B1C2D33DB5500310046 /* privacy_policy.txt */,
+				B2390B1D2D33DB5500310046 /* terms_and_conditions.txt */,
+				B2600AE62D331D490096E553 /* board_games.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B248086E2D328A78002F0017 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B248086F2D328A90002F0017 /* BoardGame.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B24808742D3299D9002F0017 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				B24808752D329A04002F0017 /* SearchViewModel.swift */,
+				B24808772D329A78002F0017 /* ChatViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		B2600AE82D332F1B0096E553 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2600AED2D3330450096E553 /* Dices Views */,
+				B2600AE92D332F240096E553 /* Games Views */,
+				B2E14AC42D2EAF1D00CA7D5A /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B2600AE92D332F240096E553 /* Games Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2600AEB2D332F4A0096E553 /* GamesView.swift */,
+			);
+			path = "Games Views";
+			sourceTree = "<group>";
+		};
+		B2600AED2D3330450096E553 /* Dices Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2600AEE2D33305A0096E553 /* DicesView.swift */,
+				B2390B202D34051D00310046 /* SceneKitView.swift */,
+			);
+			path = "Dices Views";
+			sourceTree = "<group>";
+		};
+		B2DF20202D2EB78100301845 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B2E14AB62D2EAF1D00CA7D5A = {
 			isa = PBXGroup;
 			children = (
+				B2DF20232D2EB98000301845 /* Config.plist */,
+				B213E2942D305A990076AF5B /* StoreKitConfiguration.storekit */,
 				B2E14AC12D2EAF1D00CA7D5A /* Game-Master-AI */,
 				B2E14AC02D2EAF1D00CA7D5A /* Products */,
+				B2DF20202D2EB78100301845 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +181,13 @@
 		B2E14AC12D2EAF1D00CA7D5A /* Game-Master-AI */ = {
 			isa = PBXGroup;
 			children = (
+				B2390B252D34288200310046 /* Extensions */,
+				B2390B222D3405CB00310046 /* Enums */,
+				B2600AE82D332F1B0096E553 /* Views */,
+				B24808742D3299D9002F0017 /* View Models */,
+				B248086E2D328A78002F0017 /* Models */,
+				B248086B2D32844B002F0017 /* Resources */,
 				B2E14AC22D2EAF1D00CA7D5A /* Game_Master_AIApp.swift */,
-				B2E14AC42D2EAF1D00CA7D5A /* ContentView.swift */,
 				B2E14AC62D2EAF1E00CA7D5A /* Assets.xcassets */,
 				B2E14AC82D2EAF1E00CA7D5A /* Preview Content */,
 			);
@@ -83,6 +218,9 @@
 			dependencies = (
 			);
 			name = "Game-Master-AI";
+			packageProductDependencies = (
+				B2DF20212D2EB78600301845 /* Essentials */,
+			);
 			productName = "Game-Master-AI";
 			productReference = B2E14ABF2D2EAF1D00CA7D5A /* Game-Master-AI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +249,9 @@
 				Base,
 			);
 			mainGroup = B2E14AB62D2EAF1D00CA7D5A;
+			packageReferences = (
+				B2E14AD02D2EAF3600CA7D5A /* XCLocalSwiftPackageReference "../Essentials" */,
+			);
 			productRefGroup = B2E14AC02D2EAF1D00CA7D5A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +267,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E14ACA2D2EAF1E00CA7D5A /* Preview Assets.xcassets in Resources */,
+				B2390B1E2D33DB5500310046 /* privacy_policy.txt in Resources */,
+				B21B28412D35457F00DA2FB4 /* D12.dae in Resources */,
+				B2600AE72D331D490096E553 /* board_games.txt in Resources */,
+				B2DF20242D2EB98000301845 /* Config.plist in Resources */,
+				B21B28462D358CE100DA2FB4 /* D20.dae in Resources */,
+				B2390B1F2D33DB5500310046 /* terms_and_conditions.txt in Resources */,
+				B21B283F2D35457F00DA2FB4 /* D4.dae in Resources */,
+				B21B28422D35457F00DA2FB4 /* D8.dae in Resources */,
+				B21B28402D35457F00DA2FB4 /* D6.dae in Resources */,
 				B2E14AC72D2EAF1E00CA7D5A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +287,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24808702D328A90002F0017 /* BoardGame.swift in Sources */,
+				B2390B292D3428C300310046 /* ArrayExtensions.swift in Sources */,
+				B2600AEF2D33305A0096E553 /* DicesView.swift in Sources */,
 				B2E14AC52D2EAF1D00CA7D5A /* ContentView.swift in Sources */,
+				B2600AEC2D332F4A0096E553 /* GamesView.swift in Sources */,
+				B24808762D329A04002F0017 /* SearchViewModel.swift in Sources */,
+				B24808782D329A78002F0017 /* ChatViewModel.swift in Sources */,
+				B2390B242D3405D600310046 /* DiceType.swift in Sources */,
+				B2390B212D34051D00310046 /* SceneKitView.swift in Sources */,
 				B2E14AC32D2EAF1D00CA7D5A /* Game_Master_AIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -275,6 +433,8 @@
 				DEVELOPMENT_TEAM = J6U333HZ7J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Game Master AI";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +464,8 @@
 				DEVELOPMENT_TEAM = J6U333HZ7J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Game Master AI";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +506,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B2E14AD02D2EAF3600CA7D5A /* XCLocalSwiftPackageReference "../Essentials" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Essentials;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2DF20212D2EB78600301845 /* Essentials */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2E14AD02D2EAF3600CA7D5A /* XCLocalSwiftPackageReference "../Essentials" */;
+			productName = Essentials;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2E14AB72D2EAF1D00CA7D5A /* Project object */;
 }

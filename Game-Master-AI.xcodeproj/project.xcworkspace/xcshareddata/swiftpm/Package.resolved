@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+        "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "codablecsv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dehesa/CodableCSV.git",
+      "state" : {
+        "revision" : "99ace2cfdfbc19108b529c021005fb57a460e715",
+        "version" : "0.6.7"
+      }
+    },
+    {
+      "identity" : "simplekeychain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/SimpleKeychain.git",
+      "state" : {
+        "revision" : "b694f155907b189bc82e93586695a26f558c742f",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swiftyrsa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TakeScoop/SwiftyRSA.git",
+      "state" : {
+        "revision" : "6521919ad0e99dff927685f142d8136479acb452",
+        "version" : "1.8.0"
+      }
+    }
+  ],
+  "version" : 2
+}
