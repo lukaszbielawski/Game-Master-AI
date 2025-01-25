@@ -11,13 +11,10 @@ import SwiftUI
 
 @main
 struct Game_Master_AIApp: App {
-    let api = ChatAPI()
-
     var body: some Scene {
         WindowGroup {
             EssentialsApp {
                 ContentView()
-                    .environmentObject(api)
             }
         }
     }

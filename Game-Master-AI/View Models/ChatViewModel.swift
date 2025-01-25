@@ -9,16 +9,25 @@ import Essentials
 import Foundation
 import StoreKit
 
+@MainActor
 final class ChatViewModel: ObservableObject {
     private let prompt: String
-    private let chatAPI: ChatAPI
+    private let chatAPI = ChatAPI()
+    private let initialAssistantMessage: String
 
     @Published var messages: [Essentials.Message] = []
-    @Published var streamedMessage: String = ""
+    @Published var streamedMessageContent: String? = nil
 
-    init(chatAPI: ChatAPI, prompt: String) {
-        self.chatAPI = chatAPI
+    init(chatAPI: ChatAPI = ChatAPI(), prompt: String, initialAssistantMessage: String) {
         self.prompt = prompt
+        self.initialAssistantMessage = initialAssistantMessage
+        resetConversation()
+    }
+
+    func resetConversation() {
+        messages.removeAll()
+        let greetingsMessage = Message(role: "assistant", content: initialAssistantMessage)
+        messages.append(greetingsMessage)
     }
 
     func sendMessage(content: String) async {
@@ -28,13 +37,16 @@ final class ChatViewModel: ObservableObject {
         let result = await chatAPI.getChatCompletionStream(
             prompt: prompt,
             messages: messages,
-            deployEnvironment: .simulator,
             onReceive: { [weak self] chunk in
-                self?.streamedMessage.append(chunk)
+                if self?.streamedMessageContent == nil {
+                    self?.streamedMessageContent = ""
+                }
+                self?.streamedMessageContent?.append(chunk)
             })
         switch result {
         case .success(let message):
             messages.append(message)
+            streamedMessageContent = nil
         case .failure(let error):
             print("Error:", error)
         }

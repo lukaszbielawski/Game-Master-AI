@@ -63,7 +63,7 @@ public struct DicesView: View {
                              diceResult: $diceResult,
                              dice: currentDice)
                     .opacity(isRolling ? 0.0 + (isRollQueued ? 0.0 : 1.0) : 1.0)
-                    .edgesIgnoringSafeArea(.all)
+                    .edgesIgnoringSafeArea([.top, .leading, .trailing])
                     .gesture(DragGesture(minimumDistance: 0)
                         .onChanged { value in
                             isDragging = true
@@ -72,8 +72,13 @@ public struct DicesView: View {
                             let deltaWidth = translation.width - lastDragGesturePosition.width
                             let deltaHeight = translation.height - lastDragGesturePosition.height
 
-                            rotationY = Angle(radians: rotationY.radians + Double(deltaWidth) * 0.05)
-                            rotationX = Angle(radians: rotationX.radians + Double(deltaHeight) * 0.05)
+                            rotationY = Angle(radians: rotationY.radians - Double(deltaHeight) * 0.03)
+                            rotationX = Angle(radians: rotationX.radians - Double(deltaWidth) * 0.03)
+
+                            let diagonalMovement = sqrt(deltaWidth * deltaWidth + deltaHeight * deltaHeight)
+                            if deltaWidth * deltaHeight > 0 {
+                                rotationZ = Angle(radians: rotationZ.radians + Double(diagonalMovement) * 0.005)
+                            }
                         }
                         .onEnded { _ in
                             isDragging = false
@@ -114,11 +119,12 @@ public struct DicesView: View {
                     .disabled(isRolling)
                     .onChange(of: selectedDiceIndex) { _ in
                         isDiceChangeQueued = true
-                        diceResult = 1
+                        diceResult = 20
                         (rotationX, rotationY, rotationZ) = currentDice.defaultOrientation
                     }
             }
         }
+        .background(Color(.background))
     }
 
     func rollDice() {
