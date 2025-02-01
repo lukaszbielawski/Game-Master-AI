@@ -11,39 +11,45 @@ import SwiftUI
 
 struct ChatListView: View {
     @StateObject var vm = ChatTabExploreViewModel()
+    @EnvironmentObject var toastProvider: ToastProvider
     @State var searchQuery: String = ""
     @State var isNavigationLinkActivated = false
     @FocusState.Binding var isFocused: Bool
-    @State var boardGameSubject = CurrentValueSubject<String?, Never>(nil)
+    @State var boardGameSubject = CurrentValueSubject<BoardGameModel?, Never>(nil)
 
     var body: some View {
-        VStack(spacing: 8.0) {
-            EssentialsSearchBarView(searchText: $searchQuery, isFocused: $isFocused)
-                .onChange(of: searchQuery) { newValue in
-                    vm.searchQueryChanged(newValue: newValue)
+        EssentialsLoadingStateView(vm.games) { games in
+            VStack(spacing: 8.0) {
+                EssentialsSearchBarView(searchText: $searchQuery, isFocused: $isFocused)
+                    .onChange(of: searchQuery) { newValue in
+                        vm.searchQueryChanged(newValue: newValue)
+                    }
+                EssentialsListView(games) { boardGame in
+                    Text(boardGame.name)
+                        .foregroundStyle(Color(.accent))
+                } onCellTaped: { boardGame in
+                    isFocused = false
+                    boardGameSubject.send(boardGame)
                 }
-            EssentialsListView(vm.filteredGames) { boardGame in
-                Text(boardGame)
-                    .foregroundStyle(Color(.accent))
-            } onCellTaped: { boardGame in
-                isFocused = false
-                boardGameSubject.send(boardGame)
-            }
 
-            NavigationLink(
-                destination:
-                EssentialsLazyView {
-                    ChatView(boardGame: boardGameSubject.value ?? "")
-                        .onDisappear {
-                            boardGameSubject.send(nil)
-                        }
-                },
-                isActive: $isNavigationLinkActivated, label: {
-                    EmptyView()
-                })
+                NavigationLink(
+                    destination:
+                    EssentialsLazyView {
+                        ChatView(boardGameModel: boardGameSubject.value!, toastProvider: toastProvider)
+                            .onDisappear {
+                                boardGameSubject.send(nil)
+                            }
+                    },
+                    isActive: $isNavigationLinkActivated, label: {
+                        EmptyView()
+                    })
+            }
+        }
+        .task(priority: .userInitiated) { [weak vm] in
+            print("appear")
+            await vm?.fetchMyCustomGames()
         }
         .onReceive(boardGameSubject) { value in
-            print("value", value)
             if value != nil {
                 isFocused = false
                 isNavigationLinkActivated = true

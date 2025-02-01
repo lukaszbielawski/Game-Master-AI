@@ -151,33 +151,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "755416F2-6B39-4B01-A64F-85E5582AA083"
+            uuid = "2853ED83-455F-4322-B391-608D16296089"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/TextParser/Errors/TextParserServiceError.swift"
+            filePath = "../Essentials/Sources/Essentials/Modules/Network/API Services/CompletionsAPIService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "TextParserServiceError"
-            landmarkType = "13">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "65660F58-836D-414A-9938-38132BC8CD6C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/TextParser/Errors/TextParserServiceError.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "TextParserServiceError"
-            landmarkType = "13">
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getChatCompletionsStream(request:deployEnvironment:onReceive:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

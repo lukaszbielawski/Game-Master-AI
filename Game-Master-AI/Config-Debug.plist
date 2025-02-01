@@ -6,8 +6,8 @@
 	<string>http://192.168.0.105:9090</string>
 	<key>MobileAppBackendModuleName</key>
 	<string>gameMaster</string>
-	<key>SignaturePrivateKeyFileName</key>
-	<string>signature_creation_private_key</string>
+	<key>EncryptionPublicKeyFileName</key>
+	<string>encryption_private_key</string>
 	<key>PrivacyPolicyFileName</key>
 	<string>privacy_policy</string>
 	<key>TermsAndConditionsFileName</key>
