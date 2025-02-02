@@ -21,8 +21,7 @@ struct ChatView: View {
         EssentialsLoadingStateView(vm.messages) { messages in
             EssentialsChatView(messages: messages,
                                streamedMessageContent: vm.streamedMessageContent,
-                               navigationTitle: boardGameModel.name,
-                               messageSendSubject: vm.messageSendSubject)
+                               navigationTitle: boardGameModel.name)
             { messageContent in
                 Task(priority: .userInitiated) { [weak vm] in
                     await vm?.sendMessage(content: messageContent)

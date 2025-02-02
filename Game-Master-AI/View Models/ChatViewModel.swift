@@ -20,8 +20,6 @@ final class ChatViewModel: ObservableObject {
     @Published private(set) var messages: EssentialsLoadingState<[Essentials.Message]> = .initial
     @Published private(set) var streamedMessageContent: String? = nil
 
-    let messageSendSubject = PassthroughSubject<Void, Never>()
-
     lazy var assistantGreetingMessage = Message(role: "assistant", content: """
     Hello! I’m your dedicated \(boardGameModel.name) rules expert. I’m here to help you understand and clarify any questions you have about the rules of \(boardGameModel.name), based solely on its official rulebook. Feel free to ask me anything, such as:
 
@@ -75,13 +73,11 @@ final class ChatViewModel: ObservableObject {
                     self?.streamedMessageContent = ""
                 }
                 self?.streamedMessageContent?.append(chunk)
-                self?.messageSendSubject.send()
             })
         switch result {
         case .success(let message):
             messages.appendIfSuccess(message)
             streamedMessageContent = nil
-            messageSendSubject.send()
         case .failure(let error):
             print("Error:", error)
         }

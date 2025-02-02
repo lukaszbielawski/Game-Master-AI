@@ -1,5 +1,5 @@
 //
-//  ChatTabExploreViewModel.swift
+//  ChatTabCustomGamesViewModel.swift
 //  Game-Master-AI
 //
 //  Created by Łukasz Bielawski on 23/01/2025.
@@ -11,7 +11,7 @@ import Foundation
 import SwiftUI
 
 @MainActor
-final class ChatTabExploreViewModel: ObservableObject {
+final class ChatTabCustomGamesViewModel: ObservableObject {
     @Published var games: EssentialsLoadingState<[BoardGameModel]> = .initial
     @Published private(set) var filteredGames: [BoardGameModel] = []
     private let searchQuerySubject = PassthroughSubject<String, Never>()
