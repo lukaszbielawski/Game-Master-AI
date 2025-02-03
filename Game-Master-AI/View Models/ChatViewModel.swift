@@ -15,7 +15,7 @@ final class ChatViewModel: ObservableObject {
     private let completionsAPI = EssentialsCompletionsAPIService<BoardGameCompletionsRequest>()
     private let sessionAPI = EssentialsSessionsAPIService()
     private let boardGameModel: BoardGameModel
-    private let toastProvider: ToastProvider
+    private let toastProvider: EssentialsToastProvider
 
     @Published private(set) var messages: EssentialsLoadingState<[Essentials.Message]> = .initial
     @Published private(set) var streamedMessageContent: String? = nil
@@ -32,7 +32,7 @@ final class ChatViewModel: ObservableObject {
     If something isn’t specified in the rulebook, I’ll let you know. Let’s dive into \(boardGameModel.name)—what would you like to know?
     """)
 
-    init(boardGameModel: BoardGameModel, toastProvider: ToastProvider) {
+    init(boardGameModel: BoardGameModel, toastProvider: EssentialsToastProvider) {
         self.boardGameModel = boardGameModel
         self.toastProvider = toastProvider
     }

@@ -40,6 +40,11 @@
 		B2E14AC52D2EAF1D00CA7D5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E14AC42D2EAF1D00CA7D5A /* ContentView.swift */; };
 		B2E14AC72D2EAF1E00CA7D5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E14AC62D2EAF1E00CA7D5A /* Assets.xcassets */; };
 		B2E14ACA2D2EAF1E00CA7D5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E14AC92D2EAF1E00CA7D5A /* Preview Assets.xcassets */; };
+		B2EEA05F2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA05E2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift */; };
+		B2EEA0612D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA0602D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift */; };
+		B2EEA0632D50A14200F8745A /* ChatAddNewGameView+TakePicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA0622D50A14200F8745A /* ChatAddNewGameView+TakePicturesView.swift */; };
+		B2EEA0652D50B92300F8745A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA0642D50B92300F8745A /* Route.swift */; };
+		B2EEA0672D50DE5300F8745A /* SheetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA0662D50DE5300F8745A /* SheetRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +83,11 @@
 		B2E14AC42D2EAF1D00CA7D5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B2E14AC62D2EAF1E00CA7D5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2E14AC92D2EAF1E00CA7D5A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B2EEA05E2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+GameNameTextFieldView.swift"; sourceTree = "<group>"; };
+		B2EEA0602D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+MediaTypePickerView.swift"; sourceTree = "<group>"; };
+		B2EEA0622D50A14200F8745A /* ChatAddNewGameView+TakePicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+TakePicturesView.swift"; sourceTree = "<group>"; };
+		B2EEA0642D50B92300F8745A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		B2EEA0662D50DE5300F8745A /* SheetRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				B2390B232D3405D600310046 /* DiceType.swift */,
+				B2EEA0642D50B92300F8745A /* Route.swift */,
+				B2EEA0662D50DE5300F8745A /* SheetRoute.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -206,8 +218,8 @@
 		B2550A122D42ABD300906DFF /* Chat Tab Custom Games */ = {
 			isa = PBXGroup;
 			children = (
+				B2EEA05D2D509EEF00F8745A /* ChatAddNewGameView */,
 				B2550A0E2D42A94100906DFF /* ChatListView.swift */,
-				B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */,
 			);
 			path = "Chat Tab Custom Games";
 			sourceTree = "<group>";
@@ -301,6 +313,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B2EEA05D2D509EEF00F8745A /* ChatAddNewGameView */ = {
+			isa = PBXGroup;
+			children = (
+				B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */,
+				B2EEA05E2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift */,
+				B2EEA0602D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift */,
+				B2EEA0622D50A14200F8745A /* ChatAddNewGameView+TakePicturesView.swift */,
+			);
+			path = ChatAddNewGameView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -391,8 +414,10 @@
 				B22E9D562D4FB3BF00BA1C28 /* ChatAddNewGameView.swift in Sources */,
 				B2390B292D3428C300310046 /* ArrayExtensions.swift in Sources */,
 				B2600AEF2D33305A0096E553 /* DicesView.swift in Sources */,
+				B2EEA0672D50DE5300F8745A /* SheetRoute.swift in Sources */,
 				B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */,
 				B22E9D592D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift in Sources */,
+				B2EEA05F2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift in Sources */,
 				B2E14AC52D2EAF1D00CA7D5A /* ContentView.swift in Sources */,
 				B2550A162D42AC4600906DFF /* GameModel.swift in Sources */,
 				B2600AEC2D332F4A0096E553 /* GamesView.swift in Sources */,
@@ -401,11 +426,14 @@
 				B24808782D329A78002F0017 /* ChatViewModel.swift in Sources */,
 				B2A374502D4E37100065F8F6 /* BoardGameCompletionsRequest.swift in Sources */,
 				B2550A072D42910400906DFF /* ChatTabView.swift in Sources */,
+				B2EEA0612D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift in Sources */,
 				B2550A0C2D42993B00906DFF /* ChatTabButtonViewModifier.swift in Sources */,
 				B2550A0F2D42A94100906DFF /* ChatListView.swift in Sources */,
 				B2390B242D3405D600310046 /* DiceType.swift in Sources */,
 				B2390B212D34051D00310046 /* SceneKitView.swift in Sources */,
 				B2E14AC32D2EAF1D00CA7D5A /* Game_Master_AIApp.swift in Sources */,
+				B2EEA0652D50B92300F8745A /* Route.swift in Sources */,
+				B2EEA0632D50A14200F8745A /* ChatAddNewGameView+TakePicturesView.swift in Sources */,
 				B2550A182D42B01F00906DFF /* ChatTabViewContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

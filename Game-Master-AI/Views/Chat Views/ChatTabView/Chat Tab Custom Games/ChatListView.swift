@@ -11,12 +11,12 @@ import SwiftUI
 
 struct ChatListView: View {
     @StateObject var vm = ChatTabCustomGamesViewModel()
-    @EnvironmentObject var toastProvider: ToastProvider
+    @EnvironmentObject var toastProvider: EssentialsToastProvider
     @State var searchQuery: String = ""
     @State var isNavigationLinkActivated = false
     @FocusState.Binding var isFocused: Bool
-    @State var boardGameSubject = CurrentValueSubject<BoardGameModel?, Never>(nil)
-    @State private var isAddNewGameSheetPresented = false
+//    @State private var isAddNewGameSheetPresented = false
+    @EnvironmentObject var router: EssentialsRouterState<Route, SheetRoute>
 
     var body: some View {
         EssentialsLoadingStateView(vm.games) { games in
@@ -36,32 +36,21 @@ struct ChatListView: View {
                     .padding(.bottom, 4.0)
                     .padding(.top, 24.0)
                     .onTapGesture {
-                        isAddNewGameSheetPresented = true
+                        router.currentSheetRoute = .addBoardGameView
                     }
 
                 EssentialsListView(games) { boardGame in
-                    Text(boardGame.name)
+//                    NavigationLink(value: boardGame) {
+                        Text(boardGame.name)
+//                    }
                 } onCellTaped: { boardGame in
                     isFocused = false
-                    boardGameSubject.send(boardGame)
+                    router.currentRoute = .chatView(boardGame, toastProvider)
                 }
-
-                NavigationLink(
-                    destination:
-                    EssentialsLazyView {
-                        ChatView(boardGameModel: boardGameSubject.value!, toastProvider: toastProvider)
-                            .onDisappear {
-                                boardGameSubject.send(nil)
-                            }
-                    },
-                    isActive: $isNavigationLinkActivated, label: {
-                        EmptyView()
-                    }
-                )
             }
-            .sheet(isPresented: $isAddNewGameSheetPresented) {
-                ChatAddNewGameView()
-            }
+//            .sheet(isPresented: $isAddNewGameSheetPresented) {
+//                ChatAddNewGameView()
+//            }
         } failureView: { _ in
             EssentialsContentUnavailableView(
                 icon: Image(systemName: "wifi.slash"),
@@ -75,15 +64,6 @@ struct ChatListView: View {
         }
         .task(priority: .userInitiated) { [weak vm] in
             await vm?.fetchMyCustomGames()
-        }
-        .onReceive(boardGameSubject) { value in
-            if value != nil {
-                isFocused = false
-                isNavigationLinkActivated = true
-            }
-        }
-        .onAppear {
-            print(isNavigationLinkActivated)
         }
         .onTapGesture {
             isFocused = false

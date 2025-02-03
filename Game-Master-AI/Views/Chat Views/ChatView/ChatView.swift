@@ -12,7 +12,7 @@ struct ChatView: View {
     @StateObject var vm: ChatViewModel
     let boardGameModel: BoardGameModel
 
-    public init(boardGameModel: BoardGameModel, toastProvider: ToastProvider) {
+    public init(boardGameModel: BoardGameModel, toastProvider: EssentialsToastProvider) {
         self.boardGameModel = boardGameModel
         self._vm = StateObject(wrappedValue: ChatViewModel(boardGameModel: boardGameModel, toastProvider: toastProvider))
     }

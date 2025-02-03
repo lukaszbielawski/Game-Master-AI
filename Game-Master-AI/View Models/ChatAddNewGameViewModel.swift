@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import PhotosUI
 
 final class ChatAddNewGameViewModel: ObservableObject {
-    @Published var currentPage: ChatAddNewGameViewPage = .gameNameTextField
+    @Published var currentPage: ViewPage = .gameNameTextField
     @Published var gameName: String = ""
+
+    @Published var selectedPhotos: [PHPickerResult] = []
 }
 
 extension ChatAddNewGameViewModel {
-    enum ChatAddNewGameViewPage {
+    enum ViewPage {
         case gameNameTextField
         case mediaTypePicker
 

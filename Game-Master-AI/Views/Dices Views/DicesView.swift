@@ -32,7 +32,7 @@ public struct DicesView: View {
 
     @GestureState private var lastDragGesturePosition: CGSize = .zero
 
-    @EnvironmentObject private var colorSchemeState: ColorSchemeState
+    @EnvironmentObject private var colorSchemeState: EssentialsColorSchemeState
 
     var currentDice: DiceType {
         dices[selectedDiceIndex]

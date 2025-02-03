@@ -14,7 +14,9 @@ struct Game_Master_AIApp: App {
     var body: some Scene {
         WindowGroup {
             EssentialsApp {
-                ContentView()
+                EssentialsRouter(routeType: Route.self, sheetRouteType: SheetRoute.self) {
+                    ContentView()
+                }
             }
         }
     }
