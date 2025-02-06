@@ -10,7 +10,6 @@ import SwiftUI
 
 extension ChatAddNewGameView {
     struct MediaTypePickerView: View {
-        @State private var completion: () -> Void
         @EnvironmentObject private var vm: ChatAddNewGameViewModel
         @EnvironmentObject private var router: EssentialsRouterState<Route, SheetRoute>
 
@@ -31,10 +30,6 @@ extension ChatAddNewGameView {
                 image: Image(systemName: "doc.text.fill")
             )
         ]
-
-        init(completion: @escaping () -> Void) {
-            self.completion = completion
-        }
 
         var body: some View {
             VStack(spacing: 16.0) {

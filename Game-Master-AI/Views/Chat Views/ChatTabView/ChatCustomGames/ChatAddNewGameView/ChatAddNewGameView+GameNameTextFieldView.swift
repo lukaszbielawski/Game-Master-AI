@@ -38,6 +38,8 @@ extension ChatAddNewGameView {
                 } label: {
                     Text("Continue")
                 }
+                .disabled(gameName.isEmpty)
+                .animation(.easeInOut(duration: 0.35), value: gameName.isEmpty)
                 .buttonStyle(EssentialsBigButtonStyle())
                 Spacer()
             }

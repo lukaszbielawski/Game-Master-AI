@@ -11,15 +11,41 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct LoadingView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
+        @EnvironmentObject var toastProvider: EssentialsToastProvider
+        @EnvironmentObject var router: EssentialsRouterState<Route, SheetRoute>
 
         @State private var gameName: String = ""
         @State private var onAddGameTapped: () -> Void
-        @State private var progressFraction: CGFloat = 0.0
 
         let lines = [
             "Extracting text from your manual",
-            "Processing page"
+            "Processing page",
+            "Completed"
         ]
+
+        private var currentLineIndex: Int {
+            return switch vm.creationStage {
+            case .ocr:
+                0
+            case .pageConversion:
+                1
+            case .finished:
+                2
+            }
+        }
+
+        private var currentLoadingLine: String {
+            if currentLineIndex == 0 || currentLineIndex == 2 {
+                lines[currentLineIndex]
+            } else {
+                lines[currentLineIndex] + " \(vm.currentPage)/\(vm.totalPages)"
+            }
+        }
+
+        var currentProgresFraction: CGFloat {
+            CGFloat(vm.currentStep)
+                / CGFloat(vm.totalStepCount)
+        }
 
         public init(onAddGameTapped: @escaping () -> Void) {
             self.onAddGameTapped = onAddGameTapped
@@ -35,13 +61,13 @@ extension ChatAddNewGameView {
                     .font(.headline)
                     .fontWeight(.light)
 
-                ProgressView(value: progressFraction, total: 1.0)
+                ProgressView(value: currentProgresFraction, total: 1.0)
                     .colorMultiply(Color.white)
                     .onAppear {}
                 HStack(spacing: 8.0) {
                     ProgressView()
                         .font(.callout)
-                    Text("Extracting text from your manual")
+                    Text(currentLoadingLine)
                         .font(.callout)
                         .fontWeight(.light)
                 }
@@ -54,10 +80,17 @@ extension ChatAddNewGameView {
                     Text("Continue")
                 }
                 .buttonStyle(EssentialsBigButtonStyle())
-                .disabled(progressFraction != 1.0)
+                .disabled(currentProgresFraction != 1.0)
                 Spacer()
             }.task(priority: .userInitiated) { [weak vm] in
                 await vm?.createBoardGame()
+            }
+            .onReceive(vm.$retrievedText) { text in
+                print("Text", text)
+            }
+            .onReceive(vm.gameCreatedPublisher) { boardGameModel in
+                router.currentSheetRoute = .none
+                router.currentRoute = .chatView(boardGameModel, toastProvider)
             }
             .modifier(EssentialsAutoHeightSheetModifier(fraction: .constant(0.75)))
         }

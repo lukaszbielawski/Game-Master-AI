@@ -16,30 +16,28 @@ struct ChatAddNewGameView: View {
 
     var body: some View {
         ZStack {
-            switch vm.currentPage {
+            switch vm.currentViewPage {
             case .gameNameTextField:
                 GameNameTextFieldView(
                     gameName: $vm.gameName,
                     isFocused: $isFocused
                 ) {
                     EssentialsHapticService.shared.play(.medium)
-                    vm.currentPage = .mediaTypePicker
+                    vm.currentViewPage = .mediaTypePicker
                 }
             case .mediaTypePicker:
-                MediaTypePickerView {
-
-                }
+                MediaTypePickerView()
             }
         }
         .padding()
         .modifier(EssentialsAutoHeightSheetModifier(fraction: $sheetPresentationDetentFraction))
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .background(Color.sheetBackgroundColor, ignoresSafeAreaEdges: .all)
-        .onChange(of: vm.currentPage) { newPage in
+        .onChange(of: vm.currentViewPage) { newPage in
             sheetPresentationDetentFraction = newPage.presentationDetentFraction
         }
         .onAppear {
-            sheetPresentationDetentFraction = vm.currentPage.presentationDetentFraction
+            sheetPresentationDetentFraction = vm.currentViewPage.presentationDetentFraction
         }
         .environmentObject(vm)
     }

@@ -16,6 +16,8 @@
 		B22E9D562D4FB3BF00BA1C28 /* ChatAddNewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */; };
 		B22E9D592D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */; };
 		B234D3852D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234D3842D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift */; };
+		B234D3882D553E4A0041ED4C /* ProcessInstructionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234D3872D553E4A0041ED4C /* ProcessInstructionAPIService.swift */; };
+		B234D38A2D553E710041ED4C /* ProcessInstructionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234D3892D553E710041ED4C /* ProcessInstructionRequest.swift */; };
 		B2390B1E2D33DB5500310046 /* privacy_policy.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2390B1C2D33DB5500310046 /* privacy_policy.txt */; };
 		B2390B1F2D33DB5500310046 /* terms_and_conditions.txt in Resources */ = {isa = PBXBuildFile; fileRef = B2390B1D2D33DB5500310046 /* terms_and_conditions.txt */; };
 		B2390B212D34051D00310046 /* SceneKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2390B202D34051D00310046 /* SceneKitView.swift */; };
@@ -59,6 +61,8 @@
 		B22E9D572D4FDE2F00BA1C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAddNewGameViewModel.swift; sourceTree = "<group>"; };
 		B234D3842D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+PDFFilePickerView.swift"; sourceTree = "<group>"; };
+		B234D3872D553E4A0041ED4C /* ProcessInstructionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessInstructionAPIService.swift; sourceTree = "<group>"; };
+		B234D3892D553E710041ED4C /* ProcessInstructionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessInstructionRequest.swift; sourceTree = "<group>"; };
 		B2390B1C2D33DB5500310046 /* privacy_policy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = privacy_policy.txt; sourceTree = "<group>"; };
 		B2390B1D2D33DB5500310046 /* terms_and_conditions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = terms_and_conditions.txt; sourceTree = "<group>"; };
 		B2390B202D34051D00310046 /* SceneKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneKitView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,14 @@
 				B2390B1D2D33DB5500310046 /* terms_and_conditions.txt */,
 			);
 			path = Texts;
+			sourceTree = "<group>";
+		};
+		B234D3862D553E330041ED4C /* API Services */ = {
+			isa = PBXGroup;
+			children = (
+				B234D3872D553E4A0041ED4C /* ProcessInstructionAPIService.swift */,
+			);
+			path = "API Services";
 			sourceTree = "<group>";
 		};
 		B2390B222D3405CB00310046 /* Enums */ = {
@@ -246,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A3744F2D4E37100065F8F6 /* BoardGameCompletionsRequest.swift */,
+				B234D3892D553E710041ED4C /* ProcessInstructionRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -280,6 +293,7 @@
 		B2E14AC12D2EAF1D00CA7D5A /* Game-Master-AI */ = {
 			isa = PBXGroup;
 			children = (
+				B234D3862D553E330041ED4C /* API Services */,
 				B22E9D572D4FDE2F00BA1C28 /* Info.plist */,
 				B2390B252D34288200310046 /* Extensions */,
 				B2390B222D3405CB00310046 /* Enums */,
@@ -425,6 +439,8 @@
 				B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */,
 				B234D3852D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift in Sources */,
 				B2EEA0652D50B92300F8745A /* Route.swift in Sources */,
+				B234D3882D553E4A0041ED4C /* ProcessInstructionAPIService.swift in Sources */,
+				B234D38A2D553E710041ED4C /* ProcessInstructionRequest.swift in Sources */,
 				B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */,
 				B2EEA0632D50A14200F8745A /* ChatAddNewGameView+PhotoPickerView.swift in Sources */,
 			);
