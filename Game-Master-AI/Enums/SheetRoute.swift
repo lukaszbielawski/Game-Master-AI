@@ -12,7 +12,9 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
     case privacyPolicy(vm: EssentialsSettingsViewModel)
     case termsAndConditions(vm: EssentialsSettingsViewModel)
     case addBoardGameView
+    case addBoardGameLoadingView(vm: ChatAddNewGameViewModel)
     case mail
+    case pdfFilePickerView(_ vm: ChatAddNewGameViewModel)
 
     var body: some View {
         switch self {
@@ -30,8 +32,15 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
             .environmentObject(vm)
         case .addBoardGameView:
             ChatAddNewGameView()
+        case .addBoardGameLoadingView(let vm):
+            ChatAddNewGameView.LoadingView {}
+                .environmentObject(vm)
+                .interactiveDismissDisabled()
         case .mail:
             EssentialsMailView()
+        case .pdfFilePickerView(let vm):
+            ChatAddNewGameView.PDFFilePickerView()
+                .environmentObject(vm)
         }
     }
 
@@ -45,8 +54,12 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
             2
         case .addBoardGameView:
             3
-        case .mail:
+        case .addBoardGameLoadingView:
             4
+        case .mail:
+            5
+        case .pdfFilePickerView:
+            6
         }
     }
 }

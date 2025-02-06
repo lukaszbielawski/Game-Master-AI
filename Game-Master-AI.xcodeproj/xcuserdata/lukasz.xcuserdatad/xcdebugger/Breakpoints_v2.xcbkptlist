@@ -152,7 +152,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2853ED83-455F-4322-B391-608D16296089"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Essentials/Sources/Essentials/Modules/Network/API Services/CompletionsAPIService.swift"
@@ -161,6 +161,38 @@
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "getChatCompletionsStream(request:deployEnvironment:onReceive:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEB4AEA7-F2F2-433E-B535-14FFF6862364"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/PDFPicker/EssentialsPDFFilePicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "documentPicker(_:didPickDocumentsAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05EC065A-01FF-40B4-806A-1852BB74058C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/PDFPicker/EssentialsPDFFilePicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "documentPickerWasCancelled(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -17,10 +17,10 @@ final class ChatViewModel: ObservableObject {
     private let boardGameModel: BoardGameModel
     private let toastProvider: EssentialsToastProvider
 
-    @Published private(set) var messages: EssentialsLoadingState<[Essentials.Message]> = .initial
+    @Published private(set) var messages: EssentialsLoadingState<[Essentials.EssentialsMessage]> = .initial
     @Published private(set) var streamedMessageContent: String? = nil
 
-    lazy var assistantGreetingMessage = Message(role: "assistant", content: """
+    lazy var assistantGreetingMessage = EssentialsMessage(role: "assistant", content: """
     Hello! I’m your dedicated \(boardGameModel.name) rules expert. I’m here to help you understand and clarify any questions you have about the rules of \(boardGameModel.name), based solely on its official rulebook. Feel free to ask me anything, such as:
 
     - How to set up the game.
@@ -62,7 +62,7 @@ final class ChatViewModel: ObservableObject {
     func sendMessage(content: String) async {
         guard !content.isEmpty else { return }
 
-        let newMessage = Message(role: "user", content: content)
+        let newMessage = EssentialsMessage(role: "user", content: content)
         messages.appendIfSuccess(newMessage)
         let request = BoardGameCompletionsRequest(boardGameId: boardGameModel.id, userQuery: content)
 

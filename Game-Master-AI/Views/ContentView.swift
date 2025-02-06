@@ -19,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $tabNumber) {
-            ChatTabView()
+            GamesView()
                 .environmentObject(chatTabViewModel)
                 .tabItem { Label("Games", systemImage: "checkerboard.rectangle") }
                 .tag(1)
@@ -31,7 +31,7 @@ struct ContentView: View {
                 .tag(3)
         }
         .onChange(of: tabNumber) { _ in
-            HapticService.shared.play(.medium)
+            EssentialsHapticService.shared.play(.medium)
         }
     }
 }

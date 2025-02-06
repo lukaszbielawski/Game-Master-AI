@@ -22,10 +22,13 @@ struct ChatAddNewGameView: View {
                     gameName: $vm.gameName,
                     isFocused: $isFocused
                 ) {
+                    EssentialsHapticService.shared.play(.medium)
                     vm.currentPage = .mediaTypePicker
                 }
             case .mediaTypePicker:
-                MediaTypePickerView {}
+                MediaTypePickerView {
+
+                }
             }
         }
         .padding()

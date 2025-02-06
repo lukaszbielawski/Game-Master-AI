@@ -15,12 +15,14 @@ struct ChatListView: View {
     @State var searchQuery: String = ""
     @State var isNavigationLinkActivated = false
     @FocusState.Binding var isFocused: Bool
-//    @State private var isAddNewGameSheetPresented = false
     @EnvironmentObject var router: EssentialsRouterState<Route, SheetRoute>
 
     var body: some View {
         EssentialsLoadingStateView(vm.games) { games in
             VStack(spacing: 8.0) {
+                Text("Board games")
+                    .padding(.top, 8.0)
+                    .padding(.bottom)
                 EssentialsSearchBarView(searchText: $searchQuery, isFocused: $isFocused)
                     .onChange(of: searchQuery) { newValue in
                         vm.searchQueryChanged(newValue: newValue)
@@ -40,17 +42,12 @@ struct ChatListView: View {
                     }
 
                 EssentialsListView(games) { boardGame in
-//                    NavigationLink(value: boardGame) {
-                        Text(boardGame.name)
-//                    }
+                    Text(boardGame.name)
                 } onCellTaped: { boardGame in
                     isFocused = false
                     router.currentRoute = .chatView(boardGame, toastProvider)
                 }
             }
-//            .sheet(isPresented: $isAddNewGameSheetPresented) {
-//                ChatAddNewGameView()
-//            }
         } failureView: { _ in
             EssentialsContentUnavailableView(
                 icon: Image(systemName: "wifi.slash"),

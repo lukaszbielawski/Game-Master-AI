@@ -13,13 +13,18 @@ import SwiftUI
 enum Route: EssentialsRouteProtocol {
     case chatView(_ boardGameModel: BoardGameModel, _ toastProvider: EssentialsToastProvider)
     case photoPickerView(_ vm: ChatAddNewGameViewModel)
+    case cameraPickerView(_ vm: ChatAddNewGameViewModel)
 
     var body: some View {
         switch self {
         case .chatView(let boardGameModel, let toastProvider):
             ChatView(boardGameModel: boardGameModel, toastProvider: toastProvider)
+                .navigationBarBackButtonHidden()
         case .photoPickerView(let vm):
-            ChatAddNewGameView.TakePicturesView()
+            ChatAddNewGameView.PhotoPickerView()
+                .environmentObject(vm)
+        case .cameraPickerView(let vm):
+            ChatAddNewGameView.CameraPickerView()
                 .environmentObject(vm)
         }
     }
@@ -30,6 +35,8 @@ enum Route: EssentialsRouteProtocol {
             0
         case .photoPickerView:
             1
+        case .cameraPickerView:
+            2
         }
     }
 
@@ -42,6 +49,8 @@ enum Route: EssentialsRouteProtocol {
         case (.chatView, .chatView):
             true
         case (.photoPickerView, .photoPickerView):
+            true
+        case (.cameraPickerView, .cameraPickerView):
             true
         default:
             false

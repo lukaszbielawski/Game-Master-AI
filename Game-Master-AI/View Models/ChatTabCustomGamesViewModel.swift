@@ -18,8 +18,8 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
 
     private var cancellables: Set<AnyCancellable> = []
 
-//    private let gameFetchService = TextParserService()
-//    private lazy var searchService: TrieSearchService = .init(dictionary: games)
+//    private let gameFetchService = EssentialsTextParserService()
+//    private lazy var searchService: EssentialsTrieSearchService = .init(dictionary: games)
     private let boardGameAPI = EssentialsSubjectsAPIService()
 
     private let fileName: String = "board_games"
@@ -27,17 +27,7 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
     func searchQueryChanged(newValue: String) {
         searchQuerySubject.send(newValue)
     }
-
-//    private func setupSubscription() {
-//        searchQuerySubject
-//            .receive(on: DispatchQueue.global(qos: .userInitiated))
-//            .debounce(for: .seconds(0.35), scheduler: DispatchQueue.main)
-//            .sink { [weak self] value in
-//                self?.search(query: value)
-//            }
-//            .store(in: &cancellables)
-//    }
-
+    
     func fetchMyCustomGames() async {
         games = .loading
         switch await boardGameAPI.getMySubjects() {

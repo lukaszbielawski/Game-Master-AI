@@ -91,7 +91,7 @@ public struct DicesView: View {
             Button(action: {
                 if !isRolling {
                     rollDice()
-                    HapticService.shared.play(.medium)
+                    EssentialsHapticService.shared.play(.medium)
                 }
             }, label: {
                 Text("Roll dice")

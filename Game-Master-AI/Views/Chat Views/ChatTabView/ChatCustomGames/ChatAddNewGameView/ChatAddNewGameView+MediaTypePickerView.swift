@@ -41,9 +41,17 @@ extension ChatAddNewGameView {
                 Text("Select Game Manual Source")
                     .font(.title2)
                     .padding(.top, 16.0)
-                EssentialsSelectionListView(options: options) { _ in
-                    router.currentRoute = .photoPickerView(vm)
-                    router.currentSheetRoute = .none
+                EssentialsSelectionListView(options: options) { selection in
+                    EssentialsHapticService.shared.play(.medium)
+                    if selection == options[0] {
+                        router.currentRoute = .cameraPickerView(vm)
+                        router.currentSheetRoute = .none
+                    } else if selection == options[1] {
+                        router.currentRoute = .photoPickerView(vm)
+                        router.currentSheetRoute = .none
+                    } else {
+                        router.currentSheetRoute = .pdfFilePickerView(vm)
+                    }
                 }
                 Spacer()
             }

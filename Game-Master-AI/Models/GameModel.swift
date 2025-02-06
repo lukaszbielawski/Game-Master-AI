@@ -15,7 +15,7 @@ struct BoardGameModel: Identifiable, Hashable, ExpressibleByEssentialsSubject {
     let name: String
     let creationTimestamp: Int64
 
-    init(_ subject: Essentials.SubjectDTO) {
+    init(_ subject: Essentials.EssentialsSubjectDTO) {
         self.subjectId = subject.subjectId
         self.sessionId = subject.sessionId
         self.name = subject.name
