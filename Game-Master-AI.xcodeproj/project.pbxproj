@@ -204,7 +204,8 @@
 		B2550A052D4290EF00906DFF /* ChatTabView */ = {
 			isa = PBXGroup;
 			children = (
-				B2550A122D42ABD300906DFF /* ChatCustomGames */,
+				B2550A0E2D42A94100906DFF /* ChatListView.swift */,
+				B2EEA05D2D509EEF00F8745A /* ChatAddNewGameView */,
 			);
 			path = ChatTabView;
 			sourceTree = "<group>";
@@ -215,15 +216,6 @@
 				B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */,
 			);
 			path = ChatView;
-			sourceTree = "<group>";
-		};
-		B2550A122D42ABD300906DFF /* ChatCustomGames */ = {
-			isa = PBXGroup;
-			children = (
-				B2EEA05D2D509EEF00F8745A /* ChatAddNewGameView */,
-				B2550A0E2D42A94100906DFF /* ChatListView.swift */,
-			);
-			path = ChatCustomGames;
 			sourceTree = "<group>";
 		};
 		B2600AE82D332F1B0096E553 /* Views */ = {

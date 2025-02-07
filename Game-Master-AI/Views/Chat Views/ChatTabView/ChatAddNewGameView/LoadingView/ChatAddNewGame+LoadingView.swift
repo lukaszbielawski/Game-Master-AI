@@ -85,9 +85,6 @@ extension ChatAddNewGameView {
             }.task(priority: .userInitiated) { [weak vm] in
                 await vm?.createBoardGame()
             }
-            .onReceive(vm.$retrievedText) { text in
-                print("Text", text)
-            }
             .onReceive(vm.gameCreatedPublisher) { boardGameModel in
                 router.currentSheetRoute = .none
                 router.currentRoute = .chatView(boardGameModel, toastProvider)

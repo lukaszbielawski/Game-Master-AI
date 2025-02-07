@@ -16,17 +16,17 @@ extension ChatAddNewGameView {
         let options: [EssentialsSelectionListView.Model] = [
             .init(
                 title: "Take pictures",
-                description: "Capture images of the game manual",
+                description: "Ensure good lighting and sharpness for better text recognition.",
                 image: Image(systemName: "camera.fill")
             ),
             .init(
                 title: "Photo library",
-                description: "Select images of the game instruction",
+                description: "Pick bright and sharp photos of the game manual.",
                 image: Image(systemName: "photo.fill.on.rectangle.fill")
             ),
             .init(
                 title: "Select PDF file",
-                description: "Choose PDF file of the game manual",
+                description: "Get the best quality and accuracy.",
                 image: Image(systemName: "doc.text.fill")
             )
         ]

@@ -9,5 +9,5 @@ import Foundation
 
 struct ProcessInstructionRequest: Codable, Sendable {
     let boardGameName: String
-    let text: String
+    let base64Images: [String]
 }

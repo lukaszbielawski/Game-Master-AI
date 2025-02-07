@@ -21,6 +21,7 @@ struct ChatView: View {
         EssentialsLoadingStateView(vm.messages) { messages in
             EssentialsChatView(messages: messages,
                                streamedMessageContent: vm.streamedMessageContent,
+                               maxCharactersInTextField: 2000,
                                navigationTitle: boardGameModel.name)
             { messageContent in
                 Task(priority: .userInitiated) { [weak vm] in

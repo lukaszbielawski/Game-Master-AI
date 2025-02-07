@@ -11,7 +11,6 @@ import Foundation
 import StoreKit
 
 final class ProcessInstructionAPIService: EssentialsAPIService {
-    @discardableResult
     func processInstruction(
         request: ProcessInstructionRequest,
         deployEnvironment: DeployEnvironmentType? = nil,

@@ -19,12 +19,13 @@ final class ChatAddNewGameViewModel: ObservableObject {
     @Published var selectedImages: [CGImage] = []
     @Published var selectedPDFManualURL: URL?
 
-    @Published var retrievedText: EssentialsLoadingState<String> = .initial
+    @Published var manualImages: [CGImage] = []
     @Published var currentStep: Int = 0
     @Published var totalStepCount: Int = 1
     @Published var currentPage: Int = 1
     @Published var totalPages: Int = 1
     @Published var creationStage: GameCreationStage = .ocr
+    @Published var cancellables: Set<AnyCancellable> = []
 
     let gameCreatedPublisher = PassthroughSubject<BoardGameModel, Never>()
 
@@ -34,64 +35,82 @@ final class ChatAddNewGameViewModel: ObservableObject {
     let subjectsAPIService = EssentialsSubjectsAPIService()
 
     func createBoardGame() async {
-        let result: Result<String, EssentialsTextRecognitionServiceError>
-        retrievedText = .loading
+        let result: Result<[CGImage], EssentialsTextRecognitionServiceError>
         if !selectedPhotos.isEmpty {
             result = await createGameFromSelectedAssets()
         } else if !selectedImages.isEmpty {
-            result = await createGameFromCameraPickedImages()
+            result = .success(selectedImages)
         } else {
             result = await createGameFromPDFManualFile()
         }
-        retrievedText <== result
-        let manualPages = retrievedText.getValueIfSuccess()?.split(separator: "\u{0C}").count ?? 0
-        totalPages = manualPages
-        totalStepCount += manualPages
+        switch result {
+        case .success(let images):
+            manualImages = images
+        case .failure(let failure):
+            print(failure)
+            // zwrocic error
+            return
+        }
+
+        totalPages = manualImages.count
+        totalStepCount += manualImages.count
         currentStep += 1
         creationStage = .pageConversion
 
-        if let retrievedTextValue = retrievedText.getValueIfSuccess() {
-            let request = ProcessInstructionRequest(boardGameName: gameName, text: retrievedTextValue)
-            let result = await processInstructionAPIService.processInstruction(request: request) { [weak self] chunk in
+        Timer.publish(every: CGFloat(15.0 / CGFloat(manualImages.count)), on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
                 guard let self else { return }
-                print(chunk)
-                if chunk == "^" {
-                    if currentPage != totalPages {
-                        currentStep += 1
-                        currentPage += 1
-                    }
-                }
-            }
-            switch result {
-            case .success(let newSubject):
-                creationStage = .finished
                 currentStep += 1
-                let boardGameModel = BoardGameModel(newSubject)
-                gameCreatedPublisher.send(boardGameModel)
-            case .failure(let failure):
-                print(failure)
+                currentPage += 1
+            }
+            .store(in: &cancellables)
+
+        let base64Strings = manualImages.map { $0.toBase64String }
+        let areBase64StringsProperlyCreated = base64Strings.allSatisfy { $0 != nil }
+        guard areBase64StringsProperlyCreated else {
+            print("Base64 creation error \(areBase64StringsProperlyCreated)")
+            // zwrocic error
+            return
+        }
+
+        let request = ProcessInstructionRequest(boardGameName: gameName, base64Images: base64Strings.compactMap { $0 })
+        let processInstructionResult = await processInstructionAPIService.processInstruction(request: request) { [weak self] chunk in
+            guard let self else { return }
+            print(chunk)
+            if chunk == "^" {
+                if currentPage != totalPages {
+                    currentStep += 1
+                    currentPage += 1
+                }
+            } else if let range = chunk.range(of: #"@!@(.*?)@!@"#, options: .regularExpression) {
+                let errorMessage = String(chunk[range])
+                    .replacingOccurrences(of: "@!@", with: "")
+                    .trimmingCharacters(in: .whitespaces)
+
+                print(errorMessage)
+                return
             }
         }
-    }
-
-    private func createGameFromSelectedAssets() async -> Result<String, EssentialsTextRecognitionServiceError> {
-        let imagesResult = await photoLibraryService.loadCGImages(from: selectedPhotos)
-            .mapError { EssentialsTextRecognitionServiceError.other($0.localizedDescription) }
-        switch imagesResult {
-        case .success(let images):
-            return await textRecognitionService.recognizeTextsBulk(from: images)
-        case .failure(let error):
-            return .failure(error)
+        switch processInstructionResult {
+        case .success(let newSubject):
+            creationStage = .finished
+            currentStep += 1
+            let boardGameModel = BoardGameModel(newSubject)
+            gameCreatedPublisher.send(boardGameModel)
+        case .failure(let failure):
+            print(failure)
         }
     }
 
-    private func createGameFromCameraPickedImages() async -> Result<String, EssentialsTextRecognitionServiceError> {
-        return await textRecognitionService.recognizeTextsBulk(from: selectedImages)
+    private func createGameFromSelectedAssets() async -> Result<[CGImage], EssentialsTextRecognitionServiceError> {
+        return await photoLibraryService.loadCGImages(from: selectedPhotos)
+            .mapError { EssentialsTextRecognitionServiceError.other($0.localizedDescription) }
     }
 
-    private func createGameFromPDFManualFile() async -> Result<String, EssentialsTextRecognitionServiceError> {
+    private func createGameFromPDFManualFile() async -> Result<[CGImage], EssentialsTextRecognitionServiceError> {
         guard let selectedPDFManualURL else { return .failure(.other("No PDF file URL")) }
-        return await textRecognitionService.recognizePDFFileText(pdfFileURL: selectedPDFManualURL)
+        return .success(textRecognitionService.convertPDFToImages(pdfFileURL: selectedPDFManualURL))
     }
 }
 
