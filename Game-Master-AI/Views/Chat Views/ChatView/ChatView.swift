@@ -11,6 +11,8 @@ import SwiftUI
 struct ChatView: View {
     @StateObject var vm: ChatViewModel
     let boardGameModel: BoardGameModel
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var router: RouterState
 
     public init(boardGameModel: BoardGameModel, toastProvider: EssentialsToastProvider) {
         self.boardGameModel = boardGameModel
@@ -19,11 +21,15 @@ struct ChatView: View {
 
     var body: some View {
         EssentialsLoadingStateView(vm.messages) { messages in
-            EssentialsChatView(messages: messages,
-                               streamedMessageContent: vm.streamedMessageContent,
-                               maxCharactersInTextField: 2000,
-                               navigationTitle: boardGameModel.name)
-            { messageContent in
+            EssentialsChatView(
+                navigationRouteType: NavigationRoute.self,
+                sheetRouteType: SheetRoute.self,
+                toolbarRouteType: TabToolbarRoute.self,
+                messages: messages,
+                streamedMessageContent: vm.streamedMessageContent,
+                maxCharactersInTextField: 2000,
+                navigationTitle: boardGameModel.name
+            ) { messageContent in
                 Task(priority: .userInitiated) { [weak vm] in
                     await vm?.sendMessage(content: messageContent)
                 }
@@ -32,8 +38,26 @@ struct ChatView: View {
                     await vm?.resetConversation()
                 }
             }
+        } failureView: { _ in
+            EssentialsContentUnavailableView(
+                icon: Image(systemName: "wifi.slash"),
+                title: "No Connection",
+                description: "There was a problem connecting to the internet. Please check your connection and try again."
+            ) {
+                Task(priority: .userInitiated) { [weak vm] in
+                    await vm?.fetchAllMessages()
+                }
+            }
+            .toolbar {
+                ChatViewFailureToolbar {
+                    EssentialsHapticService.shared.play(.medium)
+                    dismiss()
+                }
+            }
         }
-        .task { [weak vm] in
+        .navigationBarBackButtonHidden()
+        .navigationBarTitleDisplayMode(.inline)
+        .task(priority: .userInitiated) { [weak vm] in
             await vm?.fetchAllMessages()
         }
     }

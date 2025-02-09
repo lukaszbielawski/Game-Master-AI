@@ -12,7 +12,7 @@ extension ChatAddNewGameView {
     struct LoadingView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
         @EnvironmentObject var toastProvider: EssentialsToastProvider
-        @EnvironmentObject var router: EssentialsRouterState<Route, SheetRoute>
+        @EnvironmentObject var router: RouterState
 
         @State private var gameName: String = ""
         @State private var onAddGameTapped: () -> Void
@@ -87,7 +87,7 @@ extension ChatAddNewGameView {
             }
             .onReceive(vm.gameCreatedPublisher) { boardGameModel in
                 router.currentSheetRoute = .none
-                router.currentRoute = .chatView(boardGameModel, toastProvider)
+                router.currentNavigationRoute = .chatView(boardGameModel, toastProvider)
             }
             .modifier(EssentialsAutoHeightSheetModifier(fraction: .constant(0.75)))
         }

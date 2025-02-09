@@ -11,7 +11,7 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct PhotoPickerView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
-        @EnvironmentObject var router: EssentialsRouterState<Route, SheetRoute>
+        @EnvironmentObject var router: RouterState
         @Environment(\.dismiss) var dismiss
 
         var body: some View {
@@ -22,7 +22,7 @@ extension ChatAddNewGameView {
                 dismiss()
             }
             .ignoresSafeArea(.all)
-            .toolbar(.hidden)
+//            .toolbar(.hidden)
         }
     }
 }

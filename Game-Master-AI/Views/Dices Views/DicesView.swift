@@ -34,6 +34,8 @@ public struct DicesView: View {
 
     @EnvironmentObject private var colorSchemeState: EssentialsColorSchemeState
 
+    @EnvironmentObject private var tabRouter: TabRouterState
+
     var currentDice: DiceType {
         dices[selectedDiceIndex]
     }
@@ -123,6 +125,9 @@ public struct DicesView: View {
                         (rotationX, rotationY, rotationZ) = currentDice.defaultOrientation
                     }
             }
+        }
+        .onAppear {
+            tabRouter.currentToolbarRoute = .diceTab
         }
         .background(Color(.background))
     }

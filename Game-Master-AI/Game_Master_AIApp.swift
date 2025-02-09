@@ -9,13 +9,18 @@ import Essentials
 import StoreKit
 import SwiftUI
 
+typealias RouterState = EssentialsRouterState<NavigationRoute, SheetRoute>
+typealias TabRouterState = EssentialsTabRouterState<TabRoute, TabToolbarRoute>
+
 @main
 struct Game_Master_AIApp: App {
     var body: some Scene {
         WindowGroup {
             EssentialsApp {
-                EssentialsRouter(routeType: Route.self, sheetRouteType: SheetRoute.self) {
-                    ContentView()
+                EssentialsRouter(navigationRouteType: NavigationRoute.self,
+                                 sheetRouteType: SheetRoute.self)
+                {
+                    EssentialsTabRouter(tabRouteType: TabRoute.self, tabToolbarRouteType: TabToolbarRoute.self)
                 }
             }
         }

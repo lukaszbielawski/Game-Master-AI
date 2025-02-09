@@ -1,5 +1,5 @@
 //
-//  Route.swift
+//  NavigationRoute.swift
 //  Game-Master-AI
 //
 //  Created by Łukasz Bielawski on 03/02/2025.
@@ -10,7 +10,7 @@ import Foundation
 import PhotosUI
 import SwiftUI
 
-enum Route: EssentialsRouteProtocol {
+enum NavigationRoute: EssentialsNavigationRouteProtocol {
     case chatView(_ boardGameModel: BoardGameModel, _ toastProvider: EssentialsToastProvider)
     case photoPickerView(_ vm: ChatAddNewGameViewModel)
     case cameraPickerView(_ vm: ChatAddNewGameViewModel)
@@ -19,7 +19,6 @@ enum Route: EssentialsRouteProtocol {
         switch self {
         case .chatView(let boardGameModel, let toastProvider):
             ChatView(boardGameModel: boardGameModel, toastProvider: toastProvider)
-                .navigationBarBackButtonHidden()
         case .photoPickerView(let vm):
             ChatAddNewGameView.PhotoPickerView()
                 .environmentObject(vm)
@@ -44,7 +43,7 @@ enum Route: EssentialsRouteProtocol {
         hasher.combine(rawValue)
     }
 
-    static func == (lhs: Route, rhs: Route) -> Bool {
+    static func == (lhs: NavigationRoute, rhs: NavigationRoute) -> Bool {
         return switch (lhs, rhs) {
         case (.chatView, .chatView):
             true

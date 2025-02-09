@@ -15,13 +15,16 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
     @Published var games: EssentialsLoadingState<[BoardGameModel]> = .initial
     @Published private(set) var filterPredicate: ((BoardGameModel) throws -> Bool)? = nil
     private let searchQuerySubject = PassthroughSubject<String, Never>()
-    @Published var remainingGamesThisMonth: EssentialsLoadingState<Int> = .success(10)
+    @Published var remainingGamesThisMonth: EssentialsLoadingState<Int> = .initial
 
     private var cancellables: Set<AnyCancellable> = []
 
     private let boardGameAPI = EssentialsSubjectsAPIService()
+    private let deviceAPI = EssentialsDevicesAPIService()
 
     private let fileName: String = "board_games"
+
+    private let isSubscriber: Bool
 
     func searchQueryChanged(newValue: String) {
         searchQuerySubject.send(newValue)
@@ -31,7 +34,8 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
         games.removeIfSuccess(boardGame)
     }
 
-    init() {
+    init(isSubscriber: Bool) {
+        self.isSubscriber = isSubscriber
         searchQuerySubject
             .sink { [weak self] query in
                 self?.search(query: query)
@@ -47,6 +51,25 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
         case .failure(let error):
             print(error)
             games = .failure(error: error)
+        }
+    }
+
+    func fetchAllMyRemainingUses() async {
+        remainingGamesThisMonth = .loading
+        switch await deviceAPI.getAllUserUses() {
+        case .success(let response):
+
+            if let userUsage = response.userUses.filter({ userUsage in
+                userUsage.tier == (isSubscriber ? TierType.monthlyLimitNewGames.tierValue : TierType.freeUsesNewGames.tierValue)
+            }).first?.remainingUses {
+                remainingGamesThisMonth = .success(userUsage)
+            } else {
+                remainingGamesThisMonth = .failure(error: EssentialsAPIError.other)
+            }
+
+        case .failure(let error):
+            print(error)
+            remainingGamesThisMonth = .failure(error: error)
         }
     }
 

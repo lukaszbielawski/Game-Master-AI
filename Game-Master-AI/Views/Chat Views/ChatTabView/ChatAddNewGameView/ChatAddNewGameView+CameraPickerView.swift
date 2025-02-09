@@ -13,16 +13,20 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct CameraPickerView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
-        @EnvironmentObject var router: EssentialsRouterState<Route, SheetRoute>
+        @EnvironmentObject var router: RouterState
         @Environment(\.dismiss) var dismiss
         @EnvironmentObject var subscriptionState: EssentialsSubscriptionState
 
         var maxPhotos: Int { subscriptionState.isActive ? 40 : 10 }
 
         var body: some View {
-            EssentialsCameraPicker(selectedImages: $vm.selectedImages,
-                                   title: "Board Game Manual Pictures",
-                                   maxPhotos: maxPhotos)
+            EssentialsCameraPicker(
+                navigationRouterType: NavigationRoute.self,
+                sheetRouterType: SheetRoute.self,
+                toolbarRouterType: TabToolbarRoute.self,
+                selectedImages: $vm.selectedImages,
+                title: "Board Game Manual Pictures",
+                maxPhotos: maxPhotos)
             {
                 dismiss()
                 router.currentSheetRoute = .addBoardGameLoadingView(vm: vm)

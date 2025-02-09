@@ -10,15 +10,21 @@ import Essentials
 import SwiftUI
 
 struct ChatListView: View {
-    @StateObject var vm = ChatTabCustomGamesViewModel()
+    @StateObject var vm: ChatTabCustomGamesViewModel
     @EnvironmentObject var toastProvider: EssentialsToastProvider
-    @EnvironmentObject var router: EssentialsRouterState<Route, SheetRoute>
+    @EnvironmentObject var router: RouterState
+    @EnvironmentObject var tabRouter: TabRouterState
     @FocusState.Binding var isFocused: Bool
 
     @State var searchQuery: String = ""
     @State var isInEditMode: Bool = false
     @State var isNavigationLinkActivated = false
     @State private var boardGameToDelete: BoardGameModel? = nil
+
+    init(subscriptionState: EssentialsSubscriptionState, isFocused: FocusState<Bool>.Binding) {
+        self._vm = StateObject(wrappedValue: ChatTabCustomGamesViewModel(isSubscriber: subscriptionState.isActive))
+        self._isFocused = isFocused
+    }
 
     var isAlertPresented: Binding<Bool> {
         return Binding<Bool> {
@@ -33,9 +39,6 @@ struct ChatListView: View {
     var body: some View {
         EssentialsLoadingStateView(vm.games) { games in
             VStack(spacing: 8.0) {
-//                Text("Board games")
-//                    .padding(.top, 8.0)
-//                    .padding(.bottom)
                 EssentialsSearchBarView(searchText: $searchQuery, isFocused: $isFocused)
                     .onChange(of: searchQuery) { newValue in
                         vm.searchQueryChanged(newValue: newValue)
@@ -51,6 +54,7 @@ struct ChatListView: View {
                     .padding(.bottom, 4.0)
                     .padding(.top, 24.0)
                     .onTapGesture {
+                        EssentialsHapticService.shared.play(.light)
                         router.currentSheetRoute = .addBoardGameView
                     }
 
@@ -62,8 +66,10 @@ struct ChatListView: View {
                     Text(boardGame.name)
                 } onCellTaped: { boardGame in
                     isFocused = false
-                    router.currentRoute = .chatView(boardGame, toastProvider)
+                    EssentialsHapticService.shared.play(.soft)
+                    router.currentNavigationRoute = .chatView(boardGame, toastProvider)
                 } onCellDeleteTapped: { boardGame in
+                    EssentialsHapticService.shared.notify(.warning)
                     boardGameToDelete = boardGame
                 }
                 .alert(
@@ -89,27 +95,20 @@ struct ChatListView: View {
                 description: "There was a problem connecting to the internet. Please check your connection and try again."
             ) {
                 Task(priority: .userInitiated) { [weak vm] in
+                    // TODO: fix
                     await vm?.fetchMyCustomGames()
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("Board games")
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    isInEditMode.toggle()
-                } label: {
-                    Image(systemName: isInEditMode ? "arrowshape.turn.up.backward.fill" : "pencil")
-                        .foregroundStyle(Color.accentColor)
-                }
-            }
+        .onAppear {
+            tabRouter.currentToolbarRoute = .chatListView(isInEditMode: $isInEditMode, onTapTopBarTrailingButton: {
+                EssentialsHapticService.shared.play(.medium)
+                isInEditMode.toggle()
+            })
         }
-        .navigationBarBackButtonHidden()
-        .navigationBarTitleDisplayMode(.inline)
         .task(priority: .userInitiated) { [weak vm] in
             await vm?.fetchMyCustomGames()
+            await vm?.fetchAllMyRemainingUses()
         }
         .onTapGesture {
             isFocused = false

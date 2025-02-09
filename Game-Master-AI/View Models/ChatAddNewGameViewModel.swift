@@ -61,8 +61,12 @@ final class ChatAddNewGameViewModel: ObservableObject {
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self else { return }
-                currentStep += 1
-                currentPage += 1
+                if currentPage < totalPages {
+                    currentStep += 1
+                    currentPage += 1
+                } else {
+                    cancellables.removeAll()
+                }
             }
             .store(in: &cancellables)
 

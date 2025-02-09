@@ -11,7 +11,7 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct MediaTypePickerView: View {
         @EnvironmentObject private var vm: ChatAddNewGameViewModel
-        @EnvironmentObject private var router: EssentialsRouterState<Route, SheetRoute>
+        @EnvironmentObject private var router: RouterState
 
         let options: [EssentialsSelectionListView.Model] = [
             .init(
@@ -39,10 +39,10 @@ extension ChatAddNewGameView {
                 EssentialsSelectionListView(options: options) { selection in
                     EssentialsHapticService.shared.play(.medium)
                     if selection == options[0] {
-                        router.currentRoute = .cameraPickerView(vm)
+                        router.currentNavigationRoute = .cameraPickerView(vm)
                         router.currentSheetRoute = .none
                     } else if selection == options[1] {
-                        router.currentRoute = .photoPickerView(vm)
+                        router.currentNavigationRoute = .photoPickerView(vm)
                         router.currentSheetRoute = .none
                     } else {
                         router.currentSheetRoute = .pdfFilePickerView(vm)
