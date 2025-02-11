@@ -11,7 +11,6 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct LoadingView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
-        @EnvironmentObject var toastProvider: EssentialsToastProvider
         @EnvironmentObject var router: RouterState
 
         @State private var gameName: String = ""
@@ -87,7 +86,10 @@ extension ChatAddNewGameView {
             }
             .onReceive(vm.gameCreatedPublisher) { boardGameModel in
                 router.currentSheetRoute = .none
-                router.currentNavigationRoute = .chatView(boardGameModel, toastProvider)
+                router.currentNavigationRoute = .chatView(boardGameModel)
+            } onFailure: { error in
+                EssentialsToastProvider.shared.enqueueToast(EssentialsToast(fromError: error))
+                router.currentSheetRoute = .none
             }
             .modifier(EssentialsAutoHeightSheetModifier(fraction: .constant(0.75)))
         }

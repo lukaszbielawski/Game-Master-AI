@@ -14,9 +14,9 @@ struct ChatView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var router: RouterState
 
-    public init(boardGameModel: BoardGameModel, toastProvider: EssentialsToastProvider) {
+    public init(boardGameModel: BoardGameModel) {
         self.boardGameModel = boardGameModel
-        self._vm = StateObject(wrappedValue: ChatViewModel(boardGameModel: boardGameModel, toastProvider: toastProvider))
+        self._vm = StateObject(wrappedValue: ChatViewModel(boardGameModel: boardGameModel))
     }
 
     var body: some View {
@@ -26,7 +26,7 @@ struct ChatView: View {
                 sheetRouteType: SheetRoute.self,
                 toolbarRouteType: TabToolbarRoute.self,
                 messages: messages,
-                streamedMessageContent: vm.streamedMessageContent,
+                streamedMessage: vm.streamedMessage,
                 maxCharactersInTextField: 2000,
                 navigationTitle: boardGameModel.name
             ) { messageContent in

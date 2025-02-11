@@ -11,10 +11,11 @@ import SwiftUI
 
 struct ChatListView: View {
     @StateObject var vm: ChatTabCustomGamesViewModel
-    @EnvironmentObject var toastProvider: EssentialsToastProvider
     @EnvironmentObject var router: RouterState
     @EnvironmentObject var tabRouter: TabRouterState
     @FocusState.Binding var isFocused: Bool
+
+    private let toastProvider = EssentialsToastProvider.shared
 
     @State var searchQuery: String = ""
     @State var isInEditMode: Bool = false
@@ -67,7 +68,7 @@ struct ChatListView: View {
                 } onCellTaped: { boardGame in
                     isFocused = false
                     EssentialsHapticService.shared.play(.soft)
-                    router.currentNavigationRoute = .chatView(boardGame, toastProvider)
+                    router.currentNavigationRoute = .chatView(boardGame)
                 } onCellDeleteTapped: { boardGame in
                     EssentialsHapticService.shared.notify(.warning)
                     boardGameToDelete = boardGame
@@ -88,15 +89,19 @@ struct ChatListView: View {
                 )
             }
 
-        } failureView: { _ in
+        } failureView: { error in
             EssentialsContentUnavailableView(
                 icon: Image(systemName: "wifi.slash"),
                 title: "No Connection",
                 description: "There was a problem connecting to the internet. Please check your connection and try again."
             ) {
                 Task(priority: .userInitiated) { [weak vm] in
-                    // TODO: fix
                     await vm?.fetchMyCustomGames()
+                }
+            }
+            .onAppear {
+                if let error = error as? EssentialsToastProvidableError {
+                    toastProvider.enqueueToast(EssentialsToast(fromError: error))
                 }
             }
         }

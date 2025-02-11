@@ -27,7 +27,8 @@ final class ChatAddNewGameViewModel: ObservableObject {
     @Published var creationStage: GameCreationStage = .ocr
     @Published var cancellables: Set<AnyCancellable> = []
 
-    let gameCreatedPublisher = PassthroughSubject<BoardGameModel, Never>()
+    let gameCreatedPublisher = PassthroughSubject<BoardGameModel, ProcessInstructionAPIService.Error>()
+    let toastProvider = EssentialsToastProvider.shared
 
     let textRecognitionService = EssentialsTextRecognitionService()
     let photoLibraryService = EssentialsPhotoLibraryService()
@@ -48,6 +49,7 @@ final class ChatAddNewGameViewModel: ObservableObject {
             manualImages = images
         case .failure(let failure):
             print(failure)
+            gameCreatedPublisher.send(completion: .failure(.init(nil)))
             // zwrocic error
             return
         }
@@ -74,26 +76,18 @@ final class ChatAddNewGameViewModel: ObservableObject {
         let areBase64StringsProperlyCreated = base64Strings.allSatisfy { $0 != nil }
         guard areBase64StringsProperlyCreated else {
             print("Base64 creation error \(areBase64StringsProperlyCreated)")
-            // zwrocic error
+            gameCreatedPublisher.send(completion: .failure(.init(nil)))
             return
         }
 
         let request = ProcessInstructionRequest(boardGameName: gameName, base64Images: base64Strings.compactMap { $0 })
         let processInstructionResult = await processInstructionAPIService.processInstruction(request: request) { [weak self] chunk in
             guard let self else { return }
-            print(chunk)
             if chunk == "^" {
                 if currentPage != totalPages {
                     currentStep += 1
                     currentPage += 1
                 }
-            } else if let range = chunk.range(of: #"@!@(.*?)@!@"#, options: .regularExpression) {
-                let errorMessage = String(chunk[range])
-                    .replacingOccurrences(of: "@!@", with: "")
-                    .trimmingCharacters(in: .whitespaces)
-
-                print(errorMessage)
-                return
             }
         }
         switch processInstructionResult {
@@ -103,7 +97,7 @@ final class ChatAddNewGameViewModel: ObservableObject {
             let boardGameModel = BoardGameModel(newSubject)
             gameCreatedPublisher.send(boardGameModel)
         case .failure(let failure):
-            print(failure)
+            gameCreatedPublisher.send(completion: .failure(failure))
         }
     }
 

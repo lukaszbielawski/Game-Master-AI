@@ -12,10 +12,10 @@ import SwiftUI
 
 @MainActor
 final class ChatTabCustomGamesViewModel: ObservableObject {
-    @Published var games: EssentialsLoadingState<[BoardGameModel]> = .initial
+    @Published var games: EssentialsLoadingState<[BoardGameModel], EssentialsSubjectsAPIService.Error> = .initial
     @Published private(set) var filterPredicate: ((BoardGameModel) throws -> Bool)? = nil
     private let searchQuerySubject = PassthroughSubject<String, Never>()
-    @Published var remainingGamesThisMonth: EssentialsLoadingState<Int> = .initial
+    @Published var remainingGamesThisMonth: EssentialsLoadingState<Int, EssentialsDevicesAPIService.Error> = .initial
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -58,13 +58,12 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
         remainingGamesThisMonth = .loading
         switch await deviceAPI.getAllUserUses() {
         case .success(let response):
-
             if let userUsage = response.userUses.filter({ userUsage in
                 userUsage.tier == (isSubscriber ? TierType.monthlyLimitNewGames.tierValue : TierType.freeUsesNewGames.tierValue)
             }).first?.remainingUses {
                 remainingGamesThisMonth = .success(userUsage)
             } else {
-                remainingGamesThisMonth = .failure(error: EssentialsAPIError.other)
+                remainingGamesThisMonth = .failure(error: .init(nil))
             }
 
         case .failure(let error):

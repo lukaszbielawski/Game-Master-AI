@@ -11,14 +11,14 @@ import PhotosUI
 import SwiftUI
 
 enum NavigationRoute: EssentialsNavigationRouteProtocol {
-    case chatView(_ boardGameModel: BoardGameModel, _ toastProvider: EssentialsToastProvider)
+    case chatView(_ boardGameModel: BoardGameModel)
     case photoPickerView(_ vm: ChatAddNewGameViewModel)
     case cameraPickerView(_ vm: ChatAddNewGameViewModel)
 
     var body: some View {
         switch self {
-        case .chatView(let boardGameModel, let toastProvider):
-            ChatView(boardGameModel: boardGameModel, toastProvider: toastProvider)
+        case .chatView(let boardGameModel):
+            ChatView(boardGameModel: boardGameModel)
         case .photoPickerView(let vm):
             ChatAddNewGameView.PhotoPickerView()
                 .environmentObject(vm)
