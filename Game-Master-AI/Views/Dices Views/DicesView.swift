@@ -40,11 +40,14 @@ public struct DicesView: View {
         dices[selectedDiceIndex]
     }
 
-    public init() {
+    let isOnboardingInitialized: Bool
+
+    public init(isOnboardingInitialized: Bool = false) {
         let defaultOrientation = DiceType.d20.defaultOrientation
         self._rotationX = State(wrappedValue: defaultOrientation.x)
         self._rotationY = State(wrappedValue: defaultOrientation.y)
         self._rotationZ = State(wrappedValue: defaultOrientation.z)
+        self.isOnboardingInitialized = isOnboardingInitialized
     }
 
     public var body: some View {
@@ -90,44 +93,48 @@ public struct DicesView: View {
                             lastDragGesturePosition = value.translation
                         })
             }
-            Button(action: {
-                if !isRolling {
-                    rollDice()
-                    EssentialsHapticService.shared.play(.medium)
-                }
-            }, label: {
-                Text("Roll dice")
-                    .font(.title)
-                    .fontWeight(.thin)
-            })
-            .opacity(isRolling ? 0.5 : 1)
-            .animation(.easeInOut(duration: 0.35), value: isRolling)
-            .disabled(isRolling)
-            .foregroundStyle(Color.white)
-            .padding(.horizontal, 24.0)
-            .padding(.vertical, 8.0)
-            .background(Capsule(style: .circular).fill(Color.accent))
-            .padding(.bottom)
-
-            HStack {
-                Spacer()
-                    .frame(maxWidth: .infinity)
-                EssentialsVerticalSegmentedPicker(selection: $selectedDiceIndex, items: dices.map { $0.rawValue })
-                    .frame(maxWidth: 80, maxHeight: 175)
-                    .padding()
-                    .padding(.trailing, 8.0)
-                    .opacity(isRolling ? 0.5 : 1)
-                    .animation(.easeInOut(duration: 0.35), value: isRolling)
-                    .disabled(isRolling)
-                    .onChange(of: selectedDiceIndex) { _ in
-                        isDiceChangeQueued = true
-                        diceResult = 20
-                        (rotationX, rotationY, rotationZ) = currentDice.defaultOrientation
+            if !isOnboardingInitialized {
+                Button(action: {
+                    if !isRolling {
+                        rollDice()
+                        EssentialsHapticService.shared.play(.medium)
                     }
+                }, label: {
+                    Text("Roll dice")
+                        .font(.title)
+                        .fontWeight(.thin)
+                })
+                .opacity(isRolling ? 0.5 : 1)
+                .animation(.easeInOut(duration: 0.35), value: isRolling)
+                .disabled(isRolling)
+                .foregroundStyle(Color.white)
+                .padding(.horizontal, 24.0)
+                .padding(.vertical, 8.0)
+                .background(Capsule(style: .circular).fill(Color.accent))
+                .padding(.bottom)
+
+                HStack {
+                    Spacer()
+                        .frame(maxWidth: .infinity)
+                    EssentialsVerticalSegmentedPicker(selection: $selectedDiceIndex, items: dices.map { $0.rawValue })
+                        .frame(maxWidth: 80, maxHeight: 175)
+                        .padding()
+                        .padding(.trailing, 8.0)
+                        .opacity(isRolling ? 0.5 : 1)
+                        .animation(.easeInOut(duration: 0.35), value: isRolling)
+                        .disabled(isRolling)
+                        .onChange(of: selectedDiceIndex) { _ in
+                            isDiceChangeQueued = true
+                            diceResult = 20
+                            (rotationX, rotationY, rotationZ) = currentDice.defaultOrientation
+                        }
+                }
             }
         }
         .onAppear {
-            tabRouter.currentToolbarRoute = .diceTab
+            if !isOnboardingInitialized {
+                tabRouter.currentToolbarRoute = .diceTab
+            }
         }
         .background(Color(.background))
     }

@@ -22,7 +22,6 @@ extension ChatAddNewGameView {
                 dismiss()
             }
             .ignoresSafeArea(.all)
-//            .toolbar(.hidden)
         }
     }
 }

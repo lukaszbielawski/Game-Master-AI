@@ -46,6 +46,14 @@
 		B2E64F0E2D59683500EDF1CF /* ChatViewFailureToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E64F0D2D59683500EDF1CF /* ChatViewFailureToolbar.swift */; };
 		B2E64F102D59684C00EDF1CF /* DiceTabToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E64F0F2D59684C00EDF1CF /* DiceTabToolbar.swift */; };
 		B2E64F122D59687C00EDF1CF /* ChatListViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E64F112D59687C00EDF1CF /* ChatListViewToolbar.swift */; };
+		B2EDD09A2D5E08F30068F37A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD0992D5E08F30068F37A /* OnboardingView.swift */; };
+		B2EDD09C2D5E09410068F37A /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD09B2D5E09410068F37A /* PaywallView.swift */; };
+		B2EDD09E2D5E17860068F37A /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD09D2D5E17860068F37A /* OnboardingViewModel.swift */; };
+		B2EDD0A32D5E95B80068F37A /* OnboardingFirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD0A22D5E95B80068F37A /* OnboardingFirstScreenView.swift */; };
+		B2EDD0A52D5E95CA0068F37A /* OnboardingSecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD0A42D5E95CA0068F37A /* OnboardingSecondScreenView.swift */; };
+		B2EDD0A72D5E95D30068F37A /* OnboardingThirdScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD0A62D5E95D30068F37A /* OnboardingThirdScreenView.swift */; };
+		B2EDD0A92D5E95E10068F37A /* OnboardingForthScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD0A82D5E95E10068F37A /* OnboardingForthScreenView.swift */; };
+		B2EDD0AB2D5E95F20068F37A /* OnboardingLandingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EDD0AA2D5E95F20068F37A /* OnboardingLandingScreenView.swift */; };
 		B2EEA05F2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA05E2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift */; };
 		B2EEA0612D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA0602D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift */; };
 		B2EEA0632D50A14200F8745A /* ChatAddNewGameView+PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EEA0622D50A14200F8745A /* ChatAddNewGameView+PhotoPickerView.swift */; };
@@ -95,6 +103,14 @@
 		B2E64F0D2D59683500EDF1CF /* ChatViewFailureToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewFailureToolbar.swift; sourceTree = "<group>"; };
 		B2E64F0F2D59684C00EDF1CF /* DiceTabToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceTabToolbar.swift; sourceTree = "<group>"; };
 		B2E64F112D59687C00EDF1CF /* ChatListViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewToolbar.swift; sourceTree = "<group>"; };
+		B2EDD0992D5E08F30068F37A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B2EDD09B2D5E09410068F37A /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		B2EDD09D2D5E17860068F37A /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		B2EDD0A22D5E95B80068F37A /* OnboardingFirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstScreenView.swift; sourceTree = "<group>"; };
+		B2EDD0A42D5E95CA0068F37A /* OnboardingSecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondScreenView.swift; sourceTree = "<group>"; };
+		B2EDD0A62D5E95D30068F37A /* OnboardingThirdScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThirdScreenView.swift; sourceTree = "<group>"; };
+		B2EDD0A82D5E95E10068F37A /* OnboardingForthScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingForthScreenView.swift; sourceTree = "<group>"; };
+		B2EDD0AA2D5E95F20068F37A /* OnboardingLandingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLandingScreenView.swift; sourceTree = "<group>"; };
 		B2EEA05E2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+GameNameTextFieldView.swift"; sourceTree = "<group>"; };
 		B2EEA0602D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+MediaTypePickerView.swift"; sourceTree = "<group>"; };
 		B2EEA0622D50A14200F8745A /* ChatAddNewGameView+PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+PhotoPickerView.swift"; sourceTree = "<group>"; };
@@ -155,11 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				B2390B232D3405D600310046 /* DiceType.swift */,
-				B2EEA0642D50B92300F8745A /* NavigationRoute.swift */,
-				B2EEA0662D50DE5300F8745A /* SheetRoute.swift */,
 				B206F2AE2D57A1F100DAD789 /* TierType.swift */,
-				B206F2B02D57B0AA00DAD789 /* TabRoute.swift */,
-				B206F2B22D57C1A800DAD789 /* TabToolbarRoute.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -197,6 +209,7 @@
 				B24808772D329A78002F0017 /* ChatViewModel.swift */,
 				B2550A102D42AB7C00906DFF /* ChatTabCustomGamesViewModel.swift */,
 				B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */,
+				B2EDD09D2D5E17860068F37A /* OnboardingViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -231,6 +244,7 @@
 		B2600AE82D332F1B0096E553 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B2EDD0982D5DF3C10068F37A /* Onboarding Views */,
 				B2550A042D4290E900906DFF /* Chat Views */,
 				B2600AED2D3330450096E553 /* Dices Views */,
 			);
@@ -294,6 +308,7 @@
 		B2E14AC12D2EAF1D00CA7D5A /* Game-Master-AI */ = {
 			isa = PBXGroup;
 			children = (
+				B2EDD0932D5DF34D0068F37A /* Routes */,
 				B234D3862D553E330041ED4C /* API Services */,
 				B22E9D572D4FDE2F00BA1C28 /* Info.plist */,
 				B2390B252D34288200310046 /* Extensions */,
@@ -326,6 +341,31 @@
 				B2E64F112D59687C00EDF1CF /* ChatListViewToolbar.swift */,
 			);
 			path = Toolbars;
+			sourceTree = "<group>";
+		};
+		B2EDD0932D5DF34D0068F37A /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				B2EEA0642D50B92300F8745A /* NavigationRoute.swift */,
+				B2EEA0662D50DE5300F8745A /* SheetRoute.swift */,
+				B206F2B02D57B0AA00DAD789 /* TabRoute.swift */,
+				B206F2B22D57C1A800DAD789 /* TabToolbarRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		B2EDD0982D5DF3C10068F37A /* Onboarding Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2EDD0992D5E08F30068F37A /* OnboardingView.swift */,
+				B2EDD09B2D5E09410068F37A /* PaywallView.swift */,
+				B2EDD0A22D5E95B80068F37A /* OnboardingFirstScreenView.swift */,
+				B2EDD0A42D5E95CA0068F37A /* OnboardingSecondScreenView.swift */,
+				B2EDD0A62D5E95D30068F37A /* OnboardingThirdScreenView.swift */,
+				B2EDD0A82D5E95E10068F37A /* OnboardingForthScreenView.swift */,
+				B2EDD0AA2D5E95F20068F37A /* OnboardingLandingScreenView.swift */,
+			);
+			path = "Onboarding Views";
 			sourceTree = "<group>";
 		};
 		B2EEA05D2D509EEF00F8745A /* ChatAddNewGameView */ = {
@@ -436,13 +476,20 @@
 				B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */,
 				B22E9D592D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift in Sources */,
 				B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */,
+				B2EDD0A32D5E95B80068F37A /* OnboardingFirstScreenView.swift in Sources */,
 				B2EEA05F2D509F4B00F8745A /* ChatAddNewGameView+GameNameTextFieldView.swift in Sources */,
+				B2EDD0AB2D5E95F20068F37A /* OnboardingLandingScreenView.swift in Sources */,
+				B2EDD09E2D5E17860068F37A /* OnboardingViewModel.swift in Sources */,
+				B2EDD0A92D5E95E10068F37A /* OnboardingForthScreenView.swift in Sources */,
 				B2550A162D42AC4600906DFF /* GameModel.swift in Sources */,
 				B206F2AF2D57A1F100DAD789 /* TierType.swift in Sources */,
 				B2550A112D42AB7C00906DFF /* ChatTabCustomGamesViewModel.swift in Sources */,
 				B24808782D329A78002F0017 /* ChatViewModel.swift in Sources */,
+				B2EDD0A72D5E95D30068F37A /* OnboardingThirdScreenView.swift in Sources */,
+				B2EDD09A2D5E08F30068F37A /* OnboardingView.swift in Sources */,
 				B2A374502D4E37100065F8F6 /* BoardGameCompletionsRequest.swift in Sources */,
 				B2E64F102D59684C00EDF1CF /* DiceTabToolbar.swift in Sources */,
+				B2EDD09C2D5E09410068F37A /* PaywallView.swift in Sources */,
 				B2550A072D42910400906DFF /* GamesView.swift in Sources */,
 				B2EEA0612D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift in Sources */,
 				B2550A0F2D42A94100906DFF /* ChatListView.swift in Sources */,
@@ -450,6 +497,7 @@
 				B2390B212D34051D00310046 /* SceneKitView.swift in Sources */,
 				B2E14AC32D2EAF1D00CA7D5A /* Game_Master_AIApp.swift in Sources */,
 				B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */,
+				B2EDD0A52D5E95CA0068F37A /* OnboardingSecondScreenView.swift in Sources */,
 				B234D3852D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift in Sources */,
 				B206F2B12D57B0AA00DAD789 /* TabRoute.swift in Sources */,
 				B2EEA0652D50B92300F8745A /* NavigationRoute.swift in Sources */,
@@ -596,7 +644,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Game-Master-AI/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Game Master AI";
+				INFOPLIST_KEY_CFBundleDisplayName = "Game Scanner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";
@@ -632,7 +680,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Game-Master-AI/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Game Master AI";
+				INFOPLIST_KEY_CFBundleDisplayName = "Game Scanner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";
