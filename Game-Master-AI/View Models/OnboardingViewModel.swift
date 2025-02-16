@@ -9,13 +9,15 @@ import Essentials
 import SwiftUI
 
 final class OnboardingViewModel: ObservableObject {
-    @Published var navigationStack: [OnboaringScreenRoute] = [.landingScreen]
+    @Published var navigationStack: [OnboaringScreenRoute] = [.paywall]
+    @Published var currentScreenContinueButtonState: EssentialsOnboardingContinueButton.State = .hidden
+    @Published var willBeUsingBackTransition: Bool = false
+    @Published var isBackButtonDisabled: Bool = false
+
     @Published var screenTransition: AnyTransition = .asymmetric(
         insertion: .move(edge: .trailing),
         removal: .move(edge: .leading))
         .animation(.easeInOut(duration: 0.35))
-
-    @Published var willBeUsingBackTransition: Bool = false
 
     var transition: AnyTransition {
         if willBeUsingBackTransition {
@@ -31,25 +33,7 @@ final class OnboardingViewModel: ObservableObject {
         }
     }
 
-    var currentScreenHasContinueButton: Bool {
-        guard let currentScreen = navigationStack.last else { return false }
-        return switch currentScreen {
-        case .landingScreen:
-            false
-        case .firstOnboardingScreen:
-            true
-        case .secondOnboardingScreen:
-            true
-        case .thirdOnboardingScreen:
-            true
-        case .forthOnboardingScreen:
-            true
-        case .chatSampleScreen:
-            false
-        }
-    }
-
-    @Published var landingScreenOptions: [EssentialsOnboardingSelectionView.Model] = [
+    let landingScreenOptions: [EssentialsOnboardingSelectionView.Model] = [
         .init(title: "I'm a beginner") {
             Text("🎲")
         },
@@ -72,25 +56,39 @@ final class OnboardingViewModel: ObservableObject {
             OnboardingLandingScreenView(landingScreenOptions: landingScreenOptions) { [weak self] in
                 self?.present(.firstOnboardingScreen)
                 EssentialsHapticService.shared.play(.soft)
+            }.onAppear { [weak self] in
+                self?.currentScreenContinueButtonState = .hidden
             }
         case .firstOnboardingScreen:
-            OnboardingFirstScreenView { [weak self] in
-                self?.present(.secondOnboardingScreen)
-            }
+            OnboardingFirstScreenView()
+                .onAppear { [weak self] in
+                    self?.currentScreenContinueButtonState = .visible
+                }
         case .secondOnboardingScreen:
-            OnboardingSecondScreenView { [weak self] in
-                self?.present(.thirdOnboardingScreen)
-            }
+            OnboardingSecondScreenView()
+                .onAppear { [weak self] in
+                    self?.currentScreenContinueButtonState = .visible
+                }
         case .thirdOnboardingScreen:
-            OnboardingThirdScreenView { [weak self] in
-                self?.present(.forthOnboardingScreen)
-            }
+            OnboardingThirdScreenView()
+                .onAppear { [weak self] in
+                    self?.currentScreenContinueButtonState = .visible
+                }
         case .forthOnboardingScreen:
-            OnboardingForthScreenView { [weak self] in
-                self?.present(.chatSampleScreen)
-            }
-        default:
-            EmptyView()
+            OnboardingForthScreenView()
+                .onAppear { [weak self] in
+                    self?.currentScreenContinueButtonState = .visible
+                }
+        case .chatSampleScreen:
+            OnboardingChatSampleScreenView()
+                .onAppear { [weak self] in
+                    self?.currentScreenContinueButtonState = .skip
+                }
+        case .paywall:
+            PaywallView(hasTrial: true)
+                .onAppear { [weak self] in
+                    self?.currentScreenContinueButtonState = .hidden
+                }
         }
     }
 
@@ -118,6 +116,7 @@ public enum OnboaringScreenRoute: EssentialsOnboardingScreenRouteProtocol {
     case thirdOnboardingScreen
     case forthOnboardingScreen
     case chatSampleScreen
+    case paywall
 
     public var nextScreen: OnboaringScreenRoute? {
         switch self {
@@ -131,7 +130,9 @@ public enum OnboaringScreenRoute: EssentialsOnboardingScreenRouteProtocol {
             .forthOnboardingScreen
         case .forthOnboardingScreen:
             .chatSampleScreen
-        default:
+        case .chatSampleScreen:
+            .paywall
+        case .paywall:
             .none
         }
     }

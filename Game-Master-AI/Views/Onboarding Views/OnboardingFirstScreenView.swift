@@ -11,8 +11,6 @@ struct OnboardingFirstScreenView: View {
     @State private var isTitleShown: Bool = false
     @State private var isSubtitleShown: Bool = false
 
-    let onSelection: () -> Void
-
     var body: some View {
         VStack(spacing: 16.0) {
             Text("That's perfect!")

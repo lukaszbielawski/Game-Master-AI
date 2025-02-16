@@ -93,6 +93,7 @@ extension ProcessInstructionAPIService {
             case 443:
                 message = "You have reached monthly limit for game creation. Please wait until the next cycle."
             default:
+                print(code)
                 message = "An unexpected error occurred. Please try again later."
             }
         }

@@ -31,6 +31,7 @@ enum NavigationRoute: EssentialsNavigationRouteProtocol {
             OnboardingView()
         case .paywallView(let hasTrial):
             PaywallView(hasTrial: hasTrial)
+                .ignoresSafeArea(.all)
         }
     }
 

@@ -21,4 +21,11 @@ struct BoardGameModel: Identifiable, Hashable, ExpressibleByEssentialsSubject {
         self.name = subject.name
         self.creationTimestamp = subject.timestamp
     }
+
+    init(subjectId: UUID, sessionId: UUID, name: String, creationTimestamp: Int64) {
+        self.subjectId = subjectId
+        self.sessionId = sessionId
+        self.name = name
+        self.creationTimestamp = creationTimestamp
+    }
 }

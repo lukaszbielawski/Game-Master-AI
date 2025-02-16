@@ -23,11 +23,8 @@ final class ChatViewModel: ObservableObject {
     lazy var assistantGreetingMessage = EssentialsMessage(role: "assistant", content: """
     Hello! I’m your dedicated \(boardGameModel.name) rules expert. I’m here to help you understand and clarify any questions you have about the rules of \(boardGameModel.name), based solely on its official rulebook. Feel free to ask me anything, such as:
 
-    - How to set up the game.
-    - How specific mechanics or actions work.
-    - Clarifications on card, tile, or piece interactions.
-    - Rules for winning or ending the game.
-    - Any other details covered in the rulebook.
+    [Button]How to set up the game[/Button].
+    [Button]Rules for winning or ending the game[Button]
 
     If something isn’t specified in the rulebook, I’ll let you know. Let’s dive into \(boardGameModel.name)—what would you like to know?
     """)

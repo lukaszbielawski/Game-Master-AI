@@ -11,8 +11,6 @@ struct OnboardingThirdScreenView: View {
     @State private var isScreenShown: Bool = false
     @State private var isImageShown: Bool = false
 
-    let onSelection: () -> Void
-
     var body: some View {
         VStack(alignment: .leading, spacing: 16.0) {
             HStack {

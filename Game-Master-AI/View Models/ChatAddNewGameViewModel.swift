@@ -50,7 +50,6 @@ final class ChatAddNewGameViewModel: ObservableObject {
         case .failure(let failure):
             print(failure)
             gameCreatedPublisher.send(completion: .failure(.init(nil)))
-            // zwrocic error
             return
         }
 

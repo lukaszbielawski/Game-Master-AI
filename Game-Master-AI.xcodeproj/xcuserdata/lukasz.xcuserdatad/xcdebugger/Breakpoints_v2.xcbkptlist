@@ -36,5 +36,269 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70C7B243-56E3-4CFF-9DC0-0E19F77D4C49"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Views/Public Views/EssentialsChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/Views/Onboarding Views/OnboardingSampleChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - b8a6e1736d997ca0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - d939bf78b07d4c95"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - 11a1744fcdb20a1a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - b8a6e1736d997cee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - d939bf78b07d4cdb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - 11a1744fcdb20a54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/Views/Onboarding Views/OnboardingSampleChatView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - 11a1744fcdb20a7b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - 6ee9f54640fb274b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - 8cfd10903e14679"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - 11a1744fcdb20bb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - 6ee9f54640fb2685"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - 8cfd10903e147b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
+                  moduleName = "Game-Master-AI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A25EB75-3967-44E2-BE2C-088A5A4E4EEF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/View Models/OnboardingSampleChatViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "sendMessage(content:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CFFC256-ABD6-4C10-9C63-90CC3C0BE927"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/View Models/OnboardingSampleChatViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "sendMessage(content:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

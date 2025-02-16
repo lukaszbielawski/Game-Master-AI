@@ -15,8 +15,17 @@
 	<key>ContactEmailAddress</key>
 	<string>lukaszbielawskiapps@gmail.com</string>
 	<key>SubscriptionIdentifiers</key>
-	<array>
-		<string>lukaszbielawski.Game_Master_AI.subscription.monthly.testt</string>
-	</array>
+	<dict>
+		<key>NoTrial</key>
+		<array>
+			<string>lukaszbielawski.Game_Master_AI.one_year_premium</string>
+			<string>lukaszbielawski.Game_Master_AI.one_month_premium</string>
+		</array>
+		<key>Trial</key>
+		<array>
+			<string>lukaszbielawski.Game_Master_AI.one_year_premium_with_trial</string>
+			<string>lukaszbielawski.Game_Master_AI.one_month_premium</string>
+		</array>
+	</dict>
 </dict>
 </plist>

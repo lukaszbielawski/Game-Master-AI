@@ -5,8 +5,8 @@
 //  Created by Łukasz Bielawski on 13/02/2025.
 //
 
-import SwiftUI
 import Essentials
+import SwiftUI
 
 struct OnboardingLandingScreenView<Content: View>: View {
     let landingScreenOptions: [EssentialsOnboardingSelectionView<Content>.Model]

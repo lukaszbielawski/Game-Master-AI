@@ -11,8 +11,6 @@ struct OnboardingForthScreenView: View {
     @State private var isScreenShown: Bool = false
     @State private var isDiceShown: Bool = false
 
-    let onSelection: () -> Void
-
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .top) {

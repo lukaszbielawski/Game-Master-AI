@@ -11,8 +11,6 @@ struct OnboardingSecondScreenView: View {
     @State private var isScreenShown: Bool = false
     @State private var hourglassRotation: Angle = .radians(.pi)
 
-    let onSelection: () -> Void
-
     var body: some View {
         VStack(spacing: 16.0) {
             Text("Get Started Faster")
@@ -26,14 +24,11 @@ struct OnboardingSecondScreenView: View {
 
             VStack {
                 Spacer()
-                    .layoutPriority(1.0)
                 Image("VectorHourglass")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(32.0)
-                    .layoutPriority(2.0)
                 Spacer()
-                    .layoutPriority(1.0)
             }
             .rotationEffect(hourglassRotation)
         }
