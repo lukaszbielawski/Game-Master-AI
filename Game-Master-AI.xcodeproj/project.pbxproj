@@ -21,6 +21,7 @@
 		B223BE3A2D4AB5FC005CA9B3 /* encryption_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = B223BE392D4AB5FC005CA9B3 /* encryption_public_key.pem */; };
 		B22E9D562D4FB3BF00BA1C28 /* ChatAddNewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */; };
 		B22E9D592D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */; };
+		B22FCE232D6342C000241F25 /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FCE222D6342C000241F25 /* PaywallViewModel.swift */; };
 		B234D3852D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234D3842D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift */; };
 		B234D3882D553E4A0041ED4C /* ProcessInstructionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234D3872D553E4A0041ED4C /* ProcessInstructionAPIService.swift */; };
 		B234D38A2D553E710041ED4C /* ProcessInstructionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B234D3892D553E710041ED4C /* ProcessInstructionRequest.swift */; };
@@ -37,7 +38,6 @@
 		B2600AEF2D33305A0096E553 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2600AEE2D33305A0096E553 /* DicesView.swift */; };
 		B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */; };
 		B27F46192D60A12C00D1566C /* OnboardingChatSampleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */; };
-		B27F461B2D620F3F00D1566C /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F461A2D620F3F00D1566C /* PaywallViewModel.swift */; };
 		B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */; };
 		B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */; };
 		B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */; };
@@ -83,6 +83,7 @@
 		B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAddNewGameView.swift; sourceTree = "<group>"; };
 		B22E9D572D4FDE2F00BA1C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAddNewGameViewModel.swift; sourceTree = "<group>"; };
+		B22FCE222D6342C000241F25 /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
 		B234D3842D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+PDFFilePickerView.swift"; sourceTree = "<group>"; };
 		B234D3872D553E4A0041ED4C /* ProcessInstructionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessInstructionAPIService.swift; sourceTree = "<group>"; };
 		B234D3892D553E710041ED4C /* ProcessInstructionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessInstructionRequest.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		B2600AEE2D33305A0096E553 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
 		B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingChatSampleScreenView.swift; sourceTree = "<group>"; };
-		B27F461A2D620F3F00D1566C /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaywallViewModel.swift; path = "Game-Master-AI/PaywallViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGame+LoadingView.swift"; sourceTree = "<group>"; };
 		B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView.LoadingView+MemoryView.swift"; sourceTree = "<group>"; };
 		B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+CameraPickerView.swift"; sourceTree = "<group>"; };
@@ -216,12 +216,12 @@
 		B24808742D3299D9002F0017 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				B22FCE222D6342C000241F25 /* PaywallViewModel.swift */,
 				B24808772D329A78002F0017 /* ChatViewModel.swift */,
 				B2550A102D42AB7C00906DFF /* ChatTabCustomGamesViewModel.swift */,
 				B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */,
 				B2EDD09D2D5E17860068F37A /* OnboardingViewModel.swift */,
 				B20819C62D5F7F4E0051ED9E /* OnboardingSampleChatViewModel.swift */,
-				B27F461A2D620F3F00D1566C /* PaywallViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -510,7 +510,7 @@
 				B2EDD09C2D5E09410068F37A /* PaywallView.swift in Sources */,
 				B2550A072D42910400906DFF /* GamesView.swift in Sources */,
 				B2EEA0612D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift in Sources */,
-				B27F461B2D620F3F00D1566C /* PaywallViewModel.swift in Sources */,
+				B22FCE232D6342C000241F25 /* PaywallViewModel.swift in Sources */,
 				B2550A0F2D42A94100906DFF /* ChatListView.swift in Sources */,
 				B2390B242D3405D600310046 /* DiceType.swift in Sources */,
 				B2390B212D34051D00310046 /* SceneKitView.swift in Sources */,
@@ -672,8 +672,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -685,6 +685,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
 			};
 			name = Debug;
 		};
@@ -708,8 +709,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -721,6 +722,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				_EXPERIMENTAL_SWIFT_EXPLICIT_MODULES = YES;
 			};
 			name = Release;
 		};

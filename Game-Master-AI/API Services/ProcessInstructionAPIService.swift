@@ -45,7 +45,7 @@ final class ProcessInstructionAPIService: EssentialsAPIService {
                     .responseStream { [weak self] stream in
                         switch stream.event {
                         case .stream(let result):
-                            if let data = try? result.get(), let rawChunk = String(data: data, encoding: .utf8), !rawChunk.contains("[DONE]") {
+                            if let rawChunk = String(data: result.get(), encoding: .utf8), !rawChunk.contains("[DONE]") {
                                 let chunk = rawChunk
                                     .replacingOccurrences(of: "data:", with: "")
                                     .replacingOccurrences(of: "\n", with: "")
