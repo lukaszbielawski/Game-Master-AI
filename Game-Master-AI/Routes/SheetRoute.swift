@@ -9,8 +9,8 @@ import Essentials
 import SwiftUI
 
 enum SheetRoute: EssentialsSheetRouteProtocol {
-    case privacyPolicy(vm: EssentialsSettingsViewModel)
-    case termsAndConditions(vm: EssentialsSettingsViewModel)
+    case privacyPolicy(contentFileName: String)
+    case termsAndConditions(contentFileName: String)
     case addBoardGameView
     case addBoardGameLoadingView(vm: ChatAddNewGameViewModel)
     case mail
@@ -18,18 +18,16 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
 
     var body: some View {
         switch self {
-        case .privacyPolicy(let vm):
-            EssentialsSettingsSheetView(
+        case .privacyPolicy(let contentFileName):
+            EssentialsTextContentSheetView(
                 title: "Privacy policy",
-                sheetType: .privacyPolicy
+                contentFileName: contentFileName
             )
-            .environmentObject(vm)
-        case .termsAndConditions(let vm):
-            EssentialsSettingsSheetView(
+        case .termsAndConditions(let contentFileName):
+            EssentialsTextContentSheetView(
                 title: "Terms and conditions",
-                sheetType: .termsAndConditions
+                contentFileName: contentFileName
             )
-            .environmentObject(vm)
         case .addBoardGameView:
             ChatAddNewGameView()
         case .addBoardGameLoadingView(let vm):
@@ -65,12 +63,12 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
 }
 
 extension SheetRoute: EssentialsSettingsViewSheetRouteDelegate {
-    static func getPrivacyPolicySheetRoute(vm: EssentialsSettingsViewModel) -> SheetRoute {
-        .privacyPolicy(vm: vm)
+    static func getPrivacyPolicySheetRoute(contentFileName: String) -> SheetRoute {
+        .privacyPolicy(contentFileName: contentFileName)
     }
 
-    static func getTermsAndConditionsSheetRoute(vm: EssentialsSettingsViewModel) -> SheetRoute {
-        .termsAndConditions(vm: vm)
+    static func getTermsAndConditionsSheetRoute(contentFileName: String) -> SheetRoute {
+        .termsAndConditions(contentFileName: contentFileName)
     }
 
     static func getMailSheetRoute() -> SheetRoute {

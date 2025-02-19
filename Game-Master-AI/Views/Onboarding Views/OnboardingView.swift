@@ -65,8 +65,7 @@ extension OnboardingView {
                     vm.present(nextScreen)
                     isOnboardingContinueButtonDisabled = true
                 } else {
-                    routerState.currentNavigationRoute = .paywallView(hasTrial: true)
-                    launchDetector.markOnboardingAsSeen()
+                    routerState.push(.paywallView(hasTrial: true))
                 }
             }
             .padding(.bottom, 32.0)

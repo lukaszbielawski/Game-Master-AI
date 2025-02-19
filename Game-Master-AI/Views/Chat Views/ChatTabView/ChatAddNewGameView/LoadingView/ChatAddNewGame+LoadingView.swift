@@ -86,7 +86,7 @@ extension ChatAddNewGameView {
             }
             .onReceive(vm.gameCreatedPublisher) { boardGameModel in
                 router.currentSheetRoute = .none
-                router.currentNavigationRoute = .chatView(boardGameModel)
+                router.navigateTo(.chatView(boardGameModel))
             } onFailure: { error in
                 EssentialsToastProvider.shared.enqueueToast(EssentialsToast(fromError: error))
                 router.currentSheetRoute = .none

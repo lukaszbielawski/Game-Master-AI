@@ -21,10 +21,9 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
 
     private let boardGameAPI = EssentialsSubjectsAPIService()
     private let deviceAPI = EssentialsDevicesAPIService()
+    private let subscriptionState = EssentialsSubscriptionState.shared
 
     private let fileName: String = "board_games"
-
-    private let isSubscriber: Bool
 
     func searchQueryChanged(newValue: String) {
         searchQuerySubject.send(newValue)
@@ -34,8 +33,7 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
         games.removeIfSuccess(boardGame)
     }
 
-    init(isSubscriber: Bool) {
-        self.isSubscriber = isSubscriber
+    init() {
         searchQuerySubject
             .sink { [weak self] query in
                 self?.search(query: query)
@@ -59,7 +57,7 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
         switch await deviceAPI.getAllUserUses() {
         case .success(let response):
             if let userUsage = response.userUses.filter({ userUsage in
-                userUsage.tier == (isSubscriber ? TierType.monthlyLimitNewGames.tierValue : TierType.freeUsesNewGames.tierValue)
+                userUsage.tier == (subscriptionState.isActive ? TierType.monthlyLimitNewGames.tierValue : TierType.freeUsesNewGames.tierValue)
             }).first?.remainingUses {
                 remainingGamesThisMonth = .success(userUsage)
             } else {

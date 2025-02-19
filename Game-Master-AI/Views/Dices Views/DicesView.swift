@@ -32,7 +32,7 @@ public struct DicesView: View {
 
     @GestureState private var lastDragGesturePosition: CGSize = .zero
 
-    @EnvironmentObject private var colorSchemeState: EssentialsColorSchemeState
+    @ObservedObject private var colorSchemeState = EssentialsColorSchemeState.shared
 
     @EnvironmentObject private var tabRouter: TabRouterState
 

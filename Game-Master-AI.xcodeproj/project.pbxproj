@@ -37,6 +37,7 @@
 		B2550A162D42AC4600906DFF /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2550A152D42AC4600906DFF /* GameModel.swift */; };
 		B2600AEF2D33305A0096E553 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2600AEE2D33305A0096E553 /* DicesView.swift */; };
 		B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */; };
+		B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */; };
 		B27F46192D60A12C00D1566C /* OnboardingChatSampleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */; };
 		B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */; };
 		B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */; };
@@ -99,6 +100,7 @@
 		B2550A152D42AC4600906DFF /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		B2600AEE2D33305A0096E553 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
 		B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingChatSampleScreenView.swift; sourceTree = "<group>"; };
 		B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGame+LoadingView.swift"; sourceTree = "<group>"; };
 		B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView.LoadingView+MemoryView.swift"; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				B2EDD0932D5DF34D0068F37A /* Routes */,
 				B234D3862D553E330041ED4C /* API Services */,
 				B22E9D572D4FDE2F00BA1C28 /* Info.plist */,
+				B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */,
 				B2390B252D34288200310046 /* Extensions */,
 				B2390B222D3405CB00310046 /* Enums */,
 				B2E64F0A2D595CAF00EDF1CF /* Toolbars */,
@@ -461,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */,
 				B2E14ACA2D2EAF1E00CA7D5A /* Preview Assets.xcassets in Resources */,
 				B2390B1E2D33DB5500310046 /* privacy_policy.txt in Resources */,
 				B223BE3A2D4AB5FC005CA9B3 /* encryption_public_key.pem in Resources */,

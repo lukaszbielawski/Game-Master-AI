@@ -10,7 +10,7 @@ import Essentials
 import SwiftUI
 
 struct ChatListView: View {
-    @StateObject var vm: ChatTabCustomGamesViewModel
+    @StateObject var vm: ChatTabCustomGamesViewModel = .init()
     @EnvironmentObject var router: RouterState
     @EnvironmentObject var tabRouter: TabRouterState
     @FocusState.Binding var isFocused: Bool
@@ -19,11 +19,9 @@ struct ChatListView: View {
 
     @State var searchQuery: String = ""
     @State var isInEditMode: Bool = false
-    @State var isNavigationLinkActivated = false
     @State private var boardGameToDelete: BoardGameModel? = nil
 
-    init(subscriptionState: EssentialsSubscriptionState, isFocused: FocusState<Bool>.Binding) {
-        self._vm = StateObject(wrappedValue: ChatTabCustomGamesViewModel(isSubscriber: subscriptionState.isActive))
+    init(isFocused: FocusState<Bool>.Binding) {
         self._isFocused = isFocused
     }
 
@@ -68,7 +66,7 @@ struct ChatListView: View {
                 } onCellTaped: { boardGame in
                     isFocused = false
                     EssentialsHapticService.shared.play(.soft)
-                    router.currentNavigationRoute = .chatView(boardGame)
+                    router.push(.chatView(boardGame))
                 } onCellDeleteTapped: { boardGame in
                     EssentialsHapticService.shared.notify(.warning)
                     boardGameToDelete = boardGame

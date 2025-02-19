@@ -12,19 +12,21 @@ import StoreKit
 
 @MainActor
 final class ChatViewModel: ObservableObject {
-    private let completionsAPI = EssentialsCompletionsAPIService<BoardGameCompletionsRequest>()
+    private let completionsAPI =
+//    EssentialsCompletionsAPIService<BoardGameCompletionsRequest>()
+    EssentialsFakeCompletionsAPIService<BoardGameCompletionsRequest>()
     private let sessionAPI = EssentialsSessionsAPIService()
     private let boardGameModel: BoardGameModel
     private let toastProvider = EssentialsToastProvider.shared
 
     @Published private(set) var messages: EssentialsLoadingState<[Essentials.EssentialsMessage], EssentialsCompletionsAPIService<BoardGameCompletionsRequest>.Error> = .initial
-    private(set) var streamedMessage: String? = nil
+    @Published private(set) var streamedMessage: String? = nil
 
     lazy var assistantGreetingMessage = EssentialsMessage(role: "assistant", content: """
     Hello! I’m your dedicated \(boardGameModel.name) rules expert. I’m here to help you understand and clarify any questions you have about the rules of \(boardGameModel.name), based solely on its official rulebook. Feel free to ask me anything, such as:
 
     [Button]How to set up the game[/Button].
-    [Button]Rules for winning or ending the game[Button]
+    [Button]Rules for winning or ending the game[/Button]
 
     If something isn’t specified in the rulebook, I’ll let you know. Let’s dive into \(boardGameModel.name)—what would you like to know?
     """)
@@ -68,7 +70,7 @@ final class ChatViewModel: ObservableObject {
                 if let streamedMessage = self?.streamedMessage {
                     self?.streamedMessage = streamedMessage.appending(chunk)
                 } else {
-                    self?.streamedMessage = ""
+                    self?.streamedMessage = chunk
                 }
 
             })

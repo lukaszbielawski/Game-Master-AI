@@ -39,10 +39,10 @@ extension ChatAddNewGameView {
                 EssentialsSelectionListView(options: options) { selection in
                     EssentialsHapticService.shared.play(.medium)
                     if selection == options[0] {
-                        router.currentNavigationRoute = .cameraPickerView(vm)
+                        router.navigateTo(.cameraPickerView(vm))
                         router.currentSheetRoute = .none
                     } else if selection == options[1] {
-                        router.currentNavigationRoute = .photoPickerView(vm)
+                        router.navigateTo(.photoPickerView(vm))
                         router.currentSheetRoute = .none
                     } else {
                         router.currentSheetRoute = .pdfFilePickerView(vm)

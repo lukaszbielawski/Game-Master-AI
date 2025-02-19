@@ -11,10 +11,9 @@ import SwiftUI
 
 struct GamesView: View {
     @FocusState var isFocused: Bool
-    @EnvironmentObject var subscriptionState: EssentialsSubscriptionState
 
     var body: some View {
-        ChatListView(subscriptionState: subscriptionState, isFocused: $isFocused)
+        ChatListView(isFocused: $isFocused)
             .background(Color(.background))
     }
 }

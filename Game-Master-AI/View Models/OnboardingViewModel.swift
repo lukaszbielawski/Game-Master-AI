@@ -9,7 +9,7 @@ import Essentials
 import SwiftUI
 
 final class OnboardingViewModel: ObservableObject {
-    @Published var navigationStack: [OnboaringScreenRoute] = [.paywall]
+    @Published var navigationStack: [OnboaringScreenRoute] = [.landingScreen]
     @Published var currentScreenContinueButtonState: EssentialsOnboardingContinueButton.State = .hidden
     @Published var willBeUsingBackTransition: Bool = false
     @Published var isBackButtonDisabled: Bool = false
@@ -18,6 +18,11 @@ final class OnboardingViewModel: ObservableObject {
         insertion: .move(edge: .trailing),
         removal: .move(edge: .leading))
         .animation(.easeInOut(duration: 0.35))
+
+    var visitedScreens: Set<OnboaringScreenRoute> = []
+
+    let launchDetector = EssentialsLaunchDetector.shared
+    let analyticsProvider = EssentialsFirebaseAnalyticsProvider.shared
 
     var transition: AnyTransition {
         if willBeUsingBackTransition {
@@ -57,42 +62,58 @@ final class OnboardingViewModel: ObservableObject {
                 self?.present(.firstOnboardingScreen)
                 EssentialsHapticService.shared.play(.soft)
             }.onAppear { [weak self] in
-                self?.currentScreenContinueButtonState = .hidden
+                guard let self else { return }
+                if !visitedScreens.contains(route) {
+                    analyticsProvider.logScreenView(screenName: route.screenName)
+                    visitedScreens.insert(route)
+                }
+                currentScreenContinueButtonState = .hidden
             }
         case .firstOnboardingScreen:
             OnboardingFirstScreenView()
                 .onAppear { [weak self] in
-                    self?.currentScreenContinueButtonState = .visible
+                    guard let self else { return }
+                    currentScreenContinueButtonState = .visible
                 }
         case .secondOnboardingScreen:
             OnboardingSecondScreenView()
                 .onAppear { [weak self] in
-                    self?.currentScreenContinueButtonState = .visible
+                    guard let self else { return }
+                    currentScreenContinueButtonState = .visible
                 }
         case .thirdOnboardingScreen:
             OnboardingThirdScreenView()
                 .onAppear { [weak self] in
-                    self?.currentScreenContinueButtonState = .visible
+                    guard let self else { return }
+                    currentScreenContinueButtonState = .visible
                 }
         case .forthOnboardingScreen:
             OnboardingForthScreenView()
                 .onAppear { [weak self] in
-                    self?.currentScreenContinueButtonState = .visible
+                    guard let self else { return }
+                    currentScreenContinueButtonState = .visible
                 }
         case .chatSampleScreen:
             OnboardingChatSampleScreenView()
                 .onAppear { [weak self] in
-                    self?.currentScreenContinueButtonState = .skip
+                    guard let self else { return }
+                    currentScreenContinueButtonState = .skip
                 }
         case .paywall:
             PaywallView(hasTrial: true)
                 .onAppear { [weak self] in
-                    self?.currentScreenContinueButtonState = .hidden
+                    guard let self else { return }
+                    launchDetector.markOnboardingAsSeenAtNextLaunch()
+                    currentScreenContinueButtonState = .hidden
                 }
         }
     }
 
     func present(_ screen: OnboaringScreenRoute) {
+        if !visitedScreens.contains(screen) {
+            analyticsProvider.logScreenView(screenName: screen.screenName)
+            visitedScreens.insert(screen)
+        }
         willBeUsingBackTransition = false
         withAnimation(.easeInOut(duration: 0.35)) {
             navigationStack.append(screen)
@@ -134,6 +155,25 @@ public enum OnboaringScreenRoute: EssentialsOnboardingScreenRouteProtocol {
             .paywall
         case .paywall:
             .none
+        }
+    }
+
+    public var screenName: String {
+        switch self {
+        case .landingScreen:
+            "LandingScreen"
+        case .firstOnboardingScreen:
+            "FirstOnboardingScreen"
+        case .secondOnboardingScreen:
+            "SecondOnboardingScreen"
+        case .thirdOnboardingScreen:
+            "ThirdOnboardingScreen"
+        case .forthOnboardingScreen:
+            "ForthOnboardingScreen"
+        case .chatSampleScreen:
+            "ChatSampleScreen"
+        case .paywall:
+            "Paywall"
         }
     }
 }

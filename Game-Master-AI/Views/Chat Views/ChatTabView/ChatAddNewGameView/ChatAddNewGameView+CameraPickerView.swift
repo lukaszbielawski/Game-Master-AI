@@ -15,7 +15,7 @@ extension ChatAddNewGameView {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
         @EnvironmentObject var router: RouterState
         @Environment(\.dismiss) var dismiss
-        @EnvironmentObject var subscriptionState: EssentialsSubscriptionState
+        @ObservedObject var subscriptionState = EssentialsSubscriptionState.shared
 
         var maxPhotos: Int { subscriptionState.isActive ? 40 : 10 }
 

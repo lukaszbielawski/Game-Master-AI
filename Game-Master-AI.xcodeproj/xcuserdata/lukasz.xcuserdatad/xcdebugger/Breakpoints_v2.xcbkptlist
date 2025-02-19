@@ -14,8 +14,8 @@
             filePath = "../Essentials/Sources/Essentials/Core/Router/EssentialsRouter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "init(navigationRouteType:sheetRouteType:content:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,26 +30,10 @@
             filePath = "../Essentials/Sources/Essentials/Core/Router/EssentialsRouter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "init(navigationRouteType:sheetRouteType:content:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "70C7B243-56E3-4CFF-9DC0-0E19F77D4C49"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Core/Views/Public Views/EssentialsChatView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -66,50 +50,6 @@
             endingLineNumber = "30"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - 37deec011f25996d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
-                  moduleName = "Game-Master-AI.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30">
-               </Location>
-               <Location
-                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - 46a6daacc7702de1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
-                  moduleName = "Game-Master-AI.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30">
-               </Location>
-               <Location
-                  uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F - 4577d955dae2e7d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
-                  moduleName = "Game-Master-AI.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,81 +66,229 @@
             endingLineNumber = "31"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - 4577d955dae2e637"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
-                  moduleName = "Game-Master-AI.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31">
-               </Location>
-               <Location
-                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - c0c4b9644d3616ec"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
-                  moduleName = "Game-Master-AI.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31">
-               </Location>
-               <Location
-                  uuid = "61FDEEEF-AFB3-47C8-823D-1F58DDC45ADE - d7b2fad055c5a435"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 () async -&gt; Swift.Optional&lt;()&gt; in closure #1 (Swift.String) -&gt; () in closure #1 (Swift.Array&lt;Essentials.EssentialsMessage&gt;) -&gt; Essentials.EssentialsChatView&lt;Game_Master_AI.NavigationRoute, Game_Master_AI.SheetRoute, Game_Master_AI.TabToolbarRoute&gt; in Game_Master_AI.OnboardingSampleChatView.body.getter : some"
-                  moduleName = "Game-Master-AI.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Game-Master-AI/Game-Master-AI/Views/Onboarding%20Views/OnboardingSampleChatView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A25EB75-3967-44E2-BE2C-088A5A4E4EEF"
+            uuid = "7D2D682E-D434-4D06-8A38-A2266CCBC459"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Game-Master-AI/View Models/OnboardingSampleChatViewModel.swift"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsAdState.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "sendMessage(content:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "loadAppOpenAd()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CFFC256-ABD6-4C10-9C63-90CC3C0BE927"
+            uuid = "9BCD81E6-92CC-448A-8449-46BC7D7B6BBF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Game-Master-AI/View Models/OnboardingSampleChatViewModel.swift"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsAdState.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "sendMessage(content:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "loadAppOpenAd()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E06C121-69C3-484F-8A23-AFB9D6161827"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsAdState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "loadAppOpenAd()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D63B77C-3EA4-47A0-A8E4-024981FB7DC1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsAdState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "showAppOpenAd()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E62FC1F-7F8A-4C4A-8931-BA5E380739E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsAdState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "showAppOpenAd()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8AF846E-E79C-4CFE-98A2-303C0D77F4F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsAdState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "showAppOpenAd()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "016348EC-3500-4A92-B902-4E5540288474"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/App/EssentialsAppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9BDA6B8-8419-497D-9CA8-629F6EACCA31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdMobRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3C09BCD-FEC5-45F5-87EE-C151C296112E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdMobRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "767432B5-4D04-4ECB-97A8-16158FEAD1D4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdMobRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15D10583-4C8C-416D-BB7F-7E55E98BF3F2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdMobRouter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "087159C7-48D7-4869-A97C-67A44E1DD0B7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsRouterState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "push(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "456ECEB9-A7AB-4FBD-9895-E0BC24AFECB7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsRouterState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "navigateTo(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38ADADEC-C80C-4743-8A81-70AB644F4D3B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsRouterState.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "dismiss()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

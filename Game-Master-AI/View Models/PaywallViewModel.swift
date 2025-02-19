@@ -21,6 +21,8 @@ final class PaywallViewModel: ObservableObject {
 
     let hasTrial: Bool
     let storeKitService = EssentialsStoreKitService()
+    let launchDetector = EssentialsLaunchDetector.shared
+    let subscriptionState = EssentialsSubscriptionState.shared
 
     let comparisonModels: [EssentialsPaywallPlanComparisonModel] = [
         .init(subject: "📖 Process game manuals", basicValue: "1", premiumValue: "30 monthly"),
@@ -58,6 +60,28 @@ final class PaywallViewModel: ObservableObject {
         self.hasTrial = hasTrial
         Task(priority: .userInitiated) {
             await fetchProducts(hasTrial: hasTrial)
+        }
+    }
+
+    func buyProduct(onSuccess: @escaping () -> ()) async {
+        guard let selectedProduct else { return }
+        let result = await storeKitService.purchase(product: selectedProduct)
+        switch result {
+        case .success(let transaction):
+            withAnimation {
+                launchDetector.markPaywallAsSeen()
+                subscriptionState.activeSubscription = transaction
+                onSuccess()
+            }
+        case .failure(let failure):
+            let toast = EssentialsToast(fromError: failure)
+            EssentialsToastProvider.shared.enqueueToast(toast)
+        }
+    }
+
+    func cancelPaywall() {
+        withAnimation {
+            launchDetector.markPaywallAsSeen()
         }
     }
 

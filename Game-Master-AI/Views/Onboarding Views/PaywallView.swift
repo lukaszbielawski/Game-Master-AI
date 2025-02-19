@@ -14,6 +14,8 @@ struct PaywallView: View {
     @StateObject var vm: PaywallViewModel
     @Namespace var faqBottom
 
+    @Environment(\.dismiss) var dismiss
+
     init(hasTrial: Bool) {
         self.hasTrial = hasTrial
         self._vm = StateObject(wrappedValue: .init(hasTrial: hasTrial))
@@ -26,9 +28,29 @@ struct PaywallView: View {
                     ScrollView {
                         VStack(spacing: 16.0) {
                             Text("Make Every Moment Count")
-                                .font(.title)
+                                .font(.title2)
                                 .multilineTextAlignment(.center)
-                                .padding(.horizontal, 24.0)
+                                .padding(.leading, 24.0)
+                                .padding(.trailing, 48.0)
+                                .overlay {
+                                    HStack {
+                                        Spacer()
+                                        Image(systemName: "xmark")
+                                            .font(.title3)
+                                            .foregroundStyle(Color.tintColor)
+                                            .opacity(0.3)
+                                            .contentShape(Rectangle().size(width: 44, height: 44))
+                                            .onTapGesture {
+                                                withAnimation(.easeInOut(duration: 0.65)) { [weak vm] in
+                                                    if hasTrial {
+                                                        vm?.cancelPaywall()
+                                                    }
+                                                    dismiss()
+                                                }
+                                            }
+                                            .padding(8.0)
+                                    }
+                                }
                             Text(LocalizedStringKey("**Less Rules, More Laughs!** 🎉❤️"))
                                 .font(.subheadline)
                             Image("ImageBoardGameFamily")
@@ -148,13 +170,17 @@ struct PaywallView: View {
                         product: selectedProduct,
                         geoProxy: geo,
                         hasTrial: selectedProduct.subscription?.introductoryOffer != nil
-                    ) {}
-                        .transition(.move(edge: .bottom).animation(.easeOut(duration: 0.65)))
+                    ) {
+                        Task(priority: .userInitiated) {
+                            await vm.buyProduct {
+                                dismiss()
+                            }
+                        }
+                    }
+                    .transition(.move(edge: .bottom).animation(.easeOut(duration: 0.65)))
                 }
             }
         }
         .environmentObject(vm)
     }
 }
-
-

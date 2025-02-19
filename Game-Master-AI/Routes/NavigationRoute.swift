@@ -31,7 +31,6 @@ enum NavigationRoute: EssentialsNavigationRouteProtocol {
             OnboardingView()
         case .paywallView(let hasTrial):
             PaywallView(hasTrial: hasTrial)
-                .ignoresSafeArea(.all)
         }
     }
 
@@ -62,17 +61,23 @@ enum NavigationRoute: EssentialsNavigationRouteProtocol {
             true
         case (.cameraPickerView, .cameraPickerView):
             true
+        case (.onboardingView, .onboardingView):
+            true
+        case (.paywallView, .paywallView):
+            true
         default:
             false
         }
     }
 }
 
-extension NavigationRoute: EssentialsOnboardingNavigationRouteDelegate {
+extension NavigationRoute:
+    EssentialsOnboardingNavigationRouteDelegate & EssentialsPaywallNavigationRouteDelegate
+{
     static func getOnboardingNavigationRoute() -> NavigationRoute {
         .onboardingView
     }
-    
+
     static func getPaywallNavigationRoute(hasTrial: Bool) -> NavigationRoute {
         .paywallView(hasTrial: hasTrial)
     }

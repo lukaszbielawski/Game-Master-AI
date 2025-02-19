@@ -6,6 +6,7 @@
 //
 
 import Essentials
+import GoogleMobileAds
 import StoreKit
 import SwiftUI
 
@@ -17,10 +18,14 @@ struct Game_Master_AIApp: App {
     var body: some Scene {
         WindowGroup {
             EssentialsApp {
-                EssentialsRouter(navigationRouteType: NavigationRoute.self,
-                                 sheetRouteType: SheetRoute.self)
-                {
-                    EssentialsTabRouter(tabRouteType: TabRoute.self, tabToolbarRouteType: TabToolbarRoute.self)
+                EssentialsFirebaseRouter {
+                    EssentialsAdMobRouter {
+                        EssentialsRouter(navigationRouteType: NavigationRoute.self,
+                                         sheetRouteType: SheetRoute.self)
+                        {
+                            EssentialsTabRouter(tabRouteType: TabRoute.self, tabToolbarRouteType: TabToolbarRoute.self)
+                        }
+                    }
                 }
             }
         }

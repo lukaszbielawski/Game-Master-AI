@@ -50,7 +50,7 @@ final class OnboardingSampleChatViewModel: ObservableObject {
                 if let streamedMessage = self?.streamedMessage {
                     self?.streamedMessage = streamedMessage.appending(chunk)
                 } else {
-                    self?.streamedMessage = ""
+                    self?.streamedMessage = chunk
                 }
 
             })
