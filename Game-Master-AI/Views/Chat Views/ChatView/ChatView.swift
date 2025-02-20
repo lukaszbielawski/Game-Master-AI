@@ -12,7 +12,7 @@ struct ChatView: View {
     @StateObject var vm: ChatViewModel
     let boardGameModel: BoardGameModel
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var router: RouterState
+    @ObservedObject var router = RouterState.shared
 
     public init(boardGameModel: BoardGameModel) {
         self.boardGameModel = boardGameModel

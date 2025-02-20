@@ -34,7 +34,7 @@ public struct DicesView: View {
 
     @ObservedObject private var colorSchemeState = EssentialsColorSchemeState.shared
 
-    @EnvironmentObject private var tabRouter: TabRouterState
+    @ObservedObject private var tabRouter = TabRouterState.shared
 
     var currentDice: DiceType {
         dices[selectedDiceIndex]
@@ -124,6 +124,7 @@ public struct DicesView: View {
                         .animation(.easeInOut(duration: 0.35), value: isRolling)
                         .disabled(isRolling)
                         .onChange(of: selectedDiceIndex) { _ in
+                            EssentialsHapticService.shared.play(.light)
                             isDiceChangeQueued = true
                             diceResult = 20
                             (rotationX, rotationY, rotationZ) = currentDice.defaultOrientation

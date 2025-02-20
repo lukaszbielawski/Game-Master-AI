@@ -7,38 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "114DB096-57CD-4FB1-94BA-A941D4B21F31"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Core/Router/EssentialsRouter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "init(navigationRouteType:sheetRouteType:content:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9ACBB5C-350D-4AD6-A108-CC5A55F7BD8B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Core/Router/EssentialsRouter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "init(navigationRouteType:sheetRouteType:content:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E72D3770-CCEC-4C8B-83C3-AD8D8248775F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -247,48 +215,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "087159C7-48D7-4869-A97C-67A44E1DD0B7"
-            shouldBeEnabled = "Yes"
+            uuid = "E8EAE59C-4A62-4D24-BCF0-919B447DED3B"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsRouterState.swift"
+            filePath = "Game-Master-AI/Views/Timers Views/View Models/TimerViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "push(_:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getRemainingSeconds(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "456ECEB9-A7AB-4FBD-9895-E0BC24AFECB7"
+            uuid = "017ED5A0-B75A-4783-ACCF-06DACF7EBCB3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsRouterState.swift"
+            filePath = "Game-Master-AI/Views/Timers Views/View Models/TimerViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "navigateTo(_:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "launchTimer(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38ADADEC-C80C-4743-8A81-70AB644F4D3B"
+            uuid = "63970FC9-992D-4A0D-A6CD-B60F6CEF3CD9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Core/Environmental Objects/EssentialsRouterState.swift"
+            filePath = "Game-Master-AI/Views/Timers Views/View Models/TimerViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "dismiss()"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "resumeTimer(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C744442-56CD-4625-800C-1F057B55E837"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/Views/Timers Views/View Models/TimerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "getRemainingSeconds(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D03A0046-7E5E-4CF0-ABED-653AB01C45DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/Views/Timers Views/View Models/TimerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "pauseTimer(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

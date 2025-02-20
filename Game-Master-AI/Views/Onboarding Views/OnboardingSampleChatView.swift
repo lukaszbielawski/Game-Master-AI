@@ -11,7 +11,7 @@ import SwiftUI
 struct OnboardingSampleChatView: View {
     @StateObject var vm: OnboardingSampleChatViewModel = .init()
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var router: RouterState
+    @ObservedObject var router = RouterState.shared
     let onSend: () -> Void
 
     var body: some View {

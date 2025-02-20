@@ -15,6 +15,7 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
     case addBoardGameLoadingView(vm: ChatAddNewGameViewModel)
     case mail
     case pdfFilePickerView(_ vm: ChatAddNewGameViewModel)
+    case addCounterView(_ vm: CountersViewModel)
 
     var body: some View {
         switch self {
@@ -39,6 +40,9 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
         case .pdfFilePickerView(let vm):
             ChatAddNewGameView.PDFFilePickerView()
                 .environmentObject(vm)
+        case .addCounterView(let vm):
+            CountersView.AddNewCounterView()
+                .environmentObject(vm)
         }
     }
 
@@ -58,6 +62,8 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
             5
         case .pdfFilePickerView:
             6
+        case .addCounterView:
+            7
         }
     }
 }

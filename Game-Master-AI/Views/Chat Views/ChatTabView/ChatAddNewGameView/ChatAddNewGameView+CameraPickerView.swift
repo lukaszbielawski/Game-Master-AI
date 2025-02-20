@@ -13,7 +13,7 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct CameraPickerView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
-        @EnvironmentObject var router: RouterState
+        @ObservedObject var router = RouterState.shared
         @Environment(\.dismiss) var dismiss
         @ObservedObject var subscriptionState = EssentialsSubscriptionState.shared
 

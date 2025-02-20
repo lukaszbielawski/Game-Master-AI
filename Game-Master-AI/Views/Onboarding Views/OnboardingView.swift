@@ -14,7 +14,7 @@ struct OnboardingView: View {
     @State private var isContinueButtonShown: Bool = false
     @State private var isOnboardingContinueButtonDisabled = false
 
-    @EnvironmentObject private var routerState: EssentialsRouterState<NavigationRoute, SheetRoute>
+    @ObservedObject private var routerState = RouterState.shared
 
     @ObservedObject var launchDetector = EssentialsLaunchDetector.shared
 
@@ -61,6 +61,7 @@ extension OnboardingView {
         switch vm.currentScreenContinueButtonState {
         case .visible, .skip:
             EssentialsOnboardingContinueButton(buttonState: vm.currentScreenContinueButtonState) {
+                EssentialsHapticService.shared.play(.soft)
                 if let nextScreen = vm.navigationStack.last?.nextScreen {
                     vm.present(nextScreen)
                     isOnboardingContinueButtonDisabled = true

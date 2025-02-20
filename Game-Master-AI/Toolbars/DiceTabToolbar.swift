@@ -11,7 +11,7 @@ struct DiceTabToolbar: ToolbarContent {
     var body: some ToolbarContent {
         ToolbarItem(placement: .principal) {
             Text("Roll a dice")
-                .transition(.opacity.animation(.easeInOut(duration: 0.35)))
+                .transition(.normalOpacityEaseInOut)
         }
     }
 }

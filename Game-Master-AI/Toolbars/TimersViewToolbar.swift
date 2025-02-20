@@ -1,19 +1,19 @@
 //
-//  ChatListViewToolbar.swift
+//  TimersViewToolbar.swift
 //  Game-Master-AI
 //
-//  Created by Łukasz Bielawski on 09/02/2025.
+//  Created by Łukasz Bielawski on 20/02/2025.
 //
 
 import SwiftUI
 
-struct ChatListViewToolbar: ToolbarContent {
+struct TimersViewToolbar: ToolbarContent {
     @Binding var isInEditMode: Bool
     let onTapTopBarTrailingButton: () -> ()
 
     var body: some ToolbarContent {
         ToolbarItem(placement: .principal) {
-            Text("Board games")
+            Text("Timers")
                 .transition(.normalOpacityEaseInOut)
         }
         ToolbarItem(placement: .topBarTrailing) {

@@ -17,6 +17,7 @@ enum NavigationRoute: EssentialsNavigationRouteProtocol {
     case onboardingView
     case paywallView(hasTrial: Bool)
 
+
     var body: some View {
         switch self {
         case .chatView(let boardGameModel):

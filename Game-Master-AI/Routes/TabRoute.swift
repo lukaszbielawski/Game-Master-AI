@@ -11,6 +11,8 @@ import SwiftUI
 enum TabRoute: EssentialsTabRouteProtocol {
     case games
     case dice
+    case counters
+    case timers
     case settings
 
     static var defaultTabRoute: TabRoute = .games
@@ -26,6 +28,10 @@ enum TabRoute: EssentialsTabRouteProtocol {
                                    sheetRoute: SheetRoute.self,
                                    tabRoute: TabRoute.self,
                                    tabToolbarRoute: TabToolbarRoute.self)
+        case .counters:
+            CountersView()
+        case .timers:
+            TimerView()
         }
     }
 
@@ -38,6 +44,10 @@ enum TabRoute: EssentialsTabRouteProtocol {
             Label("Dices", systemImage: "dice.fill")
         case .settings:
             Label("Settings", systemImage: "gearshape.2.fill")
+        case .counters:
+            Label("Counters", systemImage: "plus.forwardslash.minus")
+        case .timers:
+            Label("Timers", systemImage: "hourglass.badge.plus")
         }
     }
 }

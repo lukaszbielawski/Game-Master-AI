@@ -12,7 +12,7 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct PDFFilePickerView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
-        @EnvironmentObject var router: RouterState
+        @ObservedObject var router = RouterState.shared
         @Environment(\.dismiss) var dismiss
 
         var body: some View {

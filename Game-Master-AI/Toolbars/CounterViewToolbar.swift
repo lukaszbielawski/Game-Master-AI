@@ -1,26 +1,25 @@
 //
-//  ChatListViewToolbar.swift
+//  CounterViewToolbar.swift
 //  Game-Master-AI
 //
-//  Created by Łukasz Bielawski on 09/02/2025.
+//  Created by Łukasz Bielawski on 20/02/2025.
 //
 
 import SwiftUI
 
-struct ChatListViewToolbar: ToolbarContent {
-    @Binding var isInEditMode: Bool
+struct CounterViewToolbar: ToolbarContent {
     let onTapTopBarTrailingButton: () -> ()
 
     var body: some ToolbarContent {
         ToolbarItem(placement: .principal) {
-            Text("Board games")
+            Text("Counters")
                 .transition(.normalOpacityEaseInOut)
         }
         ToolbarItem(placement: .topBarTrailing) {
             Button {
                 onTapTopBarTrailingButton()
             } label: {
-                Image(systemName: isInEditMode ? "arrowshape.turn.up.backward.fill" : "pencil")
+                Image(systemName: "plus")
                     .foregroundStyle(Color.accentColor)
             }
             .transition(.normalOpacityEaseInOut)

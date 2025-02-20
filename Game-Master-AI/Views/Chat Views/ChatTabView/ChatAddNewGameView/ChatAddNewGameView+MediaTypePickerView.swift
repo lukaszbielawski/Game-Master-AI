@@ -11,7 +11,7 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct MediaTypePickerView: View {
         @EnvironmentObject private var vm: ChatAddNewGameViewModel
-        @EnvironmentObject private var router: RouterState
+        @ObservedObject private var router = RouterState.shared
 
         let options: [EssentialsSelectionListView.Model] = [
             .init(

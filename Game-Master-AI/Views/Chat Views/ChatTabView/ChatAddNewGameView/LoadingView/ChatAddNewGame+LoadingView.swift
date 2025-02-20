@@ -11,7 +11,7 @@ import SwiftUI
 extension ChatAddNewGameView {
     struct LoadingView: View {
         @EnvironmentObject var vm: ChatAddNewGameViewModel
-        @EnvironmentObject var router: RouterState
+        @ObservedObject var router = RouterState.shared
 
         @State private var gameName: String = ""
         @State private var onAddGameTapped: () -> Void

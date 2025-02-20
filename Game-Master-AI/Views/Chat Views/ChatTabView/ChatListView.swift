@@ -11,8 +11,8 @@ import SwiftUI
 
 struct ChatListView: View {
     @StateObject var vm: ChatTabCustomGamesViewModel = .init()
-    @EnvironmentObject var router: RouterState
-    @EnvironmentObject var tabRouter: TabRouterState
+    @ObservedObject var router = RouterState.shared
+    @ObservedObject var tabRouter = TabRouterState.shared
     @FocusState.Binding var isFocused: Bool
 
     private let toastProvider = EssentialsToastProvider.shared
@@ -106,7 +106,9 @@ struct ChatListView: View {
         .onAppear {
             tabRouter.currentToolbarRoute = .chatListView(isInEditMode: $isInEditMode, onTapTopBarTrailingButton: {
                 EssentialsHapticService.shared.play(.medium)
-                isInEditMode.toggle()
+                withAnimation {
+                    isInEditMode.toggle()
+                }
             })
         }
         .task(priority: .userInitiated) { [weak vm] in
