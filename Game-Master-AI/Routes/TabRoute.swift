@@ -31,7 +31,7 @@ enum TabRoute: EssentialsTabRouteProtocol {
         case .counters:
             CountersView()
         case .timers:
-            TimerView()
+            TimersView()
         }
     }
 

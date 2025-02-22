@@ -28,7 +28,10 @@ struct ChatView: View {
                 messages: messages,
                 streamedMessage: vm.streamedMessage,
                 maxCharactersInTextField: 2000,
-                navigationTitle: boardGameModel.name
+                navigationTitle: boardGameModel.name,
+                volumeFractions: vm.volumeFractions,
+                recordingDurationSeconds: vm.recordingDurationSeconds,
+                recordingState: vm.recordingState
             ) { messageContent in
                 Task(priority: .userInitiated) { [weak vm] in
                     await vm?.sendMessage(content: messageContent)
@@ -36,6 +39,24 @@ struct ChatView: View {
             } onNewConversationButtonTapped: { [weak vm] in
                 Task(priority: .userInitiated) {
                     await vm?.resetConversation()
+                }
+            } onRecordButtonTapped: { [weak vm] in
+                guard let vm else { return }
+                if vm.recordingState == .recording {
+                    EssentialsHapticService.shared.play(.soft)
+                    Task(priority: .userInitiated) {
+                        await vm.stopRecording()
+                    }
+                } else if vm.recordingState == .stopped {
+                    EssentialsHapticService.shared.play(.soft)
+                    Task(priority: .userInitiated) {
+                        await vm.startRecording()
+                    }
+                }
+            } onCancelRecordButtonTapped: {
+                Task(priority: .userInitiated) { [weak vm] in
+                    guard let vm else { return }
+                    await vm.cancelRecording()
                 }
             }
         } failureView: { _ in

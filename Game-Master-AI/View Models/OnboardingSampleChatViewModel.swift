@@ -14,11 +14,11 @@ import StoreKit
 
 @MainActor
 final class OnboardingSampleChatViewModel: ObservableObject {
-    private let completionsAPI = EssentialsCompletionsAPIService<SampleCompletionsRequest>()
+    private let completionsAPI = EssentialsCompletionsAPIService()
     private let sessionAPI = EssentialsSessionsAPIService()
     private let toastProvider = EssentialsToastProvider.shared
 
-    @Published private(set) var messages: EssentialsLoadingState<[Essentials.EssentialsMessage], EssentialsCompletionsAPIService<SampleCompletionsRequest>.Error> = .success([])
+    @Published private(set) var messages: EssentialsLoadingState<[Essentials.EssentialsMessage], EssentialsCompletionsAPIServiceError> = .success([])
     @Published private(set) var streamedMessage: String? = nil
 
     let boardGameName = "Monopoly"
@@ -45,8 +45,8 @@ final class OnboardingSampleChatViewModel: ObservableObject {
 
         let result = await completionsAPI.getChatCompletionsStream(
             request: request,
-            isSampleCompletions: true,
-            onReceive: { [weak self] chunk in
+            completionsType: .sample,
+            onReceive: { [weak self] chunk, _ in
                 if let streamedMessage = self?.streamedMessage {
                     self?.streamedMessage = streamedMessage.appending(chunk)
                 } else {

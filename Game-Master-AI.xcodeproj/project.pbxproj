@@ -19,6 +19,7 @@
 		B21B28422D35457F00DA2FB4 /* D8.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283D2D35457F00DA2FB4 /* D8.dae */; };
 		B21B28462D358CE100DA2FB4 /* D20.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B28452D358CE100DA2FB4 /* D20.dae */; };
 		B223BE3A2D4AB5FC005CA9B3 /* encryption_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = B223BE392D4AB5FC005CA9B3 /* encryption_public_key.pem */; };
+		B22D35F92D68AB5A007F65F2 /* BoardGameWhisperCompletionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22D35F82D68AB5A007F65F2 /* BoardGameWhisperCompletionsRequest.swift */; };
 		B22E9D562D4FB3BF00BA1C28 /* ChatAddNewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */; };
 		B22E9D592D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */; };
 		B22FCE232D6342C000241F25 /* PaywallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FCE222D6342C000241F25 /* PaywallViewModel.swift */; };
@@ -40,8 +41,8 @@
 		B265ACBA2D674C2200B4EAF3 /* CounterViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACB92D674C2200B4EAF3 /* CounterViewToolbar.swift */; };
 		B265ACBE2D674DE400B4EAF3 /* CountersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACBD2D674DE400B4EAF3 /* CountersViewModel.swift */; };
 		B265ACC02D67856200B4EAF3 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACBF2D67855E00B4EAF3 /* ColorExtensions.swift */; };
-		B265ACC32D679DF200B4EAF3 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC22D679DF200B4EAF3 /* TimerView.swift */; };
-		B265ACC62D679E1900B4EAF3 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC52D679E1900B4EAF3 /* TimerViewModel.swift */; };
+		B265ACC32D679DF200B4EAF3 /* TimersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC22D679DF200B4EAF3 /* TimersView.swift */; };
+		B265ACC62D679E1900B4EAF3 /* TimersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC52D679E1900B4EAF3 /* TimersViewModel.swift */; };
 		B265ACC82D67A0E600B4EAF3 /* TimersViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC72D67A0E600B4EAF3 /* TimersViewToolbar.swift */; };
 		B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */; };
 		B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */; };
@@ -88,6 +89,7 @@
 		B21B283D2D35457F00DA2FB4 /* D8.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D8.dae; sourceTree = "<group>"; };
 		B21B28452D358CE100DA2FB4 /* D20.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D20.dae; sourceTree = "<group>"; };
 		B223BE392D4AB5FC005CA9B3 /* encryption_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = encryption_public_key.pem; sourceTree = "<group>"; };
+		B22D35F82D68AB5A007F65F2 /* BoardGameWhisperCompletionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameWhisperCompletionsRequest.swift; sourceTree = "<group>"; };
 		B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAddNewGameView.swift; sourceTree = "<group>"; };
 		B22E9D572D4FDE2F00BA1C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAddNewGameViewModel.swift; sourceTree = "<group>"; };
@@ -110,8 +112,8 @@
 		B265ACB92D674C2200B4EAF3 /* CounterViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewToolbar.swift; sourceTree = "<group>"; };
 		B265ACBD2D674DE400B4EAF3 /* CountersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountersViewModel.swift; sourceTree = "<group>"; };
 		B265ACBF2D67855E00B4EAF3 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		B265ACC22D679DF200B4EAF3 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		B265ACC52D679E1900B4EAF3 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		B265ACC22D679DF200B4EAF3 /* TimersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersView.swift; sourceTree = "<group>"; };
+		B265ACC52D679E1900B4EAF3 /* TimersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewModel.swift; sourceTree = "<group>"; };
 		B265ACC72D67A0E600B4EAF3 /* TimersViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewToolbar.swift; sourceTree = "<group>"; };
 		B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -312,7 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				B265ACC42D679E1500B4EAF3 /* View Models */,
-				B265ACC22D679DF200B4EAF3 /* TimerView.swift */,
+				B265ACC22D679DF200B4EAF3 /* TimersView.swift */,
 			);
 			path = "Timers Views";
 			sourceTree = "<group>";
@@ -320,7 +322,7 @@
 		B265ACC42D679E1500B4EAF3 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				B265ACC52D679E1900B4EAF3 /* TimerViewModel.swift */,
+				B265ACC52D679E1900B4EAF3 /* TimersViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -337,6 +339,7 @@
 		B2A374512D4E38380065F8F6 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				B22D35F82D68AB5A007F65F2 /* BoardGameWhisperCompletionsRequest.swift */,
 				B2A3744F2D4E37100065F8F6 /* BoardGameCompletionsRequest.swift */,
 				B234D3892D553E710041ED4C /* ProcessInstructionRequest.swift */,
 				B20819C82D5F81250051ED9E /* SampleCompletionsRequest.swift */,
@@ -545,7 +548,7 @@
 				B2600AEF2D33305A0096E553 /* DicesView.swift in Sources */,
 				B206F2B32D57C1A800DAD789 /* TabToolbarRoute.swift in Sources */,
 				B2EEA0672D50DE5300F8745A /* SheetRoute.swift in Sources */,
-				B265ACC62D679E1900B4EAF3 /* TimerViewModel.swift in Sources */,
+				B265ACC62D679E1900B4EAF3 /* TimersViewModel.swift in Sources */,
 				B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */,
 				B22E9D592D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift in Sources */,
 				B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */,
@@ -560,7 +563,7 @@
 				B2EDD0A92D5E95E10068F37A /* OnboardingForthScreenView.swift in Sources */,
 				B2550A162D42AC4600906DFF /* GameModel.swift in Sources */,
 				B206F2AF2D57A1F100DAD789 /* TierType.swift in Sources */,
-				B265ACC32D679DF200B4EAF3 /* TimerView.swift in Sources */,
+				B265ACC32D679DF200B4EAF3 /* TimersView.swift in Sources */,
 				B2550A112D42AB7C00906DFF /* ChatTabCustomGamesViewModel.swift in Sources */,
 				B24808782D329A78002F0017 /* ChatViewModel.swift in Sources */,
 				B265ACBE2D674DE400B4EAF3 /* CountersViewModel.swift in Sources */,
@@ -580,6 +583,7 @@
 				B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */,
 				B2EDD0A52D5E95CA0068F37A /* OnboardingSecondScreenView.swift in Sources */,
 				B234D3852D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift in Sources */,
+				B22D35F92D68AB5A007F65F2 /* BoardGameWhisperCompletionsRequest.swift in Sources */,
 				B206F2B12D57B0AA00DAD789 /* TabRoute.swift in Sources */,
 				B2EEA0652D50B92300F8745A /* NavigationRoute.swift in Sources */,
 				B234D3882D553E4A0041ED4C /* ProcessInstructionAPIService.swift in Sources */,
@@ -732,6 +736,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to enable voice input for chat messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -769,6 +774,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to enable voice input for chat messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

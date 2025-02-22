@@ -20,9 +20,9 @@ struct CountersView: View {
         ZStack {
             if vm.counters.isEmpty {
                 EssentialsContentUnavailableView(
-                    icon: Image(systemName: "timer"),
-                    title: "No Timers Available",
-                    description: "You haven't added any timers yet. Tap the '+' button to create a new one.",
+                    icon: Image(systemName: "minus.forwardslash.plus"),
+                    title: "No Counters Available",
+                    description: "You haven't added any counters yet. Tap the '+' button to create a new one.",
                     hasRetryButton: false
                 )
             } else {

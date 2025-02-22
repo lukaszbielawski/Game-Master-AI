@@ -1,5 +1,5 @@
 //
-//  TimerViewModel.swift
+//  TimersViewModel.swift
 //  Game-Master-AI
 //
 //  Created by Łukasz Bielawski on 20/02/2025.
@@ -10,7 +10,7 @@ import Essentials
 import SwiftUI
 
 @MainActor
-final class TimerViewModel: ObservableObject {
+final class TimersViewModel: ObservableObject {
     @Published var timers: [TimerModel] = [] {
         willSet {
             Task { @MainActor in
@@ -52,7 +52,8 @@ final class TimerViewModel: ObservableObject {
             subscription = Timer.publish(every: 0.2, on: .current, in: .default)
                 .autoconnect()
                 .sink { [weak self] _ in
-                    self?.objectWillChange.send()
+                    guard let self, !launchedTimersDict.isEmpty else { return }
+                    objectWillChange.send()
                 }
         }
     }
@@ -73,8 +74,13 @@ final class TimerViewModel: ObservableObject {
     }
 
     private func deactivateTimer(_ timer: TimerModel) {
-        pausedTimersDict[timer] = nil
-        launchedTimersDict[timer] = nil
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(5))
+            withAnimation {
+                guard getRemainingSeconds(timer) == 0 else { return }
+                resetTimer(timer)
+            }
+        }
     }
 
     func launchTimer(_ timer: TimerModel) {
@@ -86,6 +92,11 @@ final class TimerViewModel: ObservableObject {
         let newAdvance = pausedTimersDict[timer, default: TimeInterval(timer.initialDurationSeconds)]
         pausedTimersDict[timer] = nil
         launchedTimersDict[timer] = Date.now.advanced(by: newAdvance)
+    }
+
+    func resetTimer(_ timer: TimerModel) {
+        pausedTimersDict[timer] = nil
+        launchedTimersDict[timer] = nil
     }
 
     func pauseTimer(_ timer: TimerModel) {

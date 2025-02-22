@@ -1,5 +1,5 @@
 //
-//  TimerView.swift
+//  TimersView.swift
 //  Game-Master-AI
 //
 //  Created by Łukasz Bielawski on 20/02/2025.
@@ -8,10 +8,10 @@
 import Essentials
 import SwiftUI
 
-typealias TimerModel = TimerView.Model
+typealias TimerModel = TimersView.Model
 
-struct TimerView: View {
-    @StateObject var vm: TimerViewModel = .init()
+struct TimersView: View {
+    @StateObject var vm: TimersViewModel = .init()
     @ObservedObject var tabRouter = TabRouterState.shared
     @ObservedObject var router = RouterState.shared
     @Environment(\.colorScheme) var colorScheme
@@ -59,14 +59,14 @@ struct TimerView: View {
     }
 }
 
-extension TimerView {
+extension TimersView {
     struct Model: Hashable, Codable, Identifiable {
         var id: UUID = .init()
         var initialDurationSeconds: Int
     }
 
     struct TimerViewListCell: View {
-        @EnvironmentObject var vm: TimerViewModel
+        @EnvironmentObject var vm: TimersViewModel
 
         @Binding var model: Model
         let isInEditMode: Bool
@@ -102,8 +102,8 @@ extension TimerView {
         }
 
         var timerColor: Color {
+            guard !isPaused && isLaunched else { return .tintColor }
             let remainingSeconds = self.remainingSeconds
-            guard !isPaused else { return .tintColor }
 
             if remainingSeconds == 0 {
                 return .successColor
@@ -132,7 +132,9 @@ extension TimerView {
                 Spacer()
                 Button {
                     EssentialsHapticService.shared.play(.light)
-                    if isPaused {
+                    if remainingSeconds == 0 {
+                        vm.resetTimer(model)
+                    } else if isPaused {
                         vm.resumeTimer(model)
                     } else if isLaunched {
                         vm.pauseTimer(model)
@@ -164,11 +166,11 @@ extension TimerView {
                         }.compositingGroup()
                     }
                     .padding(4.0)
-                    .transition(.moveToTrailingAsymmetric.combined(with: .scale(scale: 0.0, anchor: .trailing) ))
+                    .transition(.moveToTrailingAsymmetric.combined(with: .scale(scale: 0.0, anchor: .trailing)))
                 } else {
                     Button {
                         EssentialsHapticService.shared.play(.light)
-                        vm.launchTimer(model)
+                        vm.resetTimer(model)
                     } label: {
                         ZStack {
                             Circle()
@@ -180,7 +182,7 @@ extension TimerView {
                         }.compositingGroup()
                     }
                     .padding(4.0)
-                    .transition(.moveToTrailingAsymmetric.combined(with: .scale(scale: 0.0, anchor: .trailing) ))
+                    .transition(.moveToTrailingAsymmetric.combined(with: .scale(scale: 0.0, anchor: .trailing)))
                 }
             }
             .frame(height: cellHeight)
@@ -189,7 +191,7 @@ extension TimerView {
     }
 
     struct TimerPickerView: View {
-        @EnvironmentObject var vm: TimerViewModel
+        @EnvironmentObject var vm: TimersViewModel
         let geo: GeometryProxy
         let hoursRange = Array(0...23)
         let minutesAndSecondsRange = Array(0...59)
@@ -207,9 +209,8 @@ extension TimerView {
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: min(geo.size.width * 0.3, 100), height: 150)
                     .onChange(of: vm.pickerHours) { _ in
-                                        EssentialsHapticService.shared.play(.light)
-                                    }
-
+                        EssentialsHapticService.shared.play(.light)
+                    }
 
                     Picker("Minutes", selection: $vm.pickerMinutes) {
                         ForEach(minutesAndSecondsRange, id: \.self) { minute in
@@ -220,9 +221,8 @@ extension TimerView {
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: min(geo.size.width * 0.3, 100), height: 150)
                     .onChange(of: vm.pickerMinutes) { _ in
-                                       EssentialsHapticService.shared.play(.light)
-                                   }
-
+                        EssentialsHapticService.shared.play(.light)
+                    }
 
                     Picker("Seconds", selection: $vm.pickerSeconds) {
                         ForEach(minutesAndSecondsRange, id: \.self) { second in
@@ -233,8 +233,8 @@ extension TimerView {
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: min(geo.size.width * 0.3, 100), height: 150)
                     .onChange(of: vm.pickerSeconds) { _ in
-                                        EssentialsHapticService.shared.play(.light)
-                                    }
+                        EssentialsHapticService.shared.play(.light)
+                    }
                     Spacer()
                 }
                 .padding()

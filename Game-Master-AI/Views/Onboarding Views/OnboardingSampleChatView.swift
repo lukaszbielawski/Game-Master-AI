@@ -30,7 +30,7 @@ struct OnboardingSampleChatView: View {
                 Task(priority: .userInitiated) { [weak vm] in
                     await vm?.sendMessage(content: messageContent)
                 }
-            } onNewConversationButtonTapped: {}
+            }
         }
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)

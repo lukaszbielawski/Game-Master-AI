@@ -43,6 +43,7 @@ final class ProcessInstructionAPIService: EssentialsAPIService {
                 { $0.timeoutInterval = 240.0 }
                     .validate()
                     .responseStream { [weak self] stream in
+                        guard let self else { return }
                         switch stream.event {
                         case .stream(let result):
                             if let rawChunk = String(data: result.get(), encoding: .utf8), !rawChunk.contains("[DONE]") {
@@ -54,7 +55,7 @@ final class ProcessInstructionAPIService: EssentialsAPIService {
 
                                 if chunk == "^" {
                                     onReceive(chunk)
-                                } else if let errorMessage = self?.getErrorMessageFromStream(chunk: chunk) {
+                                } else if let errorMessage = getErrorMessageFromStream(chunk: chunk) {
                                     continuation.resume(returning: Result.failure(.init(errorMessage)))
                                 } else {
                                     guard let jsonData = chunk.data(using: .utf8),
