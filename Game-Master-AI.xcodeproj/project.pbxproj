@@ -13,6 +13,7 @@
 		B20819C52D5F7ED70051ED9E /* OnboardingSampleChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20819C42D5F7ED70051ED9E /* OnboardingSampleChatView.swift */; };
 		B20819C72D5F7F4E0051ED9E /* OnboardingSampleChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20819C62D5F7F4E0051ED9E /* OnboardingSampleChatViewModel.swift */; };
 		B20819C92D5F81250051ED9E /* SampleCompletionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20819C82D5F81250051ED9E /* SampleCompletionsRequest.swift */; };
+		B20CD2692D6B9EB500850B89 /* encryption_aes_key in Resources */ = {isa = PBXBuildFile; fileRef = B20CD2682D6B9EB500850B89 /* encryption_aes_key */; };
 		B21B283F2D35457F00DA2FB4 /* D4.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283A2D35457F00DA2FB4 /* D4.dae */; };
 		B21B28402D35457F00DA2FB4 /* D6.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283B2D35457F00DA2FB4 /* D6.dae */; };
 		B21B28412D35457F00DA2FB4 /* D12.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283C2D35457F00DA2FB4 /* D12.dae */; };
@@ -82,6 +83,7 @@
 		B20819C42D5F7ED70051ED9E /* OnboardingSampleChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSampleChatView.swift; sourceTree = "<group>"; };
 		B20819C62D5F7F4E0051ED9E /* OnboardingSampleChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSampleChatViewModel.swift; sourceTree = "<group>"; };
 		B20819C82D5F81250051ED9E /* SampleCompletionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCompletionsRequest.swift; sourceTree = "<group>"; };
+		B20CD2682D6B9EB500850B89 /* encryption_aes_key */ = {isa = PBXFileReference; lastKnownFileType = text; path = encryption_aes_key; sourceTree = "<group>"; };
 		B213E2942D305A990076AF5B /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreKitConfiguration.storekit; path = "Game-Master-AI/StoreKitConfiguration.storekit"; sourceTree = "<group>"; };
 		B21B283A2D35457F00DA2FB4 /* D4.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D4.dae; sourceTree = "<group>"; };
 		B21B283B2D35457F00DA2FB4 /* D6.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D6.dae; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B223BE392D4AB5FC005CA9B3 /* encryption_public_key.pem */,
+				B20CD2682D6B9EB500850B89 /* encryption_aes_key */,
 			);
 			path = Keys;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */,
+				B20CD2692D6B9EB500850B89 /* encryption_aes_key in Resources */,
 				B2E14ACA2D2EAF1E00CA7D5A /* Preview Assets.xcassets in Resources */,
 				B2390B1E2D33DB5500310046 /* privacy_policy.txt in Resources */,
 				B223BE3A2D4AB5FC005CA9B3 /* encryption_public_key.pem in Resources */,
