@@ -14,13 +14,19 @@ import StoreKit
 final class ChatViewModel: ObservableObject {
     private let completionsAPI =
         EssentialsCompletionsAPIService()
-//    EssentialsFakeCompletionsAPIService()
+//        EssentialsFakeCompletionsAPIService()
     private let sessionAPI = EssentialsSessionsAPIService()
+    private let deviceAPI = EssentialsDevicesAPIService()
     private let audioCaptureService = EssentialsAudioCaptureService()
     private let boardGameModel: BoardGameModel
     private let toastProvider = EssentialsToastProvider.shared
+    private let subscriptionState = EssentialsSubscriptionState.shared
+    private let routerState = RouterState.shared
 
     @Published private(set) var messages: EssentialsLoadingState<[Essentials.EssentialsMessage], EssentialsCompletionsAPIServiceError> = .initial
+
+    @Published private(set) var remainingUserUsages: EssentialsLoadingState<[EssentialsUserUsageDTO], EssentialsDevicesAPIService.Error> = .initial
+
     @Published private(set) var streamedMessage: String? = nil
 
     @Published private(set) var volumeFractions: [CGFloat] = []
@@ -38,9 +44,64 @@ final class ChatViewModel: ObservableObject {
     If something isn’t specified in the rulebook, I’ll let you know. Let’s dive into \(boardGameModel.name)—what would you like to know?
     """)
 
+    var remainingMessages: Int {
+        if subscriptionState.isActive {
+            return min(
+                getRemainingUsages(for: .dailyLimitMessages),
+                getRemainingUsages(for: .monthlyLimitMessages)
+            )
+        } else {
+            return getRemainingUsages(for: .freeUsesMessages)
+        }
+    }
+
+    private func getRemainingUsages(for tier: TierType) -> Int {
+        guard let userUsages = remainingUserUsages.getValueIfSuccess() else { return 0 }
+        return userUsages.getRemainingUsages(for: tier)
+    }
+
+    func changeRemainingMessages(by value: Int) {
+        guard var userUsages = remainingUserUsages.getValueIfSuccess() else { return }
+
+        for i in userUsages.indices where [TierType.dailyLimitMessages.tierValue,
+                                           TierType.monthlyLimitMessages.tierValue,
+                                           subscriptionState.isActive
+                                               ? Int.max
+                                               : TierType.freeUsesMessages.tierValue]
+            .contains(userUsages[i].tier)
+        {
+            userUsages[i].remainingUses += value
+        }
+        remainingUserUsages = .success(userUsages)
+    }
+
+    func hasNonzeroRemainingUsages(for tier: TierType) -> Bool {
+        return getRemainingUsages(for: tier) > 0
+    }
+
+    var canAddMessages: Bool {
+        hasNonzeroRemainingUsages(for: .dailyLimitMessages) &&
+            hasNonzeroRemainingUsages(for: .monthlyLimitMessages) &&
+            (subscriptionState.isActive ? true : hasNonzeroRemainingUsages(for: .freeUsesMessages))
+    }
+
     init(boardGameModel: BoardGameModel) {
         self.boardGameModel = boardGameModel
         audioCaptureService.delegate = self
+        Task(priority: .userInitiated) {
+            await fetchAllMyRemainingUses()
+        }
+    }
+
+    func fetchAllMyRemainingUses() async {
+        remainingUserUsages = .loading
+        switch await deviceAPI.getAllUserUses() {
+        case .success(let response):
+            remainingUserUsages = .success(response.userUses)
+        case .failure(let error):
+            print(error)
+            remainingUserUsages = .failure(error: error)
+        }
     }
 
     func fetchAllMessages() async {
@@ -53,6 +114,26 @@ final class ChatViewModel: ObservableObject {
         case .failure(let error):
             messages = .failure(error: error.toEssentialsCompletionsAPIServiceError())
         }
+    }
+
+    func displayRefillDialogSheet() async -> Bool {
+        let didRefillSucceded = await withCheckedContinuation { [weak self] continuation in
+            guard let self else { return }
+            var wasResumed = false
+            routerState.currentSheetRoute = .refillDialogSheet { success in
+                guard !wasResumed else { return }
+                wasResumed = true
+                continuation.resume(returning: success)
+            }
+        }
+        if didRefillSucceded {
+            changeRemainingMessages(by: 3)
+        }
+        return didRefillSucceded
+    }
+
+    private func refillFreeCompletions() {
+        changeRemainingMessages(by: 3)
     }
 
     func resetConversation() async {
@@ -100,6 +181,11 @@ final class ChatViewModel: ObservableObject {
     }
 
     func sendWhisperRecording(m4aData: Data) async {
+        if !canAddMessages {
+            let hadRefilled = await tryToRefillAndContinueSending()
+            guard hadRefilled else { return }
+        }
+
         let base64EncodedAudio = m4aData.base64EncodedString()
 
         let request = BoardGameWhisperCompletionsRequest(
@@ -136,6 +222,10 @@ final class ChatViewModel: ObservableObject {
 
     func sendMessage(content: String) async {
         guard !content.isEmpty else { return }
+        if !canAddMessages {
+            let hadRefilled = await tryToRefillAndContinueSending()
+            guard hadRefilled else { return }
+        }
 
         let newMessage = EssentialsMessage(role: "user", content: content)
         messages.appendIfSuccess(newMessage)
@@ -151,6 +241,7 @@ final class ChatViewModel: ObservableObject {
                 }
             }
         )
+        changeRemainingMessages(by: -1)
         switch result {
         case .success(let message):
             messages.appendIfSuccess(message)
@@ -159,6 +250,21 @@ final class ChatViewModel: ObservableObject {
             let failureMessage = EssentialsMessage(role: "failure", content: error.message)
             messages.appendIfSuccess(failureMessage)
             print(error)
+        }
+    }
+
+    func tryToRefillAndContinueSending() async -> Bool {
+        if subscriptionState.isActive {
+            let toast: EssentialsToast
+            if hasNonzeroRemainingUsages(for: .monthlyLimitMessages) {
+                toast = .failure("You have reached monthly limit for messages. Please wait until the next cycle.")
+            } else {
+                toast = .failure("You have reached daily limit for messages. Please wait until the next cycle.")
+            }
+            toastProvider.enqueueToast(toast)
+            return false
+        } else {
+            return await displayRefillDialogSheet()
         }
     }
 }

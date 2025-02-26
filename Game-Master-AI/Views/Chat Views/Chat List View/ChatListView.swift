@@ -10,10 +10,11 @@ import Essentials
 import SwiftUI
 
 struct ChatListView: View {
-    @StateObject var vm: ChatTabCustomGamesViewModel = .init()
+    @StateObject var vm: ChatListViewModel = .init()
     @ObservedObject var router = RouterState.shared
     @ObservedObject var tabRouter = TabRouterState.shared
     @FocusState.Binding var isFocused: Bool
+    @ObservedObject private var subscriptionState = EssentialsSubscriptionState.shared
 
     private let toastProvider = EssentialsToastProvider.shared
 
@@ -53,8 +54,20 @@ struct ChatListView: View {
                     .padding(.bottom, 4.0)
                     .padding(.top, 24.0)
                     .onTapGesture {
-                        EssentialsHapticService.shared.play(.light)
-                        router.currentSheetRoute = .addBoardGameView
+                        if vm.canAddGame {
+                            EssentialsHapticService.shared.play(.light)
+                            router.currentSheetRoute = .addBoardGameView
+                        } else {
+                            EssentialsHapticService.shared.notify(.warning)
+                            let toast: EssentialsToast
+                            if subscriptionState.isActive {
+                                toast = .failure("You have reached monthly limit for new games. Please wait until the next cycle.")
+                            } else {
+                                toast = .failure("You cannot add any more games. Please purchase premium to continue.")
+                                router.push(.paywallView(hasTrial: false))
+                            }
+                            toastProvider.enqueueToast(toast)
+                        }
                     }
 
                 EssentialsListView(games.filter { game in
@@ -82,7 +95,7 @@ struct ChatListView: View {
                         }
                     },
                     message: {
-                        Text("You can add \(vm.remainingGamesThisMonth.getValueIfSuccess() ?? 0) more games this month.")
+                        Text("You can add \(vm.remainingGameCreations) more games this month.")
                     }
                 )
             }
@@ -110,10 +123,6 @@ struct ChatListView: View {
                     isInEditMode.toggle()
                 }
             })
-        }
-        .task(priority: .userInitiated) { [weak vm] in
-            await vm?.fetchMyCustomGames()
-            await vm?.fetchAllMyRemainingUses()
         }
         .onTapGesture {
             isFocused = false

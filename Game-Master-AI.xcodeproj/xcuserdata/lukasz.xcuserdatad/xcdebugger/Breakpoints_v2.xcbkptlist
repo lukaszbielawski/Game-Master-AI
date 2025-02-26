@@ -7,64 +7,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C32734D7-1AFE-4098-8711-0410044A44A5"
+            uuid = "BCEDB17E-8656-4D3C-92EF-F39F2E3DB9A2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/Network/Services/EssentialsDeviceService.swift"
+            filePath = "Game-Master-AI/Views/Chat Views/ChatView/Chat Refill Dialog Sheet View/ChatRefillDialogSheetView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "fetchDeviceId()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17677047-0B0F-4366-89A3-0FDC133272F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/Views/Chat Views/ChatView/Chat Refill Dialog Sheet View/ChatRefillDialogSheetView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8752A2AA-9494-4FFA-A738-D633BA4A47FD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/Views/Chat Views/ChatView/Chat Refill Dialog Sheet View/ChatRefillDialogSheetView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5868C6CE-E51B-40F1-B183-EC9A091FBFE2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/Views/Chat Views/ChatView/Chat Refill Dialog Sheet View/ChatRefillDialogSheetView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8551940-0A69-473B-8A0A-C3DE0ACA00F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "adDidDismissFullScreenContent(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F440E894-C47D-40EB-8D79-A45FE3BCE6BB"
-            shouldBeEnabled = "No"
+            uuid = "CFF9EA16-9CFA-4D3A-A453-7B9F45CCA66B"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/Network/Services/EssentialsDeviceService.swift"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "fetchDeviceId()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "EssentialsAdProvider"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9E1B070-0820-4580-A9AD-32A349B462CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "showAppOpenAd()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5D82C69E-B1BE-4288-9727-53E506F841E6"
+            uuid = "B07D5C01-B3DE-419D-8E1B-1E5BB9D6F985"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/Network/Services/EssentialsAuthorizationService.swift"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "fetchTransactionIdAndDeviceToken()"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "showAppOpenAd()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "821D5F61-9A29-45BC-A0DE-3A893CFC1273"
+            uuid = "F65B9D0F-6A01-4842-9449-13441F5126C3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/Network/Services/EssentialsAuthorizationService.swift"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdProvider.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "fetchTransactionIdAndDeviceToken()"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "showAppOpenAd()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6DBC3E9-4F8B-4B78-9E97-95D9E6E58D2C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Essentials/Sources/Essentials/Modules/AdMob/EssentialsAdProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "showAppOpenAd()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

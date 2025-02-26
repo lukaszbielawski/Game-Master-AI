@@ -45,6 +45,7 @@
 		B265ACC32D679DF200B4EAF3 /* TimersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC22D679DF200B4EAF3 /* TimersView.swift */; };
 		B265ACC62D679E1900B4EAF3 /* TimersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC52D679E1900B4EAF3 /* TimersViewModel.swift */; };
 		B265ACC82D67A0E600B4EAF3 /* TimersViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC72D67A0E600B4EAF3 /* TimersViewToolbar.swift */; };
+		B2703E082D6F220B00B32EFC /* ChatRefillDialogSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2703E072D6F220300B32EFC /* ChatRefillDialogSheetView.swift */; };
 		B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */; };
 		B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */; };
 		B27F46192D60A12C00D1566C /* OnboardingChatSampleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */; };
@@ -117,6 +118,7 @@
 		B265ACC22D679DF200B4EAF3 /* TimersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersView.swift; sourceTree = "<group>"; };
 		B265ACC52D679E1900B4EAF3 /* TimersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewModel.swift; sourceTree = "<group>"; };
 		B265ACC72D67A0E600B4EAF3 /* TimersViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersViewToolbar.swift; sourceTree = "<group>"; };
+		B2703E072D6F220300B32EFC /* ChatRefillDialogSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRefillDialogSheetView.swift; sourceTree = "<group>"; };
 		B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingChatSampleScreenView.swift; sourceTree = "<group>"; };
@@ -253,23 +255,24 @@
 			children = (
 				B2550A062D42910400906DFF /* GamesView.swift */,
 				B2550A0D2D42A93100906DFF /* ChatView */,
-				B2550A052D4290EF00906DFF /* ChatTabView */,
+				B2550A052D4290EF00906DFF /* Chat List View */,
 			);
 			path = "Chat Views";
 			sourceTree = "<group>";
 		};
-		B2550A052D4290EF00906DFF /* ChatTabView */ = {
+		B2550A052D4290EF00906DFF /* Chat List View */ = {
 			isa = PBXGroup;
 			children = (
 				B2550A0E2D42A94100906DFF /* ChatListView.swift */,
 				B2EEA05D2D509EEF00F8745A /* ChatAddNewGameView */,
 			);
-			path = ChatTabView;
+			path = "Chat List View";
 			sourceTree = "<group>";
 		};
 		B2550A0D2D42A93100906DFF /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
+				B2703E062D6F21DB00B32EFC /* Chat Refill Dialog Sheet View */,
 				B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */,
 			);
 			path = ChatView;
@@ -328,6 +331,14 @@
 				B265ACC52D679E1900B4EAF3 /* TimersViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		B2703E062D6F21DB00B32EFC /* Chat Refill Dialog Sheet View */ = {
+			isa = PBXGroup;
+			children = (
+				B2703E072D6F220300B32EFC /* ChatRefillDialogSheetView.swift */,
+			);
+			path = "Chat Refill Dialog Sheet View";
 			sourceTree = "<group>";
 		};
 		B29A05982D539AD8000058C6 /* LoadingView */ = {
@@ -578,6 +589,7 @@
 				B2EDD09C2D5E09410068F37A /* PaywallView.swift in Sources */,
 				B2550A072D42910400906DFF /* GamesView.swift in Sources */,
 				B2EEA0612D509F9F00F8745A /* ChatAddNewGameView+MediaTypePickerView.swift in Sources */,
+				B2703E082D6F220B00B32EFC /* ChatRefillDialogSheetView.swift in Sources */,
 				B22FCE232D6342C000241F25 /* PaywallViewModel.swift in Sources */,
 				B2550A0F2D42A94100906DFF /* ChatListView.swift in Sources */,
 				B2390B242D3405D600310046 /* DiceType.swift in Sources */,

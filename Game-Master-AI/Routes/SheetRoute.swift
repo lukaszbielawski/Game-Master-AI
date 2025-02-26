@@ -16,6 +16,7 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
     case mail
     case pdfFilePickerView(_ vm: ChatAddNewGameViewModel)
     case addCounterView(_ vm: CountersViewModel)
+    case refillDialogSheet(onDismiss: (Bool) -> Void)
 
     var body: some View {
         switch self {
@@ -43,6 +44,8 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
         case .addCounterView(let vm):
             CountersView.AddNewCounterView()
                 .environmentObject(vm)
+        case .refillDialogSheet(let onDismiss):
+            ChatRefillDialogSheetView<AnyView>(onDismiss: onDismiss)
         }
     }
 
@@ -64,6 +67,8 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
             6
         case .addCounterView:
             7
+        case .refillDialogSheet:
+            8
         }
     }
 }

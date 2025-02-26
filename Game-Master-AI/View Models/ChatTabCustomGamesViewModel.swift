@@ -1,5 +1,5 @@
 //
-//  ChatTabCustomGamesViewModel.swift
+//  ChatListViewModel.swift
 //  Game-Master-AI
 //
 //  Created by Łukasz Bielawski on 23/01/2025.
@@ -11,19 +11,17 @@ import Foundation
 import SwiftUI
 
 @MainActor
-final class ChatTabCustomGamesViewModel: ObservableObject {
+final class ChatListViewModel: ObservableObject {
     @Published var games: EssentialsLoadingState<[BoardGameModel], EssentialsSubjectsAPIService.Error> = .initial
     @Published private(set) var filterPredicate: ((BoardGameModel) throws -> Bool)? = nil
     private let searchQuerySubject = PassthroughSubject<String, Never>()
-    @Published var remainingGamesThisMonth: EssentialsLoadingState<Int, EssentialsDevicesAPIService.Error> = .initial
+    @Published private(set) var remainingUserUsages: EssentialsLoadingState<[EssentialsUserUsageDTO], EssentialsDevicesAPIService.Error> = .initial
 
     private var cancellables: Set<AnyCancellable> = []
 
     private let boardGameAPI = EssentialsSubjectsAPIService()
     private let deviceAPI = EssentialsDevicesAPIService()
     private let subscriptionState = EssentialsSubscriptionState.shared
-
-    private let fileName: String = "board_games"
 
     func searchQueryChanged(newValue: String) {
         searchQuerySubject.send(newValue)
@@ -33,7 +31,28 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
         games.removeIfSuccess(boardGame)
     }
 
+    var remainingGameCreations: Int {
+        if subscriptionState.isActive {
+            guard let monthlyLimitMessagesDTO = remainingUserUsages.getValueIfSuccess()?
+                .first(where: { $0.tier == TierType.monthlyLimitNewGames.tierValue }) else { return 0 }
+            return monthlyLimitMessagesDTO.remainingUses
+        } else {
+            guard let monthlyLimitMessagesDTO = remainingUserUsages.getValueIfSuccess()?
+                .first(where: { $0.tier == TierType.freeUsesNewGames.tierValue }) else { return 0 }
+            return monthlyLimitMessagesDTO.remainingUses
+        }
+    }
+
+    var canAddGame: Bool {
+        print("Remaining games \(remainingGameCreations)")
+        return remainingGameCreations > 0
+    }
+
     init() {
+        Task(priority: .userInitiated) {
+            await fetchMyCustomGames()
+            await fetchAllMyRemainingUses()
+        }
         searchQuerySubject
             .sink { [weak self] query in
                 self?.search(query: query)
@@ -53,20 +72,13 @@ final class ChatTabCustomGamesViewModel: ObservableObject {
     }
 
     func fetchAllMyRemainingUses() async {
-        remainingGamesThisMonth = .loading
+        remainingUserUsages = .loading
         switch await deviceAPI.getAllUserUses() {
         case .success(let response):
-            if let userUsage = response.userUses.filter({ userUsage in
-                userUsage.tier == (subscriptionState.isActive ? TierType.monthlyLimitNewGames.tierValue : TierType.freeUsesNewGames.tierValue)
-            }).first?.remainingUses {
-                remainingGamesThisMonth = .success(userUsage)
-            } else {
-                remainingGamesThisMonth = .failure(error: .init(nil))
-            }
-
+            remainingUserUsages = .success(response.userUses)
         case .failure(let error):
             print(error)
-            remainingGamesThisMonth = .failure(error: error)
+            remainingUserUsages = .failure(error: error)
         }
     }
 
