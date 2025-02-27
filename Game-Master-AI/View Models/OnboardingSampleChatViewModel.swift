@@ -29,6 +29,8 @@ final class OnboardingSampleChatViewModel: ObservableObject {
         [Button]How to set up the game[/Button]
         [Button]Rules for winning or ending the game[/Button]
 
+    **You can ask your questions in any language**, and I’ll do my best to assist you!
+    
     If something isn’t specified in the rulebook, I’ll let you know. Let’s dive into \(boardGameName)—what would you like to know?
     """)
 

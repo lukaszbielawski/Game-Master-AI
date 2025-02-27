@@ -92,7 +92,9 @@ final class PaywallViewModel: ObservableObject {
         case .success(let success):
             let fetchedProducts = success.sorted(by: { $0.price > $1.price })
             products = .success(fetchedProducts)
-            selectedProduct = fetchedProducts.first
+            withAnimation(.easeOut(duration: 1.00)) {
+                selectedProduct = fetchedProducts.first
+            }
         case .failure(let failure):
             products = .failure(error: failure)
         }

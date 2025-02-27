@@ -18,6 +18,8 @@ struct OnboardingView: View {
 
     @ObservedObject var launchDetector = EssentialsLaunchDetector.shared
 
+    @State private var isTransitioningToPaywall: Bool = false
+
     var body: some View {
         ZStack {
             if let last = vm.navigationStack.last, last != .paywall {
@@ -27,7 +29,10 @@ struct OnboardingView: View {
                         .environmentObject(vm)
 
                     Spacer()
-                    continueButton()
+                    if let onboardingFrame {
+                        continueButton()
+                            .padding(.bottom, isTransitioningToPaywall ? 0 : 32)
+                    }
                 }
 
                 .toolbar {
@@ -47,6 +52,13 @@ struct OnboardingView: View {
             } else {
                 vm.currentScreenBody(.paywall)
                     .transition(vm.transition)
+            }
+
+        }.onChange(of: vm.navigationStack.last) { newValue in
+            if newValue == .paywall {
+                withAnimation {
+                    isTransitioningToPaywall = true
+                }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -69,7 +81,6 @@ extension OnboardingView {
                     routerState.push(.paywallView(hasTrial: true))
                 }
             }
-            .padding(.bottom, 32.0)
             .disabled(isOnboardingContinueButtonDisabled)
             .opacity(isContinueButtonShown ? 1.0 : 0.0)
             .task {

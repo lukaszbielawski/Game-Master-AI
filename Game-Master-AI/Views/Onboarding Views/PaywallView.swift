@@ -177,7 +177,7 @@ struct PaywallView: View {
                             }
                         }
                     }
-                    .transition(.move(edge: .bottom).animation(.easeOut(duration: 0.65)))
+                    .transition(.move(edge: .bottom).animation(.easeOut(duration: 1.00)))
                 }
             }
         }
