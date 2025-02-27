@@ -127,7 +127,7 @@ final class ChatViewModel: ObservableObject {
             }
         }
         if didRefillSucceded {
-            changeRemainingMessages(by: 3)
+            refillFreeCompletions()
         }
         return didRefillSucceded
     }
@@ -181,9 +181,9 @@ final class ChatViewModel: ObservableObject {
     }
 
     func sendWhisperRecording(m4aData: Data) async {
-        if !canAddMessages {
-            let hadRefilled = await tryToRefillAndContinueSending()
-            guard hadRefilled else { return }
+        guard canAddMessages else {
+            await tryToRefill()
+            return
         }
 
         let base64EncodedAudio = m4aData.base64EncodedString()
@@ -222,9 +222,9 @@ final class ChatViewModel: ObservableObject {
 
     func sendMessage(content: String) async {
         guard !content.isEmpty else { return }
-        if !canAddMessages {
-            let hadRefilled = await tryToRefillAndContinueSending()
-            guard hadRefilled else { return }
+        guard canAddMessages else {
+            await tryToRefill()
+            return
         }
 
         let newMessage = EssentialsMessage(role: "user", content: content)
@@ -253,7 +253,7 @@ final class ChatViewModel: ObservableObject {
         }
     }
 
-    func tryToRefillAndContinueSending() async -> Bool {
+    func tryToRefill() async {
         if subscriptionState.isActive {
             let toast: EssentialsToast
             if hasNonzeroRemainingUsages(for: .monthlyLimitMessages) {
@@ -262,9 +262,8 @@ final class ChatViewModel: ObservableObject {
                 toast = .failure("You have reached daily limit for messages. Please wait until the next cycle.")
             }
             toastProvider.enqueueToast(toast)
-            return false
         } else {
-            return await displayRefillDialogSheet()
+            await displayRefillDialogSheet()
         }
     }
 }

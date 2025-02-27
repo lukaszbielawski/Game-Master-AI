@@ -42,8 +42,12 @@ struct ChatRefillDialogSheetView<Content: View>: View {
                     } else {
                         router.currentSheetRoute = .none
                         Task { @MainActor in
-                            await adProvider.showRewardedAd {
-                                onDismiss(true)
+                            await adProvider.showRewardedAd { succeded in
+                                if !succeded {
+                                    let toast: EssentialsToast = .failure("Could not load ad. Please ensure you have internet connection")
+                                    EssentialsToastProvider.shared.enqueueToast(toast)
+                                }
+                                onDismiss(succeded)
                             }
                         }
                     }
@@ -51,8 +55,10 @@ struct ChatRefillDialogSheetView<Content: View>: View {
                 .padding(.top, 16.0)
                 Spacer()
             }
-        }.onDisappear {
-            onDismiss(false)
+        }.onReceive(adProvider.adDidDismissSubject) { adType in
+            if adType == .rewardedAd {
+                onDismiss(false)
+            }
         }
         .task(priority: .userInitiated) {
             await adProvider.loadRewardedAd()

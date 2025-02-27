@@ -16,7 +16,7 @@ struct ChatView: View {
 
     public init(boardGameModel: BoardGameModel) {
         self.boardGameModel = boardGameModel
-        self._vm = StateObject(wrappedValue: ChatViewModel(boardGameModel: boardGameModel))
+        self._vm = StateObject(wrappedValue: .init(boardGameModel: boardGameModel))
     }
 
     var body: some View {
@@ -57,6 +57,14 @@ struct ChatView: View {
                 Task(priority: .userInitiated) { [weak vm] in
                     guard let vm else { return }
                     await vm.cancelRecording()
+                }
+            } onTextFieldBarTapped: { isFocused in
+                if !vm.canAddMessages {
+                    print(vm.remainingMessages, vm.remainingUserUsages.getValueIfSuccess())
+                    isFocused.wrappedValue = false
+                    Task { @MainActor in
+                        await vm.tryToRefill()
+                    }
                 }
             }
         } failureView: { _ in

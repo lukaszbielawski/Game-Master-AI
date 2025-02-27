@@ -17,14 +17,14 @@ typealias TabRouterState = EssentialsTabRouterState<TabRoute, TabToolbarRoute>
 struct Game_Master_AIApp: App {
     var body: some Scene {
         WindowGroup {
-            EssentialsApp {
-                EssentialsFirebaseRouter {
-                    EssentialsAdMobRouter {
-                        EssentialsRouter(navigationRouteType: NavigationRoute.self,
-                                         sheetRouteType: SheetRoute.self)
-                        {
-                            EssentialsTabRouter(tabRouteType: TabRoute.self, tabToolbarRouteType: TabToolbarRoute.self)
-                        }
+            EssentialsApp(hasAds: true, hasAnalytics: true) {
+                EssentialsRouter(navigationRouteType: NavigationRoute.self,
+                                 sheetRouteType: SheetRoute.self)
+                {
+                    EssentialsAdMobRouter(navigationRouteType: NavigationRoute.self,
+                                          sheetRouteType: SheetRoute.self)
+                    {
+                        EssentialsTabRouter(tabRouteType: TabRoute.self, tabToolbarRouteType: TabToolbarRoute.self)
                     }
                 }
             }
