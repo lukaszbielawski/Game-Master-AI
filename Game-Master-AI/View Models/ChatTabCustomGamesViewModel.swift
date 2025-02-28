@@ -23,12 +23,20 @@ final class ChatListViewModel: ObservableObject {
     private let deviceAPI = EssentialsDevicesAPIService()
     private let subscriptionState = EssentialsSubscriptionState.shared
 
+    private let toastProvider = EssentialsToastProvider.shared
+
     func searchQueryChanged(newValue: String) {
         searchQuerySubject.send(newValue)
     }
 
-    func deleteBoardGame(_ boardGame: BoardGameModel) {
-        games.removeIfSuccess(boardGame)
+    func deleteBoardGame(_ boardGame: BoardGameModel) async {
+        switch await boardGameAPI.deleteSubject(subjectId: boardGame.id) {
+        case .success(let success):
+            games.removeIfSuccess(boardGame)
+        case .failure(let failure):
+            toastProvider.enqueueToast(.init(fromError: failure))
+        }
+
     }
 
     var remainingGameCreations: Int {

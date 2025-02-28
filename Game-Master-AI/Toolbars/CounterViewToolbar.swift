@@ -8,21 +8,11 @@
 import SwiftUI
 
 struct CounterViewToolbar: ToolbarContent {
-    let onTapTopBarTrailingButton: () -> ()
-
     var body: some ToolbarContent {
         ToolbarItem(placement: .principal) {
             Text("Counters")
+                .fontWeight(.semibold)
                 .transition(.normalOpacityEaseInOut)
-        }
-        ToolbarItem(placement: .topBarTrailing) {
-            Button {
-                onTapTopBarTrailingButton()
-            } label: {
-                Image(systemName: "plus")
-                    .foregroundStyle(Color.accentColor)
-            }
-            .transition(.normalOpacityEaseInOut)
         }
     }
 }

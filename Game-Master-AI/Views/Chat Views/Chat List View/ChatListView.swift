@@ -44,12 +44,14 @@ struct ChatListView: View {
                         vm.searchQueryChanged(newValue: newValue)
                     }
                 Label("Add new game", systemImage: "plus")
-                    .modifier(EssentialsListCellModifier())
                     .foregroundStyle(Color(.accent))
+                    .padding(.vertical, 9.0)
+                    .modifier(EssentialsListCellModifier())
                     .background {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.listElementBackgroundColor)
                     }
+
                     .padding(.horizontal, 24.0)
                     .padding(.bottom, 4.0)
                     .padding(.top, 24.0)
@@ -70,19 +72,22 @@ struct ChatListView: View {
                         }
                     }
 
-                EssentialsListView(games.filter { game in
+                let filteredGames = games.filter { game in
                     guard let filterPredicate = vm.filterPredicate else { return true }
                     guard let predicateResult = try? filterPredicate(game), predicateResult else { return false }
                     return true
-                }, isInEditMode: $isInEditMode) { boardGame in
+                }
+
+                EssentialsListView(filteredGames) { _, boardGame in
                     Text(boardGame.name)
-                } onCellTaped: { boardGame in
+                        .swipeActionDelete(model: boardGame) { boardGameToDelete in
+                            EssentialsHapticService.shared.notify(.warning)
+                            self.boardGameToDelete = boardGameToDelete
+                        }
+                } onCellTapped: { boardGame in
                     isFocused = false
                     EssentialsHapticService.shared.play(.soft)
                     router.push(.chatView(boardGame))
-                } onCellDeleteTapped: { boardGame in
-                    EssentialsHapticService.shared.notify(.warning)
-                    boardGameToDelete = boardGame
                 }
                 .alert(
                     "Delete \(boardGameToDelete?.name ?? "the game")?",
@@ -91,7 +96,9 @@ struct ChatListView: View {
                         Button("Cancel", role: .cancel) {}
                         Button("Delete", role: .destructive) { [weak vm] in
                             guard let boardGameToDelete else { return }
-                            vm?.deleteBoardGame(boardGameToDelete)
+                            Task { @MainActor in
+                                await vm?.deleteBoardGame(boardGameToDelete)
+                            }
                         }
                     },
                     message: {
@@ -117,12 +124,7 @@ struct ChatListView: View {
             }
         }
         .onAppear {
-            tabRouter.currentToolbarRoute = .chatListView(isInEditMode: $isInEditMode, onTapTopBarTrailingButton: {
-                EssentialsHapticService.shared.play(.medium)
-                withAnimation {
-                    isInEditMode.toggle()
-                }
-            })
+            tabRouter.currentToolbarRoute = .chatListView
         }
         .onTapGesture {
             isFocused = false

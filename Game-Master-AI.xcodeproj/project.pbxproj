@@ -49,6 +49,10 @@
 		B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */; };
 		B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */; };
 		B27F46192D60A12C00D1566C /* OnboardingChatSampleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */; };
+		B287A4452D71D00800602E8A /* CountersView+CounterViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287A4442D71D00800602E8A /* CountersView+CounterViewListCell.swift */; };
+		B287A4472D71D03800602E8A /* CountersView+AddNewCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287A4462D71D03800602E8A /* CountersView+AddNewCounterView.swift */; };
+		B287A4492D71D07100602E8A /* TimersView+TimerViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287A4482D71D07100602E8A /* TimersView+TimerViewListCell.swift */; };
+		B287A44B2D71D09000602E8A /* TimersView+TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287A44A2D71D09000602E8A /* TimersView+TimerPickerView.swift */; };
 		B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */; };
 		B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */; };
 		B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */; };
@@ -122,6 +126,10 @@
 		B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingChatSampleScreenView.swift; sourceTree = "<group>"; };
+		B287A4442D71D00800602E8A /* CountersView+CounterViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountersView+CounterViewListCell.swift"; sourceTree = "<group>"; };
+		B287A4462D71D03800602E8A /* CountersView+AddNewCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountersView+AddNewCounterView.swift"; sourceTree = "<group>"; };
+		B287A4482D71D07100602E8A /* TimersView+TimerViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimersView+TimerViewListCell.swift"; sourceTree = "<group>"; };
+		B287A44A2D71D09000602E8A /* TimersView+TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimersView+TimerPickerView.swift"; sourceTree = "<group>"; };
 		B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGame+LoadingView.swift"; sourceTree = "<group>"; };
 		B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView.LoadingView+MemoryView.swift"; sourceTree = "<group>"; };
 		B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+CameraPickerView.swift"; sourceTree = "<group>"; };
@@ -302,8 +310,10 @@
 		B265ACB62D674B5400B4EAF3 /* Counter Views */ = {
 			isa = PBXGroup;
 			children = (
-				B265ACBC2D674DD200B4EAF3 /* View Models */,
+				B287A4462D71D03800602E8A /* CountersView+AddNewCounterView.swift */,
+				B287A4442D71D00800602E8A /* CountersView+CounterViewListCell.swift */,
 				B265ACB72D674B6800B4EAF3 /* CountersView.swift */,
+				B265ACBC2D674DD200B4EAF3 /* View Models */,
 			);
 			path = "Counter Views";
 			sourceTree = "<group>";
@@ -319,6 +329,8 @@
 		B265ACC12D679DDB00B4EAF3 /* Timers Views */ = {
 			isa = PBXGroup;
 			children = (
+				B287A44A2D71D09000602E8A /* TimersView+TimerPickerView.swift */,
+				B287A4482D71D07100602E8A /* TimersView+TimerViewListCell.swift */,
 				B265ACC42D679E1500B4EAF3 /* View Models */,
 				B265ACC22D679DF200B4EAF3 /* TimersView.swift */,
 			);
@@ -561,6 +573,7 @@
 				B22E9D562D4FB3BF00BA1C28 /* ChatAddNewGameView.swift in Sources */,
 				B2390B292D3428C300310046 /* ArrayExtensions.swift in Sources */,
 				B2600AEF2D33305A0096E553 /* DicesView.swift in Sources */,
+				B287A44B2D71D09000602E8A /* TimersView+TimerPickerView.swift in Sources */,
 				B206F2B32D57C1A800DAD789 /* TabToolbarRoute.swift in Sources */,
 				B2EEA0672D50DE5300F8745A /* SheetRoute.swift in Sources */,
 				B265ACC62D679E1900B4EAF3 /* TimersViewModel.swift in Sources */,
@@ -576,6 +589,7 @@
 				B27F46192D60A12C00D1566C /* OnboardingChatSampleScreenView.swift in Sources */,
 				B2EDD09E2D5E17860068F37A /* OnboardingViewModel.swift in Sources */,
 				B2EDD0A92D5E95E10068F37A /* OnboardingForthScreenView.swift in Sources */,
+				B287A4492D71D07100602E8A /* TimersView+TimerViewListCell.swift in Sources */,
 				B2550A162D42AC4600906DFF /* GameModel.swift in Sources */,
 				B206F2AF2D57A1F100DAD789 /* TierType.swift in Sources */,
 				B265ACC32D679DF200B4EAF3 /* TimersView.swift in Sources */,
@@ -606,9 +620,11 @@
 				B234D38A2D553E710041ED4C /* ProcessInstructionRequest.swift in Sources */,
 				B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */,
 				B2EEA0632D50A14200F8745A /* ChatAddNewGameView+PhotoPickerView.swift in Sources */,
+				B287A4472D71D03800602E8A /* CountersView+AddNewCounterView.swift in Sources */,
 				B2E64F122D59687C00EDF1CF /* ChatListViewToolbar.swift in Sources */,
 				B2E64F0E2D59683500EDF1CF /* ChatViewFailureToolbar.swift in Sources */,
 				B265ACB82D674B6800B4EAF3 /* CountersView.swift in Sources */,
+				B287A4452D71D00800602E8A /* CountersView+CounterViewListCell.swift in Sources */,
 				B265ACC02D67856200B4EAF3 /* ColorExtensions.swift in Sources */,
 				B265ACC82D67A0E600B4EAF3 /* TimersViewToolbar.swift in Sources */,
 			);

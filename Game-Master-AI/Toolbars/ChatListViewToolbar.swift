@@ -8,22 +8,11 @@
 import SwiftUI
 
 struct ChatListViewToolbar: ToolbarContent {
-    @Binding var isInEditMode: Bool
-    let onTapTopBarTrailingButton: () -> ()
-
     var body: some ToolbarContent {
         ToolbarItem(placement: .principal) {
             Text("Board games")
+                .fontWeight(.semibold)
                 .transition(.normalOpacityEaseInOut)
-        }
-        ToolbarItem(placement: .topBarTrailing) {
-            Button {
-                onTapTopBarTrailingButton()
-            } label: {
-                Image(systemName: isInEditMode ? "arrowshape.turn.up.backward.fill" : "pencil")
-                    .foregroundStyle(Color.accentColor)
-            }
-            .transition(.normalOpacityEaseInOut)
         }
     }
 }

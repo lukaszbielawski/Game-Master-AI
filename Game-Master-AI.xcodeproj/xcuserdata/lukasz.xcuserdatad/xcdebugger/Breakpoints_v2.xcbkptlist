@@ -199,32 +199,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "08E5521C-EF4B-4056-A630-77B8C6877DF3"
+            uuid = "90202E64-75B2-42EB-8C96-724273B10DAE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/Network/API Services/EssentialsSessionsAPIService.swift"
+            filePath = "Game-Master-AI/Views/Chat Views/Chat List View/ChatListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getSessionMessages(sessionId:deployEnvironment:)"
-            landmarkType = "7">
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5BA70BB5-8598-4425-A299-09438D9DC10C"
+            uuid = "A00AD798-51D9-4BBD-BB42-65D8CCEAC965"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Essentials/Sources/Essentials/Modules/Network/API Services/EssentialsSessionsAPIService.swift"
+            filePath = "Game-Master-AI/Views/Chat Views/Chat List View/ChatListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getSessionMessages(sessionId:deployEnvironment:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "276E12DF-EFC9-4393-A8A5-181333C74ECE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Game-Master-AI/View Models/ChatTabCustomGamesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "deleteBoardGame(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
