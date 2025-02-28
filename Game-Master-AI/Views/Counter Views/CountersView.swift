@@ -26,25 +26,6 @@ struct CountersView: View {
                     hasRetryButton: false
                 )
             } else {
-//                List {
-//                    ForEach(Array($vm.counters.enumerated()), id: \.0) { index, $counter in
-//                        VStack(spacing: 0.0) {
-//                            Divider()
-//                            CounterViewListCell(model: $counter) { counterToDelete in
-//                                vm.deleteCounter(counterToDelete)
-//                            }
-//                            .contentShape(Rectangle())
-//                            if index == vm.counters.count - 1 {
-//                                Divider()
-//                            }
-//                        }
-//                    }
-//
-//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-//                }
-//                .listStyle(.plain)
-//
-//                .listRowSeparator(.hidden)
                 EssentialsPlainList($vm.counters) { _, elem in
                     CounterViewListCell(model: elem)
                         .swipeActionDelete(model: elem.wrappedValue) { elemToDelete in
@@ -55,7 +36,10 @@ struct CountersView: View {
         }
         .padding(.top, 16)
         .onAppear {
-            tabRouter.currentToolbarRoute
+            tabRouter.currentToolbarRoute = .counters {
+                EssentialsHapticService.shared.play(.medium)
+                router.currentSheetRoute = .addCounterView(vm)
+            }
         }
     }
 }

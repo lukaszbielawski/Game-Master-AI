@@ -768,6 +768,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We do not need your local network usage, so do as you wish";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to enable voice input for chat messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use your data to show you personalized ads and improve your experience.";
@@ -807,6 +808,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We do not need your local network usage, so do as you wish";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to enable voice input for chat messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use your data to show you personalized ads and improve your experience.";

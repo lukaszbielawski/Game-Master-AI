@@ -11,7 +11,7 @@ import SwiftUI
 enum TabToolbarRoute: EssentialsTabToolbarRouteProtocol {
     case diceTab
     case chatListView
-    case counters
+    case counters(onTapTopBarTrailingButton: () -> Void)
     case timers
 
     var toolbarBody: some ToolbarContent {
@@ -20,8 +20,8 @@ enum TabToolbarRoute: EssentialsTabToolbarRouteProtocol {
             DiceTabToolbar()
         case .chatListView:
             ChatListViewToolbar()
-        case .counters:
-            CounterViewToolbar()
+        case .counters(let onTapTopBarTrailingButton):
+            CounterViewToolbar(onTapTopBarTrailingButton: onTapTopBarTrailingButton)
         case .timers:
             TimersViewToolbar()
         }

@@ -35,7 +35,7 @@ final class ProcessInstructionAPIService: EssentialsAPIService {
 
         let returnResult: Result<EssentialsSubjectDTO, Error>? =
             await withCheckedContinuation { continuation in
-                AF.streamRequest(url,
+                session.streamRequest(url,
                                  method: .post,
                                  parameters: request,
                                  encoder: JSONParameterEncoder(),

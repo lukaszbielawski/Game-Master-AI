@@ -9,6 +9,7 @@ import Combine
 import Essentials
 import Foundation
 import StoreKit
+import SwiftUI
 
 @MainActor
 final class ChatViewModel: ObservableObject {
@@ -40,7 +41,7 @@ final class ChatViewModel: ObservableObject {
 
     [Button]How to set up the game[/Button].
     [Button]Rules for winning or ending the game[/Button]
-    
+
     **You can ask your questions in any language**, and I’ll do my best to assist you!
 
     If something isn’t specified in the rulebook, I’ll let you know. Let’s dive into \(boardGameModel.name)—what would you like to know?
@@ -118,7 +119,7 @@ final class ChatViewModel: ObservableObject {
         }
     }
 
-    func displayRefillDialogSheet() async -> Bool {
+    func displayRefillDialogSheet() async {
         let didRefillSucceded = await withCheckedContinuation { [weak self] continuation in
             guard let self else { return }
             var wasResumed = false
@@ -131,7 +132,6 @@ final class ChatViewModel: ObservableObject {
         if didRefillSucceded {
             refillFreeCompletions()
         }
-        return didRefillSucceded
     }
 
     private func refillFreeCompletions() {
@@ -150,34 +150,54 @@ final class ChatViewModel: ObservableObject {
 
     func startRecording() async {
         guard recordingState == .stopped else { return }
-        recordingState = .startingToRecord
+        withAnimation(.easeInOut(duration: 0.35)) {
+            recordingState = .startingToRecord
+        }
+
         let result = await audioCaptureService.startRecordingAudio()
         switch result {
         case .success(let success):
-            recordingState = .recording
+
+            withAnimation(.easeInOut(duration: 0.35)) {
+                recordingState = .recording
+            }
+
         case .failure(let error):
-            recordingState = .stopped
+            withAnimation(.easeInOut(duration: 0.35)) {
+                recordingState = .stopped
+            }
             print(error)
         }
     }
 
     func cancelRecording() async {
         guard recordingState == .recording else { return }
-        recordingState = .stoppingToRecord
+        withAnimation(.easeInOut(duration: 0.35)) {
+            recordingState = .stoppingToRecord
+        }
         audioCaptureService.cancelRecording()
-        recordingState = .stopped
+        withAnimation(.easeInOut(duration: 0.35)) {
+            recordingState = .stopped
+        }
     }
 
     func stopRecording() async {
         guard recordingState == .recording else { return }
-        recordingState = .stoppingToRecord
+        withAnimation(.easeInOut(duration: 0.35)) {
+            recordingState = .stoppingToRecord
+        }
+
         let result = await audioCaptureService.stopRecording()
         switch result {
         case .success(let m4aData):
             await sendWhisperRecording(m4aData: m4aData)
             recordingState = .stopped
+            objectWillChange.send()
         case .failure(let error):
-            recordingState = .recording
+            withAnimation(.easeInOut(duration: 0.35)) {
+                recordingState = .recording
+            }
+
             print(error)
         }
     }
@@ -249,6 +269,7 @@ final class ChatViewModel: ObservableObject {
             messages.appendIfSuccess(message)
             streamedMessage = nil
         case .failure(let error):
+            streamedMessage = nil
             let failureMessage = EssentialsMessage(role: "failure", content: error.message)
             messages.appendIfSuccess(failureMessage)
             print(error)
@@ -268,6 +289,11 @@ final class ChatViewModel: ObservableObject {
             await displayRefillDialogSheet()
         }
     }
+
+    func cleanupAfterRecording() {
+        volumeFractions.removeAll()
+        recordingDurationSeconds = 0
+    }
 }
 
 extension ChatViewModel: EssentialsAudioCaptureDelegate {
@@ -281,6 +307,6 @@ extension ChatViewModel: EssentialsAudioCaptureDelegate {
     }
 
     func onCancelUpdatingMeter() {
-        volumeFractions.removeAll()
+        cleanupAfterRecording()
     }
 }

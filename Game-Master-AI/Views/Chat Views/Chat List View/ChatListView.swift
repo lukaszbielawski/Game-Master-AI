@@ -51,9 +51,7 @@ struct ChatListView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.listElementBackgroundColor)
                     }
-
                     .padding(.horizontal, 24.0)
-                    .padding(.bottom, 4.0)
                     .padding(.top, 24.0)
                     .onTapGesture {
                         if vm.canAddGame {
@@ -78,7 +76,7 @@ struct ChatListView: View {
                     return true
                 }
 
-                EssentialsListView(filteredGames) { _, boardGame in
+                EssentialsList(filteredGames) { _, boardGame in
                     Text(boardGame.name)
                         .swipeActionDelete(model: boardGame) { boardGameToDelete in
                             EssentialsHapticService.shared.notify(.warning)
@@ -88,6 +86,8 @@ struct ChatListView: View {
                     isFocused = false
                     EssentialsHapticService.shared.play(.soft)
                     router.push(.chatView(boardGame))
+                }.refreshable { [weak vm] in
+                    await vm?.fetchMyCustomGames()
                 }
                 .alert(
                     "Delete \(boardGameToDelete?.name ?? "the game")?",
