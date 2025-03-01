@@ -32,6 +32,7 @@ struct OnboardingSampleChatView: View {
                 }
             }
         }
+        .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
     }

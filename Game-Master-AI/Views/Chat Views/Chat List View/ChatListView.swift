@@ -130,5 +130,6 @@ struct ChatListView: View {
             isFocused = false
         }
         .padding(.bottom, 16.0)
+        .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
     }
 }

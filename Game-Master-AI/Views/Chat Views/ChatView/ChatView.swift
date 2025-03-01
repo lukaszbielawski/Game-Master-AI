@@ -84,6 +84,7 @@ struct ChatView: View {
                 }
             }
         }
+        .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
         .task(priority: .userInitiated) { [weak vm] in

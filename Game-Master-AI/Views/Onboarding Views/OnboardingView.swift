@@ -63,6 +63,7 @@ struct OnboardingView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .frame(maxWidth: .infinity)
+        .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
         .frameAccessor { onboardingFrame = $0 }
     }
 }

@@ -28,6 +28,7 @@ struct PaywallView: View {
                     ScrollView {
                         VStack(spacing: 16.0) {
                             Text("Make Every Moment Count")
+                                .foregroundStyle(Color.essentialsColor(named: "TintOnAccentColor"))
                                 .font(.title2)
                                 .multilineTextAlignment(.center)
                                 .padding(.leading, 24.0)
@@ -37,7 +38,7 @@ struct PaywallView: View {
                                         Spacer()
                                         Image(systemName: "xmark")
                                             .font(.title3)
-                                            .foregroundStyle(Color.tintColor)
+                                            .foregroundStyle(Color.essentialsColor(named: "TintOnAccentColor"))
                                             .opacity(0.3)
                                             .contentShape(Rectangle().size(width: 44, height: 44))
                                             .onTapGesture {
@@ -52,6 +53,7 @@ struct PaywallView: View {
                                     }
                                 }
                             Text(LocalizedStringKey("**Less Rules, More Laughs!** 🎉❤️"))
+                                .foregroundStyle(Color.essentialsColor(named: "TintOnAccentColor"))
                                 .font(.subheadline)
                             Image("ImageBoardGameFamily")
                                 .resizable()

@@ -53,6 +53,7 @@
 		B287A4472D71D03800602E8A /* CountersView+AddNewCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287A4462D71D03800602E8A /* CountersView+AddNewCounterView.swift */; };
 		B287A4492D71D07100602E8A /* TimersView+TimerViewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287A4482D71D07100602E8A /* TimersView+TimerViewListCell.swift */; };
 		B287A44B2D71D09000602E8A /* TimersView+TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287A44A2D71D09000602E8A /* TimersView+TimerPickerView.swift */; };
+		B287A44D2D7325FD00602E8A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B287A44C2D7325FD00602E8A /* PrivacyInfo.xcprivacy */; };
 		B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */; };
 		B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */; };
 		B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */; };
@@ -98,7 +99,7 @@
 		B223BE392D4AB5FC005CA9B3 /* encryption_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = encryption_public_key.pem; sourceTree = "<group>"; };
 		B22D35F82D68AB5A007F65F2 /* BoardGameWhisperCompletionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameWhisperCompletionsRequest.swift; sourceTree = "<group>"; };
 		B22E9D552D4FB3BE00BA1C28 /* ChatAddNewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAddNewGameView.swift; sourceTree = "<group>"; };
-		B22E9D572D4FDE2F00BA1C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B22E9D572D4FDE2F00BA1C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B22E9D582D4FF2A000BA1C28 /* ChatAddNewGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAddNewGameViewModel.swift; sourceTree = "<group>"; };
 		B22FCE222D6342C000241F25 /* PaywallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewModel.swift; sourceTree = "<group>"; };
 		B234D3842D551C5D0041ED4C /* ChatAddNewGameView+PDFFilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+PDFFilePickerView.swift"; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		B287A4462D71D03800602E8A /* CountersView+AddNewCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountersView+AddNewCounterView.swift"; sourceTree = "<group>"; };
 		B287A4482D71D07100602E8A /* TimersView+TimerViewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimersView+TimerViewListCell.swift"; sourceTree = "<group>"; };
 		B287A44A2D71D09000602E8A /* TimersView+TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimersView+TimerPickerView.swift"; sourceTree = "<group>"; };
+		B287A44C2D7325FD00602E8A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGame+LoadingView.swift"; sourceTree = "<group>"; };
 		B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView.LoadingView+MemoryView.swift"; sourceTree = "<group>"; };
 		B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+CameraPickerView.swift"; sourceTree = "<group>"; };
@@ -403,10 +405,11 @@
 		B2E14AC12D2EAF1D00CA7D5A /* Game-Master-AI */ = {
 			isa = PBXGroup;
 			children = (
-				B2EDD0932D5DF34D0068F37A /* Routes */,
-				B234D3862D553E330041ED4C /* API Services */,
+				B287A44C2D7325FD00602E8A /* PrivacyInfo.xcprivacy */,
 				B22E9D572D4FDE2F00BA1C28 /* Info.plist */,
 				B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */,
+				B2EDD0932D5DF34D0068F37A /* Routes */,
+				B234D3862D553E330041ED4C /* API Services */,
 				B2390B252D34288200310046 /* Extensions */,
 				B2390B222D3405CB00310046 /* Enums */,
 				B2E64F0A2D595CAF00EDF1CF /* Toolbars */,
@@ -549,6 +552,7 @@
 				B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */,
 				B20CD2692D6B9EB500850B89 /* encryption_aes_key in Resources */,
 				B2E14ACA2D2EAF1E00CA7D5A /* Preview Assets.xcassets in Resources */,
+				B287A44D2D7325FD00602E8A /* PrivacyInfo.xcprivacy in Resources */,
 				B2390B1E2D33DB5500310046 /* privacy_policy.txt in Resources */,
 				B223BE3A2D4AB5FC005CA9B3 /* encryption_public_key.pem in Resources */,
 				B21B28412D35457F00DA2FB4 /* D12.dae in Resources */,

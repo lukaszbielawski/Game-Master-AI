@@ -46,6 +46,7 @@ struct TimersView: View {
 
             }
         }
+        .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
         .environmentObject(vm)
     }
 }

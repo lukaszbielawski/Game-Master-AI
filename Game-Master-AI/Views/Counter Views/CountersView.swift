@@ -35,6 +35,7 @@ struct CountersView: View {
             }
         }
         .padding(.top, 16)
+        .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
         .onAppear {
             tabRouter.currentToolbarRoute = .counters {
                 EssentialsHapticService.shared.play(.medium)
