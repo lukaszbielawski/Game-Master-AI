@@ -1,100 +1,49 @@
-Brass: Birmingham
-Pandemic Legacy: Season 1
-Ark Nova
-Gloomhaven
-Twilight Imperium: Fourth Edition
-Dune: Imperium
-Terraforming Mars
-War of the Ring (second edition)
-Star Wars: Rebellion
-Spirit Island
-Gloomhaven: Jaws of the Lion
-Gaia Project
-Twilight Struggle
-Through the Ages: A New Story of Civiliz…
-The Castles of Burgundy
-Great Western Trail
-Dune: Imperium - Uprising
-Scythe
-Eclipse: Second Dawn for the Galaxy
-7 Wonders: Duel
-Brass: Lancashire
-Nemesis
-Clank! Legacy: Acquisitions Incorporated
-A Feast for Odin
-Concordia
-Frosthaven
-Great Western Trail (Second Edition)
-Arkham Horror: The Card Game
-Lost Ruins of Arnak
-Root
-Terra Mystica
-Wingspan
-Too Many Bones
-Orleans
-Mage Knight Board Game
-Barrage
-The Crew: Mission Deep Sea
-Everdell
-Viticulture Essential Edition
-Heat: Pedal to the Metal
-Marvel Champions: The Card Game
-Sky Team
-Food Chain Magnate
-Pax Pamir (Second Edition)
-Underwater Cities
-Crokinole
-Kanban EV
-Puerto Rico
-Cascadia
-Caverna: The Cave Farmers
-Anachrony
-Pandemic Legacy: Season 0
-On Mars
-Blood Rage
-Agricola
-Hegemony: Lead Your Class to Victory
-Cthulhu: Death May Die
-Sleeping Gods
-Oathsworn: Into the Deepwood
-Lisboa
-Pandemic Legacy: Season 2
-Obsession
-Mansions of Madness: Second Edition
-Grand Austria Hotel
-Tzolk'in: The Mayan Calendar
-Power Grid
-Maracaibo
-The Quacks of Quedlinburg
-Clans of Caledonia
-Le Havre
-The Gallerist
-Paladins of the West Kingdom
-Star Wars: Imperial Assault
-Age of Innovation
-Android: Netrunner
-Mechs vs. Minions
-The Crew: The Quest for Planet Nine
-Kingdom Death: Monster
-Agricola (Revised Edition)
-Azul
-Race for the Galaxy
-Five Tribes
-Clank!: Catacombs
-Clank!: A Deck-Building Adventure
-Eclipse
-Fields of Arle
-Aeon's End
-Lords of Waterdeep
-Teotihuacan: City of Gods
-El Grande
-Beyond the Sun
-Through the Ages: A Story of Civilizatio…
-Revive
-Dominant Species
-Robinson Crusoe: Adventure on the Cursed…
-7 Wonders
-Concordia Venus
-The Voyages of Marco Polo
-Scout
-The Search for Planet X
+Effective Date: 1 March 2025
+
+**1. Introduction**
+
+Welcome to Board Game Scanner: AI Arbiter ("we," "our," or "us"). By using our application, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please do not use the app.
+
+**2. Subscription and Usage Limits**
+
+If you subscribe to our services, you acknowledge and agree to the following usage limits:
+
+•   A maximum of 200 message completions per day and 2000 message completions per month.
+•   A maximum of 30 new game creations per month.
+•   These limits are subject to change at our discretion with prior notice.
+
+**3. User Responsibilities**
+
+By using the app, you agree to:
+•   Use the application in compliance with applicable laws and regulations.
+•   Not misuse the app, attempt to hack, or disrupt the functionality of our services.
+•   Respect the intellectual property rights associated with the application.
+
+**4. Data Collection and Privacy**
+
+Your use of the app is also governed by our Privacy Policy, which explains how we collect, store, and use your data. You can review our Privacy Policy [here].
+
+**5. Service Availability**
+
+•   We do not guarantee that the app will be available at all times or without interruptions.
+•   We reserve the right to modify, suspend, or discontinue the app or certain features at any time without prior notice.
+
+**6. Termination**
+
+We reserve the right to terminate or suspend your access to the app at our discretion if you violate these Terms & Conditions or engage in misuse of the service.
+
+**7. Limitation of Liability**
+
+•   We are not responsible for any damages, losses, or issues arising from your use of the app.
+•   Our liability is limited to the extent permitted by law.
+
+**8. Changes to These Terms**
+
+We may update these Terms & Conditions at any time. Changes will be posted within the app, and continued use of the app after changes implies acceptance of the updated terms.
+
+**9. Contact Us**
+
+If you have any questions regarding these Terms & Conditions, you can contact us at:
+
+Łukasz Bielawski
+lukaszbielawskiapps@gmail.com
