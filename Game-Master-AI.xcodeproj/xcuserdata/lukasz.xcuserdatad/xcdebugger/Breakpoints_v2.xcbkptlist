@@ -146,36 +146,6 @@
             endingLineNumber = "69"
             landmarkName = "getChatCompletionsStream(request:deployEnvironment:completionsType:onReceive:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2836D836-210A-4892-BE2A-A2CAE6F8D8C8 - e0b7d3d553ee0819"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 @Sendable (Alamofire.DataStreamRequest.Stream&lt;Foundation.Data, Swift.Never&gt;) -&gt; () in closure #1 (Swift.CheckedContinuation&lt;Swift.Optional&lt;Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;&gt;, Swift.Never&gt;) -&gt; () in Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69">
-               </Location>
-               <Location
-                  uuid = "2836D836-210A-4892-BE2A-A2CAE6F8D8C8 - e0b7d3d553ee0819"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 @Sendable (Alamofire.DataStreamRequest.Stream&lt;Foundation.Data, Swift.Never&gt;) -&gt; () in closure #1 (Swift.CheckedContinuation&lt;Swift.Optional&lt;Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;&gt;, Swift.Never&gt;) -&gt; () in Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,50 +210,6 @@
             endingLineNumber = "40"
             landmarkName = "getChatCompletionsStream(request:deployEnvironment:completionsType:onReceive:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E4760D72-C0DC-417A-918D-552A4A9121AC - 8b7a41dd35d127e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40">
-               </Location>
-               <Location
-                  uuid = "E4760D72-C0DC-417A-918D-552A4A9121AC - 38c812718a38ebe2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40">
-               </Location>
-               <Location
-                  uuid = "E4760D72-C0DC-417A-918D-552A4A9121AC - e0b7d3d553ee0da4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 @Sendable (Alamofire.DataStreamRequest.Stream&lt;Foundation.Data, Swift.Never&gt;) -&gt; () in closure #1 (Swift.CheckedContinuation&lt;Swift.Optional&lt;Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;&gt;, Swift.Never&gt;) -&gt; () in Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -300,64 +226,6 @@
             endingLineNumber = "38"
             landmarkName = "getChatCompletionsStream(request:deployEnvironment:completionsType:onReceive:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "24E738C3-DF2F-4876-B7A9-9C9C9F913FCB - 8b7a41dd35d1265e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38">
-               </Location>
-               <Location
-                  uuid = "24E738C3-DF2F-4876-B7A9-9C9C9F913FCB - 8b7a41dd35d1265e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38">
-               </Location>
-               <Location
-                  uuid = "24E738C3-DF2F-4876-B7A9-9C9C9F913FCB - 38c812718a38ea5c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38">
-               </Location>
-               <Location
-                  uuid = "24E738C3-DF2F-4876-B7A9-9C9C9F913FCB - 38c812718a38ea5c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Essentials.EssentialsCompletionsAPIService.getChatCompletionsStream(request: Swift.Decodable &amp; Swift.Encodable &amp; Swift.Sendable, deployEnvironment: Swift.Optional&lt;Essentials.DeployEnvironmentType&gt;, completionsType: Essentials.EssentialsCompletionsType, onReceive: (Swift.String, Swift.Optional&lt;Essentials.EssentialsCompletionsAPIService.EssentialsMessageType&gt;) -&gt; ()) async -&gt; Swift.Result&lt;Essentials.EssentialsMessage, Essentials.EssentialsCompletionsAPIService.Error&gt;"
-                  moduleName = "Game-Master-AI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukasz/Documents/GitHub/Essentials/Sources/Essentials/Modules/Network/API%20Services/EssentialsCompletionsAPIService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -117,8 +117,12 @@ extension OnboardingView {
         }
         ToolbarItem(placement: .principal) {
             if let onboardingFrame {
-                ProgressView(value: vm.screenCompletionFraction, total: 1.0)
-                    .frame(width: onboardingFrame.width * 0.5)
+                HStack(spacing: 0.0) {
+                    Spacer()
+                    ProgressView(value: vm.screenCompletionFraction, total: 1.0)
+                        .frame(width: onboardingFrame.width * 0.5)
+                    Spacer()
+                }
             }
         }
     }

@@ -67,6 +67,7 @@ struct PaywallView: View {
                             VStack(spacing: 16) {
                                 EssentialsPaywallPricesView(products: vm.products, selectedProduct: $vm.selectedProduct)
                                     .padding(.top, 16.0)
+                                    .cappedWidthFrame()
                                 Group {
                                     HStack {
                                         Text("🕒")
@@ -86,7 +87,7 @@ struct PaywallView: View {
                                         Text(LocalizedStringKey("**Instant** setup – just scan & start playing!"))
                                         Spacer()
                                     }
-                                }
+                                }.cappedWidthFrame()
 
                                 .padding(.horizontal)
                                 EssentialsPaywallSocialProofView(
@@ -94,12 +95,12 @@ struct PaywallView: View {
                                     rating: "4.9 ★"
                                 )
                                 .padding(.top)
+                                .cappedWidthFrame()
 
                                 Text("Unlock full potetnial with Premium")
                                     .font(.title2)
                                     .fontWeight(.semibold)
                                     .padding(.vertical)
-
                                 EssentialsPaywallPlanComparisonView(rowModels: vm.comparisonModels, geoProxy: geo) {
                                     EssentialsPaywallPlanComparisonHeaderView(geoProxy: geo) {
                                         VStack {
@@ -133,6 +134,7 @@ struct PaywallView: View {
 
                                 EssentialsPaywallPricesView(products: vm.products, selectedProduct: $vm.selectedProduct)
                                     .padding(.top, 32.0)
+                                    .cappedWidthFrame()
 
                                 Text("Frequently Asked Questions (FAQ)")
                                     .font(.title2)

@@ -43,16 +43,20 @@ struct OnboardingThirdScreenView: View {
             .font(.subheadline)
             .multilineTextAlignment(.leading)
             if isImageShown {
-                Image("ImageBoardGameScan")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(32.0)
-                    .frame(width: 200)
-                    .rotationEffect(.degrees(30.0))
-                    .offset(x: 100)
-                    .transition(.asymmetric(
-                        insertion: .move(edge: .trailing).animation(.easeOut(duration: 0.65)),
-                        removal: .move(edge: .leading).animation(.easeOut(duration: 0.65))))
+                HStack(spacing: 0.0) {
+                    Spacer()
+                    Image("ImageBoardGameScan")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(32.0)
+                        .frame(width: 200)
+                        .rotationEffect(.degrees(30.0))
+                        .offset(x: 100)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing).animation(.easeOut(duration: 0.65)),
+                            removal: .move(edge: .leading).animation(.easeOut(duration: 0.65))))
+                    Spacer()
+                }
             }
         }
         .opacity(isScreenShown ? 1.0 : 0.0)
