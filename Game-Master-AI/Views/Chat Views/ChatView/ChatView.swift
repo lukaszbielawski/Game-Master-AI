@@ -60,7 +60,6 @@ struct ChatView: View {
                 }
             } onTextFieldBarTapped: { isFocused in
                 if !vm.canAddMessages {
-                    print(vm.remainingMessages, vm.remainingUserUsages.getValueIfSuccess())
                     isFocused.wrappedValue = false
                     Task { @MainActor in
                         await vm.tryToRefill()

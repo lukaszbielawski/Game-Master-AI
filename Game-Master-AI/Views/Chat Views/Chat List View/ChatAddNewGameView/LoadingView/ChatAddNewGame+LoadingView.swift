@@ -52,57 +52,52 @@ extension ChatAddNewGameView {
         }
 
         var body: some View {
-            var sheetHeightFraction = Binding<CGFloat>(
-                get: {
-                    if let frameHeight {
-                        if frameHeight * 0.75 < 852.0 * 0.75 {
-                            min(1.0, 0.75 * 852.0 / frameHeight)
+            ZStack {
+                if let frameHeight {
+                    var sheetHeightFraction: CGFloat {
+                        print("height fraction", min(1.0, 0.75 * 749.0 / frameHeight), frameHeight)
+                        return if frameHeight * 0.75 < 749.0 * 0.75 {
+                            min(1.0, 0.75 * 749.0 / frameHeight)
                         } else {
                             0.75
                         }
-                    } else {
-                        0.75
                     }
-                },
-                set: { _ in
+                    VStack(spacing: 8.0) {
+                        Text("Please wait")
+                            .font(.title)
+                            .fontWeight(.regular)
+                            .padding(.top, 16.0)
+                        Text("Your manual is being processed...")
+                            .font(.headline)
+                            .fontWeight(.light)
 
+                        ProgressView(value: currentProgresFraction, total: 1.0)
+                            .colorMultiply(Color.white)
+                            .onAppear {}
+                        HStack(spacing: 8.0) {
+                            ProgressView()
+                                .font(.callout)
+                            Text(currentLoadingLine)
+                                .font(.callout)
+                                .fontWeight(.light)
+                        }
+
+                        MemoryView()
+
+                        Button {
+                            onAddGameTapped()
+                        } label: {
+                            Text("Continue")
+                        }
+                        .buttonStyle(EssentialsBigButtonStyle())
+                        .disabled(currentProgresFraction != 1.0)
+                        Spacer()
+                    }.task(priority: .userInitiated) { [weak vm] in
+                        await vm?.createBoardGame()
+                    }
+                    .modifier(EssentialsHeightSheetModifier(fraction: sheetHeightFraction))
                 }
-            )
-
-            VStack(spacing: 8.0) {
-                Text("Please wait")
-                    .font(.title)
-                    .fontWeight(.regular)
-                    .padding(.top, 16.0)
-                Text("Your manual is being processed...")
-                    .font(.headline)
-                    .fontWeight(.light)
-
-                ProgressView(value: currentProgresFraction, total: 1.0)
-                    .colorMultiply(Color.white)
-                    .onAppear {}
-                HStack(spacing: 8.0) {
-                    ProgressView()
-                        .font(.callout)
-                    Text(currentLoadingLine)
-                        .font(.callout)
-                        .fontWeight(.light)
-                }
-
-                MemoryView()
-
-                Button {
-                    onAddGameTapped()
-                } label: {
-                    Text("Continue")
-                }
-                .buttonStyle(EssentialsBigButtonStyle())
-                .disabled(currentProgresFraction != 1.0)
-                Spacer()
-            }.task(priority: .userInitiated) { [weak vm] in
-                await vm?.createBoardGame()
             }
-            .modifier(EssentialsAutoHeightSheetModifier(fraction: sheetHeightFraction))
             .frameAccessor { frameHeight = $0.height }
             .onReceive(vm.gameCreatedPublisher) { boardGameModel in
                 router.currentSheetRoute = .none

@@ -29,10 +29,10 @@ struct OnboardingView: View {
                         .environmentObject(vm)
 
                     Spacer()
-                    if let onboardingFrame {
+//                    if let onboardingFrame {
                         continueButton()
                             .padding(.bottom, isTransitioningToPaywall ? 0 : 32)
-                    }
+//                    }
                 }
 
                 .toolbar {
@@ -64,7 +64,6 @@ struct OnboardingView: View {
         .navigationBarTitleDisplayMode(.inline)
         .frame(maxWidth: .infinity)
         .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
-        .frameAccessor { onboardingFrame = $0 }
     }
 }
 
@@ -116,13 +115,11 @@ extension OnboardingView {
             }
         }
         ToolbarItem(placement: .principal) {
-            if let onboardingFrame {
-                HStack(spacing: 0.0) {
-                    Spacer()
-                    ProgressView(value: vm.screenCompletionFraction, total: 1.0)
-                        .frame(width: onboardingFrame.width * 0.5)
-                    Spacer()
-                }
+            HStack(spacing: 0.0) {
+                Spacer()
+                ProgressView(value: vm.screenCompletionFraction, total: 1.0)
+                    .frame(width: 200)
+                Spacer()
             }
         }
     }

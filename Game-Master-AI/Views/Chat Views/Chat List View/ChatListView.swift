@@ -105,7 +105,9 @@ struct ChatListView: View {
                         Text("You can add \(vm.remainingGameCreations) more games this month.")
                     }
                 )
+                Spacer()
             }
+            .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)
 
         } failureView: { error in
             EssentialsContentUnavailableView(
@@ -128,6 +130,9 @@ struct ChatListView: View {
         }
         .onTapGesture {
             isFocused = false
+        }
+        .task { [weak vm] in
+            await vm?.fetchMyCustomGames()
         }
         .padding(.bottom, 16.0)
         .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)

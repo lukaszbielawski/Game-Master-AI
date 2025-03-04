@@ -1,5 +1,15 @@
 {
-  "identifier" : "EFDEBDE5",
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "8E2CDD8A",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -10,7 +20,7 @@
     "_applicationInternalID" : "6740344365",
     "_developerTeamID" : "J6U333HZ7J",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 761401797.33133698,
+    "_lastSynchronizedDate" : 762787326.68550599,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -83,16 +93,19 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Get full access to all features of Scanner",
-              "displayName" : "Board Game Scanner - One Month",
+              "description" : "Get full access to all features of Geek AI",
+              "displayName" : "Premium: One Month",
               "locale" : "en_US"
             }
           ],
           "productID" : "lukaszbielawski.Game_Master_AI.one_month_premium",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Board Game Scanner - One Month Premium",
+          "referenceName" : "Geek AI - One Month Premium",
           "subscriptionGroupID" : "21619088",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         },
         {
           "adHocOffers" : [
@@ -108,16 +121,19 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Get full access to all features of Scanner",
-              "displayName" : "Scanner - One Year Premium",
+              "description" : "Get full access to all features of Geek AI",
+              "displayName" : "Premium: One Year",
               "locale" : "en_US"
             }
           ],
           "productID" : "lukaszbielawski.Game_Master_AI.one_year_premium",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Board Game Scanner - One Year Premium",
+          "referenceName" : "Geek AI - One Year Premium",
           "subscriptionGroupID" : "21619088",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         },
         {
           "adHocOffers" : [
@@ -131,29 +147,32 @@
           "groupNumber" : 5,
           "internalID" : "6741869923",
           "introductoryOffer" : {
-            "internalID" : "FFD8EF5F",
+            "internalID" : "00DF020F",
             "numberOfPeriods" : 1,
             "paymentMode" : "free",
             "subscriptionPeriod" : "P3D"
           },
           "localizations" : [
             {
-              "description" : "Get full access to all features of Scanner",
-              "displayName" : "Premium: 1 Year + 3-Day Trial",
+              "description" : "Get full access to all features of Geek AI",
+              "displayName" : "Premium: 1 Year + 3-Days Free",
               "locale" : "en_US"
             }
           ],
           "productID" : "lukaszbielawski.Game_Master_AI.one_year_premium_with_trial",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Board Game Scanner - One Year Premium (3 Days Free)",
+          "referenceName" : "Geek AI - One Year Premium + 3-Days Free",
           "subscriptionGroupID" : "21619088",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
   "version" : {
-    "major" : 3,
+    "major" : 4,
     "minor" : 0
   }
 }

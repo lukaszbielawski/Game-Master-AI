@@ -14,6 +14,8 @@
 		B20819C72D5F7F4E0051ED9E /* OnboardingSampleChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20819C62D5F7F4E0051ED9E /* OnboardingSampleChatViewModel.swift */; };
 		B20819C92D5F81250051ED9E /* SampleCompletionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20819C82D5F81250051ED9E /* SampleCompletionsRequest.swift */; };
 		B20CD2692D6B9EB500850B89 /* encryption_aes_key in Resources */ = {isa = PBXBuildFile; fileRef = B20CD2682D6B9EB500850B89 /* encryption_aes_key */; };
+		B214214B2D778CB70052584F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B214214A2D778CB70052584F /* LaunchScreen.storyboard */; };
+		B21421532D7795060052584F /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21421522D7795000052584F /* LaunchScreenView.swift */; };
 		B21B283F2D35457F00DA2FB4 /* D4.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283A2D35457F00DA2FB4 /* D4.dae */; };
 		B21B28402D35457F00DA2FB4 /* D6.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283B2D35457F00DA2FB4 /* D6.dae */; };
 		B21B28412D35457F00DA2FB4 /* D12.dae in Resources */ = {isa = PBXBuildFile; fileRef = B21B283C2D35457F00DA2FB4 /* D12.dae */; };
@@ -58,6 +60,7 @@
 		B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */; };
 		B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */; };
 		B2A374502D4E37100065F8F6 /* BoardGameCompletionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A3744F2D4E37100065F8F6 /* BoardGameCompletionsRequest.swift */; };
+		B2C8E6952D7733CB00476D4C /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B2C8E6942D7733CB00476D4C /* StoreKitConfiguration.storekit */; };
 		B2CF13F12D39290200B8F55B /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2CF13F02D39290200B8F55B /* Config-Debug.plist */; };
 		B2CF13F32D3977BA00B8F55B /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2CF13F22D3977BA00B8F55B /* Config-Release.plist */; };
 		B2DF20222D2EB78600301845 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B2DF20212D2EB78600301845 /* Essentials */; };
@@ -91,6 +94,8 @@
 		B20819C82D5F81250051ED9E /* SampleCompletionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCompletionsRequest.swift; sourceTree = "<group>"; };
 		B20CD2682D6B9EB500850B89 /* encryption_aes_key */ = {isa = PBXFileReference; lastKnownFileType = text; path = encryption_aes_key; sourceTree = "<group>"; };
 		B213E2942D305A990076AF5B /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreKitConfiguration.storekit; path = "Game-Master-AI/StoreKitConfiguration.storekit"; sourceTree = "<group>"; };
+		B214214A2D778CB70052584F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B21421522D7795000052584F /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		B21B283A2D35457F00DA2FB4 /* D4.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D4.dae; sourceTree = "<group>"; };
 		B21B283B2D35457F00DA2FB4 /* D6.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D6.dae; sourceTree = "<group>"; };
 		B21B283C2D35457F00DA2FB4 /* D12.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D12.dae; sourceTree = "<group>"; };
@@ -136,6 +141,7 @@
 		B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView.LoadingView+MemoryView.swift"; sourceTree = "<group>"; };
 		B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAddNewGameView+CameraPickerView.swift"; sourceTree = "<group>"; };
 		B2A3744F2D4E37100065F8F6 /* BoardGameCompletionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameCompletionsRequest.swift; sourceTree = "<group>"; };
+		B2C8E6942D7733CB00476D4C /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		B2CF13F02D39290200B8F55B /* Config-Debug.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Config-Debug.plist"; path = "Game-Master-AI/Config-Debug.plist"; sourceTree = "<group>"; };
 		B2CF13F22D3977BA00B8F55B /* Config-Release.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Config-Release.plist"; path = "Game-Master-AI/Config-Release.plist"; sourceTree = "<group>"; };
 		B2E14ABF2D2EAF1D00CA7D5A /* Game-Master-AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-Master-AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +178,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B21421512D7794EB0052584F /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B21421522D7795000052584F /* LaunchScreenView.swift */,
+				B214214A2D778CB70052584F /* LaunchScreen.storyboard */,
+			);
+			path = "Launch Screen";
+			sourceTree = "<group>";
+		};
 		B21B28242D351E8300DA2FB4 /* Dices */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +230,7 @@
 			children = (
 				B2390B232D3405D600310046 /* DiceType.swift */,
 				B206F2AE2D57A1F100DAD789 /* TierType.swift */,
+				B2390B252D34288200310046 /* Extensions */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -405,12 +421,12 @@
 		B2E14AC12D2EAF1D00CA7D5A /* Game-Master-AI */ = {
 			isa = PBXGroup;
 			children = (
+				B21421512D7794EB0052584F /* Launch Screen */,
 				B287A44C2D7325FD00602E8A /* PrivacyInfo.xcprivacy */,
 				B22E9D572D4FDE2F00BA1C28 /* Info.plist */,
 				B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */,
 				B2EDD0932D5DF34D0068F37A /* Routes */,
 				B234D3862D553E330041ED4C /* API Services */,
-				B2390B252D34288200310046 /* Extensions */,
 				B2390B222D3405CB00310046 /* Enums */,
 				B2E64F0A2D595CAF00EDF1CF /* Toolbars */,
 				B2600AE82D332F1B0096E553 /* Views */,
@@ -420,6 +436,7 @@
 				B2E14AC22D2EAF1D00CA7D5A /* Game_Master_AIApp.swift */,
 				B2E14AC62D2EAF1E00CA7D5A /* Assets.xcassets */,
 				B2E14AC82D2EAF1E00CA7D5A /* Preview Content */,
+				B2C8E6942D7733CB00476D4C /* StoreKitConfiguration.storekit */,
 			);
 			path = "Game-Master-AI";
 			sourceTree = "<group>";
@@ -551,6 +568,7 @@
 			files = (
 				B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */,
 				B20CD2692D6B9EB500850B89 /* encryption_aes_key in Resources */,
+				B214214B2D778CB70052584F /* LaunchScreen.storyboard in Resources */,
 				B2E14ACA2D2EAF1E00CA7D5A /* Preview Assets.xcassets in Resources */,
 				B287A44D2D7325FD00602E8A /* PrivacyInfo.xcprivacy in Resources */,
 				B2390B1E2D33DB5500310046 /* privacy_policy.txt in Resources */,
@@ -563,6 +581,7 @@
 				B21B28402D35457F00DA2FB4 /* D6.dae in Resources */,
 				B2CF13F32D3977BA00B8F55B /* Config-Release.plist in Resources */,
 				B2E14AC72D2EAF1E00CA7D5A /* Assets.xcassets in Resources */,
+				B2C8E6952D7733CB00476D4C /* StoreKitConfiguration.storekit in Resources */,
 				B2CF13F12D39290200B8F55B /* Config-Debug.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +632,7 @@
 				B2390B242D3405D600310046 /* DiceType.swift in Sources */,
 				B2390B212D34051D00310046 /* SceneKitView.swift in Sources */,
 				B20819C92D5F81250051ED9E /* SampleCompletionsRequest.swift in Sources */,
+				B21421532D7795060052584F /* LaunchScreenView.swift in Sources */,
 				B2E14AC32D2EAF1D00CA7D5A /* Game_Master_AIApp.swift in Sources */,
 				B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */,
 				B2EDD0A52D5E95CA0068F37A /* OnboardingSecondScreenView.swift in Sources */,
@@ -734,7 +754,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -761,6 +781,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Game-Master-AI/Preview Content\"";
@@ -778,7 +799,8 @@
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use your data to show you personalized ads and improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
@@ -801,6 +823,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Game-Master-AI/Preview Content\"";
@@ -818,7 +841,8 @@
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use your data to show you personalized ads and improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;

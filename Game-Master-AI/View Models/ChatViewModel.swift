@@ -204,7 +204,7 @@ final class ChatViewModel: ObservableObject {
 
     func sendWhisperRecording(m4aData: Data) async {
         guard canAddMessages else {
-            await tryToRefill()
+//            await tryToRefill()
             return
         }
 
@@ -245,7 +245,7 @@ final class ChatViewModel: ObservableObject {
     func sendMessage(content: String) async {
         guard !content.isEmpty else { return }
         guard canAddMessages else {
-            await tryToRefill()
+//            await tryToRefill()
             return
         }
 

@@ -31,7 +31,7 @@ final class ChatListViewModel: ObservableObject {
 
     func deleteBoardGame(_ boardGame: BoardGameModel) async {
         switch await boardGameAPI.deleteSubject(subjectId: boardGame.id) {
-        case .success(let success):
+        case .success:
             games.removeIfSuccess(boardGame)
         case .failure(let failure):
             toastProvider.enqueueToast(.init(fromError: failure))
@@ -58,7 +58,6 @@ final class ChatListViewModel: ObservableObject {
 
     init() {
         Task(priority: .userInitiated) {
-            await fetchMyCustomGames()
             await fetchAllMyRemainingUses()
         }
         searchQuerySubject

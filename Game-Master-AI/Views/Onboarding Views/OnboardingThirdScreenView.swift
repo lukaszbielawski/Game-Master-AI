@@ -51,7 +51,6 @@ struct OnboardingThirdScreenView: View {
                         .padding(32.0)
                         .frame(width: 200)
                         .rotationEffect(.degrees(30.0))
-                        .offset(x: 100)
                         .transition(.asymmetric(
                             insertion: .move(edge: .trailing).animation(.easeOut(duration: 0.65)),
                             removal: .move(edge: .leading).animation(.easeOut(duration: 0.65))))
