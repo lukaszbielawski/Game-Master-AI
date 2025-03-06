@@ -43,10 +43,10 @@ struct ChatView: View {
             } onRecordButtonTapped: { [weak vm] in
                 guard let vm else { return }
                 if vm.recordingState == .recording {
-                    EssentialsHapticService.shared.play(.soft)
                     Task(priority: .userInitiated) {
                         await vm.stopRecording()
                     }
+                    EssentialsHapticService.shared.notify(.success)
                 } else if vm.recordingState == .stopped {
                     EssentialsHapticService.shared.play(.soft)
                     Task(priority: .userInitiated) {

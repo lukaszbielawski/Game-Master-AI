@@ -17,11 +17,16 @@ extension ChatAddNewGameView {
 
         var body: some View {
             EssentialsPDFFilePickerView(
-                selectedPDFFile: $vm.selectedPDFManualURL) {
+                selectedPDFFile: $vm.selectedPDFManualURL)
+            {
                 dismiss()
                 router.currentSheetRoute = .addBoardGameLoadingView(vm: vm)
             } onCancel: {
-                dismiss()
+                Task {
+                    await MainActor.run {
+                        router.currentSheetRoute = .addBoardGameView(vm)
+                    }
+                }
             }
         }
     }

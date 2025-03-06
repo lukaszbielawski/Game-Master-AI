@@ -93,7 +93,6 @@
 		B20819C62D5F7F4E0051ED9E /* OnboardingSampleChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSampleChatViewModel.swift; sourceTree = "<group>"; };
 		B20819C82D5F81250051ED9E /* SampleCompletionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCompletionsRequest.swift; sourceTree = "<group>"; };
 		B20CD2682D6B9EB500850B89 /* encryption_aes_key */ = {isa = PBXFileReference; lastKnownFileType = text; path = encryption_aes_key; sourceTree = "<group>"; };
-		B213E2942D305A990076AF5B /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; name = StoreKitConfiguration.storekit; path = "Game-Master-AI/StoreKitConfiguration.storekit"; sourceTree = "<group>"; };
 		B214214A2D778CB70052584F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B21421522D7795000052584F /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		B21B283A2D35457F00DA2FB4 /* D4.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = D4.dae; sourceTree = "<group>"; };
@@ -403,7 +402,6 @@
 			children = (
 				B2CF13F02D39290200B8F55B /* Config-Debug.plist */,
 				B2CF13F22D3977BA00B8F55B /* Config-Release.plist */,
-				B213E2942D305A990076AF5B /* StoreKitConfiguration.storekit */,
 				B2E14AC12D2EAF1D00CA7D5A /* Game-Master-AI */,
 				B2E14AC02D2EAF1D00CA7D5A /* Products */,
 				B2DF20202D2EB78100301845 /* Frameworks */,
@@ -789,7 +787,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Game-Master-AI/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Game Scanner";
+				INFOPLIST_KEY_CFBundleDisplayName = "Geek AI";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";
@@ -831,7 +829,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Game-Master-AI/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Game Scanner";
+				INFOPLIST_KEY_CFBundleDisplayName = "Geek AI";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera to take a photo of the game manual.";
 				INFOPLIST_KEY_NSDocumentsFolderUsageDescription = "This app needs access to your files to import a game manual in PDF format.";

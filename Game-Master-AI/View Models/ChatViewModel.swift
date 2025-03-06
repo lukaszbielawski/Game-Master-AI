@@ -96,6 +96,10 @@ final class ChatViewModel: ObservableObject {
         }
     }
 
+    deinit {
+        print("chat vm deinit")
+    }
+
     func fetchAllMyRemainingUses() async {
         remainingUserUsages = .loading
         switch await deviceAPI.getAllUserUses() {
@@ -156,7 +160,7 @@ final class ChatViewModel: ObservableObject {
 
         let result = await audioCaptureService.startRecordingAudio()
         switch result {
-        case .success(let success):
+        case .success:
 
             withAnimation(.easeInOut(duration: 0.35)) {
                 recordingState = .recording
@@ -204,7 +208,6 @@ final class ChatViewModel: ObservableObject {
 
     func sendWhisperRecording(m4aData: Data) async {
         guard canAddMessages else {
-//            await tryToRefill()
             return
         }
 
@@ -245,7 +248,6 @@ final class ChatViewModel: ObservableObject {
     func sendMessage(content: String) async {
         guard !content.isEmpty else { return }
         guard canAddMessages else {
-//            await tryToRefill()
             return
         }
 

@@ -11,7 +11,7 @@ import SwiftUI
 enum SheetRoute: EssentialsSheetRouteProtocol {
     case privacyPolicy(contentFileName: String)
     case termsAndConditions(contentFileName: String)
-    case addBoardGameView
+    case addBoardGameView(_ vm: ChatAddNewGameViewModel? = nil)
     case addBoardGameLoadingView(vm: ChatAddNewGameViewModel)
     case mail
     case pdfFilePickerView(_ vm: ChatAddNewGameViewModel)
@@ -30,8 +30,8 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
                 title: "Terms and conditions",
                 contentFileName: contentFileName
             )
-        case .addBoardGameView:
-            ChatAddNewGameView()
+        case .addBoardGameView(let vm):
+            ChatAddNewGameView(vm: vm)
         case .addBoardGameLoadingView(let vm):
             ChatAddNewGameView.LoadingView {}
                 .environmentObject(vm)

@@ -9,10 +9,14 @@ import Essentials
 import SwiftUI
 
 struct ChatAddNewGameView: View {
-    @StateObject var vm: ChatAddNewGameViewModel = .init()
+    @StateObject var vm: ChatAddNewGameViewModel
     @FocusState private var isFocused: Bool
 
     @State private var sheetPresentationDetentFraction: CGFloat = 0.5
+
+    init(vm: ChatAddNewGameViewModel?) {
+        self._vm = .init(wrappedValue: vm ?? .init())
+    }
 
     var body: some View {
         ZStack {

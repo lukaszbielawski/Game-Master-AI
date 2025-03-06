@@ -56,7 +56,7 @@ struct ChatListView: View {
                     .onTapGesture {
                         if vm.canAddGame {
                             EssentialsHapticService.shared.play(.light)
-                            router.currentSheetRoute = .addBoardGameView
+                            router.currentSheetRoute = .addBoardGameView()
                         } else {
                             EssentialsHapticService.shared.notify(.warning)
                             let toast: EssentialsToast

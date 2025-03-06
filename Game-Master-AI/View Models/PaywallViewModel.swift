@@ -23,6 +23,7 @@ final class PaywallViewModel: ObservableObject {
     let storeKitService = EssentialsStoreKitService()
     let launchDetector = EssentialsLaunchDetector.shared
     let subscriptionState = EssentialsSubscriptionState.shared
+    let deviceAPIService = EssentialsDevicesAPIService()
 
     let comparisonModels: [EssentialsPaywallPlanComparisonModel] = [
         .init(subject: "📖 Process game manuals", basicValue: "1", premiumValue: "30 monthly"),
@@ -71,6 +72,10 @@ final class PaywallViewModel: ObservableObject {
             withAnimation {
                 launchDetector.markPaywallAsSeen()
                 subscriptionState.activeSubscription = transaction
+                Task.detached(priority: .userInitiated) { [weak deviceAPIService] in
+                    guard let deviceAPIService else { return }
+                    await deviceAPIService.invalidateLastValidationTime()
+                }
                 onSuccess()
             }
         case .failure(let failure):

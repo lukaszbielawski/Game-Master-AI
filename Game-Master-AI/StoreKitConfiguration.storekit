@@ -20,7 +20,7 @@
     "_applicationInternalID" : "6740344365",
     "_developerTeamID" : "J6U333HZ7J",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 762787326.68550599,
+    "_lastSynchronizedDate" : 762862407.79283702,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -147,7 +147,7 @@
           "groupNumber" : 5,
           "internalID" : "6741869923",
           "introductoryOffer" : {
-            "internalID" : "00DF020F",
+            "internalID" : "E9824530",
             "numberOfPeriods" : 1,
             "paymentMode" : "free",
             "subscriptionPeriod" : "P3D"

@@ -32,6 +32,7 @@ extension ChatAddNewGameView {
                 router.currentSheetRoute = .addBoardGameLoadingView(vm: vm)
             } onCancel: {
                 dismiss()
+                router.currentSheetRoute = .addBoardGameView(vm)
             } leftLeadingView: { vm in
                 Text("\(vm.capturedCGImages.count) pages\n(max \(maxPhotos))")
                     .multilineTextAlignment(.leading)
