@@ -14,20 +14,7 @@ extension CountersView {
         @FocusState private var isFocused: Bool
 
         @State var pixelFrameSliderDimensionTextField: String = ""
-
-        @State var frameHeight: CGFloat? = nil
-
-        var sheetHeightFraction: CGFloat {
-            if let frameHeight {
-                if frameHeight * 0.6 < 852.0 * 0.6 {
-                    min(1.0, 0.6 * 852.0 / frameHeight)
-                } else {
-                    0.6
-                }
-            } else {
-                0.6
-            }
-        }
+        @State var sheetHeightFraction: CGFloat = 1.0
 
         var body: some View {
             GeometryReader { geo in
@@ -84,14 +71,14 @@ extension CountersView {
                     Spacer()
                 }
                 .padding()
-                .modifier(EssentialsAutoHeightSheetModifier(fraction: .constant(sheetHeightFraction)))
+                .modifier(EssentialsAutoHeightSheetModifier(fraction: $sheetHeightFraction))
                 .ignoresSafeArea(.keyboard, edges: .bottom)
                 .background(Color.sheetBackgroundColor, ignoresSafeAreaEdges: .all)
                 .onAppear {
                     vm.cleanForm()
                 }
             }
-            .frameAccessor { frameHeight = $0.height }
+            .essentialsSheetHeight($sheetHeightFraction, desiredFraction: 0.6)
         }
     }
 }

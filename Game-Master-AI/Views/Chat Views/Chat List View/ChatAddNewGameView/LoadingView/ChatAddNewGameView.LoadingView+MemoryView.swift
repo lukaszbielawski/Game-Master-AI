@@ -5,8 +5,8 @@
 //  Created by Łukasz Bielawski on 05/02/2025.
 //
 
-import SwiftUI
 import Essentials
+import SwiftUI
 
 extension ChatAddNewGameView.LoadingView {
     struct MemoryView: View {
@@ -54,7 +54,9 @@ extension ChatAddNewGameView.LoadingView {
             if let firstPickIndex {
                 guard firstPickIndex != index else { return }
                 secondPickIndex = index
+
                 EssentialsHapticService.shared.play(.medium)
+       
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if currentEmojiLayout[firstPickIndex] == currentEmojiLayout[index] {
                         revaledIndices.insert(firstPickIndex)

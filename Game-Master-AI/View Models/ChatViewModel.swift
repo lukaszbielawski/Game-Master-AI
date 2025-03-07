@@ -170,6 +170,9 @@ final class ChatViewModel: ObservableObject {
             withAnimation(.easeInOut(duration: 0.35)) {
                 recordingState = .stopped
             }
+            if error == .microphoneAccessDenied {
+                toastProvider.enqueueToast(.failure("Microphone access denied. Please allow access in settings."))
+            }
             print(error)
         }
     }
@@ -217,6 +220,8 @@ final class ChatViewModel: ObservableObject {
             boardGameId: boardGameModel.id, base64AudioM4A: base64EncodedAudio
         )
 
+        streamedMessage = ""
+
         let result = await completionsAPI.getChatCompletionsStream(
             request: request,
             completionsType: .whisper,
@@ -226,7 +231,7 @@ final class ChatViewModel: ObservableObject {
                     let userMessage = EssentialsMessage(role: messageType.rawValue, content: chunk)
                     messages.appendIfSuccess(userMessage)
                 } else if messageType == .assistant {
-                    if let streamedMessage {
+                    if let streamedMessage, !streamedMessage.isEmpty {
                         self.streamedMessage = streamedMessage.appending(chunk)
                     } else {
                         streamedMessage = chunk
@@ -254,6 +259,8 @@ final class ChatViewModel: ObservableObject {
         let newMessage = EssentialsMessage(role: "user", content: content)
         messages.appendIfSuccess(newMessage)
         let request = BoardGameCompletionsRequest(boardGameId: boardGameModel.id, userQuery: content)
+
+        streamedMessage = ""
 
         let result = await completionsAPI.getChatCompletionsStream(
             request: request,

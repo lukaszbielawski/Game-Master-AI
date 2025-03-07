@@ -35,7 +35,6 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
         case .addBoardGameLoadingView(let vm):
             ChatAddNewGameView.LoadingView {}
                 .environmentObject(vm)
-                .interactiveDismissDisabled()
         case .mail:
             EssentialsMailView()
         case .pdfFilePickerView(let vm):

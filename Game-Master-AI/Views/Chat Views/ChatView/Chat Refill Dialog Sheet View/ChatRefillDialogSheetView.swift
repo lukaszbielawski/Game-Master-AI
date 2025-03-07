@@ -22,6 +22,8 @@ struct ChatRefillDialogSheetView<Content: View>: View {
     @ObservedObject var router = RouterState.shared
     @ObservedObject var adProvider = EssentialsAdProvider.shared
 
+    @State var sheetHeightFraction: CGFloat = 1.0
+
     let onDismiss: (Bool) -> Void
 
     var body: some View {
@@ -64,8 +66,9 @@ struct ChatRefillDialogSheetView<Content: View>: View {
             await adProvider.loadRewardedAd()
         }
         .padding()
-        .modifier(EssentialsAutoHeightSheetModifier(fraction: .constant(0.6)))
+        .modifier(EssentialsAutoHeightSheetModifier(fraction: $sheetHeightFraction))
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .background(Color.sheetBackgroundColor, ignoresSafeAreaEdges: .all)
+        .essentialsSheetHeight($sheetHeightFraction, desiredFraction: 0.6)
     }
 }

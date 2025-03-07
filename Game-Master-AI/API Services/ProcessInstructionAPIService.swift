@@ -53,8 +53,8 @@ final class ProcessInstructionAPIService: EssentialsAPIService {
                                     .replacingOccurrences(of: "\\n", with: "\n")
                                     .replacingOccurrences(of: "\r", with: "")
 
-                                if chunk == "^" {
-                                    onReceive(chunk)
+                                if let userDestinedMessage = getUserDestinedMessageFromStream(chunk: chunk) {
+                                    onReceive(userDestinedMessage)
                                 } else if let errorMessage = getErrorMessageFromStream(chunk: chunk) {
                                     continuation.resume(returning: Result.failure(.init(errorMessage)))
                                 } else {

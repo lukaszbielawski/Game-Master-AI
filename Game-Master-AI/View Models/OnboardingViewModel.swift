@@ -8,6 +8,7 @@
 import Essentials
 import SwiftUI
 
+@MainActor
 final class OnboardingViewModel: ObservableObject {
     @Published var navigationStack: [OnboaringScreenRoute] = [.landingScreen]
     @Published var currentScreenContinueButtonState: EssentialsOnboardingContinueButton.State = .hidden

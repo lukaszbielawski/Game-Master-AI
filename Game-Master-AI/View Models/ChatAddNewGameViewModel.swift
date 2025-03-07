@@ -9,6 +9,7 @@ import Combine
 import Essentials
 import Foundation
 import PhotosUI
+import SwiftUI
 
 @MainActor
 final class ChatAddNewGameViewModel: ObservableObject {
@@ -20,12 +21,11 @@ final class ChatAddNewGameViewModel: ObservableObject {
     @Published var selectedPDFManualURL: URL?
 
     @Published var manualImages: [CGImage] = []
-    @Published var currentStep: Int = 0
-    @Published var totalStepCount: Int = 1
-    @Published var currentPage: Int = 1
-    @Published var totalPages: Int = 1
+    @Published var currentStep: Int = 1
+    @Published var totalStepCount: Int = 4
     @Published var creationStage: GameCreationStage = .ocr
-    @Published var cancellables: Set<AnyCancellable> = []
+
+    @Published var currentLoadingMessage: String = "Extracting text from your manual"
 
     let gameCreatedPublisher = PassthroughSubject<BoardGameModel, ProcessInstructionAPIService.Error>()
     let toastProvider = EssentialsToastProvider.shared
@@ -53,25 +53,24 @@ final class ChatAddNewGameViewModel: ObservableObject {
             return
         }
 
-        totalPages = manualImages.count
-        totalStepCount += manualImages.count
-        currentStep += 1
+        print("after switch result")
+
         creationStage = .pageConversion
 
-        Timer.publish(every: CGFloat(15.0 / CGFloat(manualImages.count)), on: .main, in: .common)
-            .autoconnect()
-            .sink { [weak self] _ in
-                guard let self else { return }
-                if currentPage < totalPages {
-                    currentStep += 1
-                    currentPage += 1
-                } else {
-                    cancellables.removeAll()
+        let base64Strings = await withTaskGroup(of: String?.self, returning: [String?].self) { [weak self] group in
+            guard let self else { return [nil] }
+            manualImages.forEach { image in
+                group.addTask(priority: .utility) {
+                    await image.toBase64String()
                 }
             }
-            .store(in: &cancellables)
+            var base64EncodedImages: [String?] = []
+            for await base64EncodedImage in group {
+                base64EncodedImages.append(base64EncodedImage)
+            }
+            return base64EncodedImages
+        }
 
-        let base64Strings = manualImages.map { $0.toBase64String }
         let areBase64StringsProperlyCreated = base64Strings.allSatisfy { $0 != nil }
         guard areBase64StringsProperlyCreated else {
             print("Base64 creation error \(areBase64StringsProperlyCreated)")
@@ -79,20 +78,19 @@ final class ChatAddNewGameViewModel: ObservableObject {
             return
         }
 
+        print("before request")
+
         let request = ProcessInstructionRequest(boardGameName: gameName, base64Images: base64Strings.compactMap { $0 })
-        let processInstructionResult = await processInstructionAPIService.processInstruction(request: request) { [weak self] chunk in
+        let processInstructionResult = await processInstructionAPIService.processInstruction(request: request) { [weak self] userDestinedMessage in
             guard let self else { return }
-            if chunk == "^" {
-                if currentPage != totalPages {
-                    currentStep += 1
-                    currentPage += 1
-                }
+            withAnimation {
+                self.currentLoadingMessage = userDestinedMessage
             }
+            currentStep += 1
         }
         switch processInstructionResult {
         case .success(let newSubject):
             creationStage = .finished
-            currentStep += 1
             let boardGameModel = BoardGameModel(newSubject)
             gameCreatedPublisher.send(boardGameModel)
         case .failure(let failure):
@@ -106,8 +104,9 @@ final class ChatAddNewGameViewModel: ObservableObject {
     }
 
     private func createGameFromPDFManualFile() async -> Result<[CGImage], EssentialsTextRecognitionServiceError> {
-        guard let selectedPDFManualURL else { return .failure(.other("No PDF file URL")) }
-        return .success(textRecognitionService.convertPDFToImages(pdfFileURL: selectedPDFManualURL))
+        guard let selectedPDFManualURL = selectedPDFManualURL else { return .failure(.other("No PDF file URL")) }
+
+        return await textRecognitionService.convertPDFToImages(pdfFileURL: selectedPDFManualURL)
     }
 }
 
