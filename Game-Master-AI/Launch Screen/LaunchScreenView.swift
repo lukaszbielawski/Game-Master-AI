@@ -18,7 +18,7 @@ struct LaunchScreenView: View {
                     background
                         .ignoresSafeArea(.all)
                     logo
-                        .scaleEffect(isLogoScaling ? 10 : 1)
+                        .scaleEffect(isLogoScaling ? 5 : 1)
                 }
                 .animation(.easeIn(duration: 0.3), value: isVisible)
             }

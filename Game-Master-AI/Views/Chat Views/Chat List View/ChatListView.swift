@@ -88,6 +88,8 @@ struct ChatListView: View {
                     router.push(.chatView(boardGame))
                 }.refreshable { [weak vm] in
                     await vm?.fetchMyCustomGames()
+                    try? await Task.sleep(for: .seconds(0.1))
+                    await vm?.fetchAllMyRemainingUses()
                 }
                 .alert(
                     "Delete \(boardGameToDelete?.name ?? "the game")?",
@@ -117,6 +119,8 @@ struct ChatListView: View {
             ) {
                 Task(priority: .userInitiated) { [weak vm] in
                     await vm?.fetchMyCustomGames()
+                    try? await Task.sleep(for: .seconds(0.1))
+                    await vm?.fetchAllMyRemainingUses()
                 }
             }
             .onAppear {
@@ -133,6 +137,8 @@ struct ChatListView: View {
         }
         .task { [weak vm] in
             await vm?.fetchMyCustomGames()
+            try? await Task.sleep(for: .seconds(0.1))
+            await vm?.fetchAllMyRemainingUses()
         }
         .padding(.bottom, 16.0)
         .background(Color.backgroundColor, ignoresSafeAreaEdges: .all)

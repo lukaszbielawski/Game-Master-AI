@@ -57,9 +57,6 @@ final class ChatListViewModel: ObservableObject {
     }
 
     init() {
-        Task(priority: .userInitiated) {
-            await fetchAllMyRemainingUses()
-        }
         searchQuerySubject
             .sink { [weak self] query in
                 self?.search(query: query)

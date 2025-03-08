@@ -53,8 +53,6 @@ final class ChatAddNewGameViewModel: ObservableObject {
             return
         }
 
-        print("after switch result")
-
         creationStage = .pageConversion
 
         let base64Strings = await withTaskGroup(of: String?.self, returning: [String?].self) { [weak self] group in
@@ -77,8 +75,6 @@ final class ChatAddNewGameViewModel: ObservableObject {
             gameCreatedPublisher.send(completion: .failure(.init(nil)))
             return
         }
-
-        print("before request")
 
         let request = ProcessInstructionRequest(boardGameName: gameName, base64Images: base64Strings.compactMap { $0 })
         let processInstructionResult = await processInstructionAPIService.processInstruction(request: request) { [weak self] userDestinedMessage in

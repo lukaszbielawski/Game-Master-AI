@@ -794,6 +794,7 @@
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We do not need your local network usage, so do as you wish";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to enable voice input for chat messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use your data to show you personalized ads and improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -836,6 +837,7 @@
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We do not need your local network usage, so do as you wish";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs access to your microphone to enable voice input for chat messages.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo gallery to select a game manual photos.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We use your data to show you personalized ads and improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
