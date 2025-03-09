@@ -34,7 +34,12 @@ struct ChatView: View {
                 recordingState: vm.recordingState
             ) { messageContent in
                 Task(priority: .userInitiated) { [weak vm] in
-                    await vm?.sendMessage(content: messageContent)
+                    guard let vm else { return }
+                    if !vm.canAddMessages {
+                        await vm.tryToRefill()
+                    } else {
+                        await vm.sendMessage(content: messageContent)
+                    }
                 }
             } onNewConversationButtonTapped: { [weak vm] in
                 Task(priority: .userInitiated) {
