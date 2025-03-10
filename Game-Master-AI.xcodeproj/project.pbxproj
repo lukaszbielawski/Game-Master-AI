@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -59,11 +59,11 @@
 		B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */; };
 		B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */; };
 		B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */; };
+		B29EA0BC2D7EF0E50090A66F /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B29EA0BB2D7EF0E50090A66F /* Essentials */; };
 		B2A374502D4E37100065F8F6 /* BoardGameCompletionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A3744F2D4E37100065F8F6 /* BoardGameCompletionsRequest.swift */; };
 		B2C8E6952D7733CB00476D4C /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B2C8E6942D7733CB00476D4C /* StoreKitConfiguration.storekit */; };
 		B2CF13F12D39290200B8F55B /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2CF13F02D39290200B8F55B /* Config-Debug.plist */; };
 		B2CF13F32D3977BA00B8F55B /* Config-Release.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2CF13F22D3977BA00B8F55B /* Config-Release.plist */; };
-		B2DF20222D2EB78600301845 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B2DF20212D2EB78600301845 /* Essentials */; };
 		B2E14AC32D2EAF1D00CA7D5A /* Game_Master_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E14AC22D2EAF1D00CA7D5A /* Game_Master_AIApp.swift */; };
 		B2E14AC72D2EAF1E00CA7D5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E14AC62D2EAF1E00CA7D5A /* Assets.xcassets */; };
 		B2E14ACA2D2EAF1E00CA7D5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E14AC92D2EAF1E00CA7D5A /* Preview Assets.xcassets */; };
@@ -170,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2DF20222D2EB78600301845 /* Essentials in Frameworks */,
+				B29EA0BC2D7EF0E50090A66F /* Essentials in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +517,7 @@
 			);
 			name = "Game-Master-AI";
 			packageProductDependencies = (
-				B2DF20212D2EB78600301845 /* Essentials */,
+				B29EA0BB2D7EF0E50090A66F /* Essentials */,
 			);
 			productName = "Game-Master-AI";
 			productReference = B2E14ABF2D2EAF1D00CA7D5A /* Game-Master-AI.app */;
@@ -548,7 +548,7 @@
 			);
 			mainGroup = B2E14AB62D2EAF1D00CA7D5A;
 			packageReferences = (
-				B2E14AD02D2EAF3600CA7D5A /* XCLocalSwiftPackageReference "../Essentials" */,
+				B29EA0BA2D7EF0E50090A66F /* XCRemoteSwiftPackageReference "Essentials" */,
 			);
 			productRefGroup = B2E14AC02D2EAF1D00CA7D5A /* Products */;
 			projectDirPath = "";
@@ -781,7 +781,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Game-Master-AI/Preview Content\"";
 				DEVELOPMENT_TEAM = J6U333HZ7J;
 				ENABLE_PREVIEWS = YES;
@@ -824,7 +824,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Game-Master-AI/Preview Content\"";
 				DEVELOPMENT_TEAM = J6U333HZ7J;
 				ENABLE_PREVIEWS = YES;
@@ -883,17 +883,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		B2E14AD02D2EAF3600CA7D5A /* XCLocalSwiftPackageReference "../Essentials" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../Essentials;
+/* Begin XCRemoteSwiftPackageReference section */
+		B29EA0BA2D7EF0E50090A66F /* XCRemoteSwiftPackageReference "Essentials" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lukaszbielawski/Essentials.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B2DF20212D2EB78600301845 /* Essentials */ = {
+		B29EA0BB2D7EF0E50090A66F /* Essentials */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B2E14AD02D2EAF3600CA7D5A /* XCLocalSwiftPackageReference "../Essentials" */;
+			package = B29EA0BA2D7EF0E50090A66F /* XCRemoteSwiftPackageReference "Essentials" */;
 			productName = Essentials;
 		};
 /* End XCSwiftPackageProductDependency section */
