@@ -48,6 +48,7 @@
 		B265ACC62D679E1900B4EAF3 /* TimersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC52D679E1900B4EAF3 /* TimersViewModel.swift */; };
 		B265ACC82D67A0E600B4EAF3 /* TimersViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ACC72D67A0E600B4EAF3 /* TimersViewToolbar.swift */; };
 		B2703E082D6F220B00B32EFC /* ChatRefillDialogSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2703E072D6F220300B32EFC /* ChatRefillDialogSheetView.swift */; };
+		B271ED652D805581009E2428 /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B271ED642D805581009E2428 /* Essentials */; };
 		B27C4EFD2D43BAA900FE5B08 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C4EFC2D43BAA900FE5B08 /* ChatView.swift */; };
 		B27F119E2D64C1DB000E38C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27F119D2D64C1DB000E38C6 /* GoogleService-Info.plist */; };
 		B27F46192D60A12C00D1566C /* OnboardingChatSampleScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F46182D60A12C00D1566C /* OnboardingChatSampleScreenView.swift */; };
@@ -59,7 +60,6 @@
 		B29A05972D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05962D5381CD000058C6 /* ChatAddNewGame+LoadingView.swift */; };
 		B29A059A2D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A05992D539B0A000058C6 /* ChatAddNewGameView.LoadingView+MemoryView.swift */; };
 		B29A059E2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A059D2D53A408000058C6 /* ChatAddNewGameView+CameraPickerView.swift */; };
-		B29EA0BC2D7EF0E50090A66F /* Essentials in Frameworks */ = {isa = PBXBuildFile; productRef = B29EA0BB2D7EF0E50090A66F /* Essentials */; };
 		B2A374502D4E37100065F8F6 /* BoardGameCompletionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A3744F2D4E37100065F8F6 /* BoardGameCompletionsRequest.swift */; };
 		B2C8E6952D7733CB00476D4C /* StoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = B2C8E6942D7733CB00476D4C /* StoreKitConfiguration.storekit */; };
 		B2CF13F12D39290200B8F55B /* Config-Debug.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2CF13F02D39290200B8F55B /* Config-Debug.plist */; };
@@ -170,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B29EA0BC2D7EF0E50090A66F /* Essentials in Frameworks */,
+				B271ED652D805581009E2428 /* Essentials in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +517,7 @@
 			);
 			name = "Game-Master-AI";
 			packageProductDependencies = (
-				B29EA0BB2D7EF0E50090A66F /* Essentials */,
+				B271ED642D805581009E2428 /* Essentials */,
 			);
 			productName = "Game-Master-AI";
 			productReference = B2E14ABF2D2EAF1D00CA7D5A /* Game-Master-AI.app */;
@@ -548,7 +548,7 @@
 			);
 			mainGroup = B2E14AB62D2EAF1D00CA7D5A;
 			packageReferences = (
-				B29EA0BA2D7EF0E50090A66F /* XCRemoteSwiftPackageReference "Essentials" */,
+				B271ED632D805581009E2428 /* XCRemoteSwiftPackageReference "Essentials" */,
 			);
 			productRefGroup = B2E14AC02D2EAF1D00CA7D5A /* Products */;
 			projectDirPath = "";
@@ -884,20 +884,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B29EA0BA2D7EF0E50090A66F /* XCRemoteSwiftPackageReference "Essentials" */ = {
+		B271ED632D805581009E2428 /* XCRemoteSwiftPackageReference "Essentials" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lukaszbielawski/Essentials.git";
 			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B29EA0BB2D7EF0E50090A66F /* Essentials */ = {
+		B271ED642D805581009E2428 /* Essentials */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B29EA0BA2D7EF0E50090A66F /* XCRemoteSwiftPackageReference "Essentials" */;
+			package = B271ED632D805581009E2428 /* XCRemoteSwiftPackageReference "Essentials" */;
 			productName = Essentials;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/lukaszbielawski/Essentials.git",
       "state" : {
-        "revision" : "66a6acdd2d160933b24beaed48e93621e43186a9",
-        "version" : "1.0.0"
+        "revision" : "27f022732f7b76cba64d5fe1b0a1fca84b46899d",
+        "version" : "1.0.1"
       }
     },
     {
