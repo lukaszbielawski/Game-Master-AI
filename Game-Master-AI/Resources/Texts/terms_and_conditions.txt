@@ -1,49 +1,43 @@
 Effective Date: 1 March 2025
 
 **1. Introduction**
+Welcome to Geek AI – Board Game Assistant ("we," "our," or "us"). By using this application, you agree to be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use the app.
 
-Welcome to Board Game Scanner: AI Arbiter ("we," "our," or "us"). By using our application, you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, please do not use the app.
+**2. License and App Store Compliance**
+This app is licensed, not sold to you. Your use of the app is subject to these Terms of Use and Apple’s Standard End User License Agreement (EULA). In case of any conflicts, Apple’s EULA takes precedence.
 
-**2. Subscription and Usage Limits**
+**3. Subscription and Usage Limits**
+By subscribing to our services, you acknowledge and agree to the following usage limits:
+• 200 message completions per day and 2000 per month.
+• 30 new game creations per month.
+• We may change these limits with prior notice.
 
-If you subscribe to our services, you acknowledge and agree to the following usage limits:
+**4. User Responsibilities**
+You agree to:
+• Use the app legally and ethically.
+• Not attempt to hack, misuse, or disrupt our services.
+• Respect intellectual property rights.
 
-•   A maximum of 200 message completions per day and 2000 message completions per month.
-•   A maximum of 30 new game creations per month.
-•   These limits are subject to change at our discretion with prior notice.
+**5. Data Collection and Privacy**
+Your data is processed according to our Privacy Policy [link here]. Additionally, we comply with Apple’s AppTrackingTransparency framework. If tracking permissions are required, you will be prompted before any data is collected.
 
-**3. User Responsibilities**
-
-By using the app, you agree to:
-•   Use the application in compliance with applicable laws and regulations.
-•   Not misuse the app, attempt to hack, or disrupt the functionality of our services.
-•   Respect the intellectual property rights associated with the application.
-
-**4. Data Collection and Privacy**
-
-Your use of the app is also governed by our Privacy Policy, which explains how we collect, store, and use your data. You can review our Privacy Policy [here].
-
-**5. Service Availability**
-
-•   We do not guarantee that the app will be available at all times or without interruptions.
-•   We reserve the right to modify, suspend, or discontinue the app or certain features at any time without prior notice.
-
-**6. Termination**
-
-We reserve the right to terminate or suspend your access to the app at our discretion if you violate these Terms & Conditions or engage in misuse of the service.
+**6. Service Availability**
+• We do not guarantee 100% uptime of the app.
+• We may modify, suspend, or discontinue features without notice.
 
 **7. Limitation of Liability**
-
-•   We are not responsible for any damages, losses, or issues arising from your use of the app.
-•   Our liability is limited to the extent permitted by law.
+• We are not liable for any damages, losses, or interruptions caused by the use of this app.
+• Apple also disclaims all warranties and liabilities as stated in its EULA.
 
 **8. Changes to These Terms**
-
-We may update these Terms & Conditions at any time. Changes will be posted within the app, and continued use of the app after changes implies acceptance of the updated terms.
+We may update these Terms of Use at any time. Continued use of the app after changes means you accept the new terms.
 
 **9. Contact Us**
-
-If you have any questions regarding these Terms & Conditions, you can contact us at:
-
+If you have questions about these terms, contact:
 Łukasz Bielawski
 lukaszbielawskiapps@gmail.com
+
+**Apple Standard End User License Agreement (EULA)**
+Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this **Licensed Application End User License Agreement (“Standard EULA”)**, or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided.
+
+You can review Apple's full Standard End User License Agreement (EULA) at the following link: [Apple Standard EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/)

@@ -27,7 +27,7 @@ enum SheetRoute: EssentialsSheetRouteProtocol {
             )
         case .termsAndConditions(let contentFileName):
             EssentialsTextContentSheetView(
-                title: "Terms and conditions",
+                title: "Terms of use",
                 contentFileName: contentFileName
             )
         case .addBoardGameView(let vm):
