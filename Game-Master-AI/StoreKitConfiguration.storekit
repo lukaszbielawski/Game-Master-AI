@@ -93,8 +93,8 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Get full access to all features of Geek AI",
-              "displayName" : "Premium: One Month",
+              "description" : "Get a premium access for a month to Geek AI",
+              "displayName" : "Geek AI Premium: One Month",
               "locale" : "en_US"
             }
           ],
@@ -121,8 +121,8 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Get full access to all features of Geek AI",
-              "displayName" : "Premium: One Year",
+              "description" : "Get a premium access for a year to Geek AI",
+              "displayName" : "Geek AI Premium: One Year",
               "locale" : "en_US"
             }
           ],
@@ -154,14 +154,14 @@
           },
           "localizations" : [
             {
-              "description" : "Get full access to all features of Geek AI",
-              "displayName" : "Premium: 1 Year + 3-Days Free",
+              "description" : "Get a 1 year of Premium access + 3-Days Trial",
+              "displayName" : "Premium: 1 Year + 3-Days Trial",
               "locale" : "en_US"
             }
           ],
           "productID" : "lukaszbielawski.Game_Master_AI.one_year_premium_with_trial",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Geek AI - One Year Premium + 3-Days Free",
+          "referenceName" : "Geek AI - One Year Premium + 3-Days Trial",
           "subscriptionGroupID" : "21619088",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
