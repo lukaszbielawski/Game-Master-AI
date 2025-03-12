@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/lukaszbielawski/Essentials.git",
       "state" : {
-        "revision" : "9bce4b33d61a958ff5e2a9c45d2367cc11d68ea7",
-        "version" : "1.0.3"
+        "revision" : "9bf083202a2375264e6149b0742cc5238886f70e",
+        "version" : "1.0.4"
       }
     },
     {
@@ -150,8 +150,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
       "state" : {
-        "revision" : "356bebbc5b84c07a7b7cdd744b22829bf5ad4e76",
-        "version" : "12.1.0"
+        "revision" : "ab4c3ec7546c7566fe49918fc9461df44e015537",
+        "version" : "12.2.0"
       }
     },
     {
